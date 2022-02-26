@@ -21,6 +21,9 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="juacabvil" action="http://dnd5e.wikidot.com/"/>
+			<acme:menu-suboption code="alvmorcal1" action="https://copilot.github.com/"/>
+			<acme:menu-suboption code="javmarjae" action="http://www.realbetisbalompie.es/"/>
+			<acme:menu-suboption code="pedsotsan" action="https://www.thingiverse.com/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
