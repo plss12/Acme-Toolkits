@@ -20,7 +20,12 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-suboption code="47549618Q: Navarro Rodr�guez, Julio" action="https://vandal.elespanol.com/"/>
+			<acme:menu-suboption code="47549618Q: Navarro Rodr�guez, Julio" action="https://vandal.elespanol.com/"/>
+			<acme:menu-suboption code="29552748W: Parejo Ramos, Salvador" action="https://sevillafc.es"/>
+			<acme:menu-suboption code="49126856Y:Cabezas Villalba, Juan Pablo" action="http://dnd5e.wikidot.com/"/>
+			<acme:menu-suboption code="49826018Z: Moreno Calderón, Álvaro" action="https://copilot.github.com/"/>
+			<acme:menu-suboption code="20063803Y: Martinez Jaen, Javier" action="http://www.realbetisbalompie.es/"/>
+			<acme:menu-suboption code="53912470X: Soto Santos, Pedro Luis" action="https://www.thingiverse.com/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
