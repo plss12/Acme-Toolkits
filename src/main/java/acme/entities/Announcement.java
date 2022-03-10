@@ -2,11 +2,12 @@ package acme.entities;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -27,7 +28,9 @@ public class Announcement extends AbstractEntity{
 	// Attributes ---------------------------------
 
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date creationDate;
+	@Past
+	@NotNull
+	protected Date moment;
 	
 	@NotBlank
 	@Length(max=101)
@@ -41,7 +44,7 @@ public class Announcement extends AbstractEntity{
 	@Length(max=256)
 	protected String body;
 	
-	@Column(nullable=false)
+	@NotNull
 	protected Boolean flag;
 	
 	@URL
