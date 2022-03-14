@@ -42,7 +42,9 @@ public class Patronage extends AbstractEntity{
 		@Size(min = 0)
 		protected Integer budget;
 		
-		//protected Date moment;
+		@NotBlank
+		@Size(min = 1)
+		protected Integer timePeriod;
 		
 		@URL
 		protected String furtherInformation;
