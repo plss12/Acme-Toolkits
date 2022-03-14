@@ -1,6 +1,7 @@
 package acme.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -46,9 +47,8 @@ public class Component extends AbstractEntity {
 	@URL
 	protected String info;
 	
-	
-	//@ManyToOne(optional=false)
-	//protected Tool tool;
+	@ManyToOne(optional=false)
+	protected Tool tool;
 	
 
 }
