@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -17,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Tool extends AbstractEntity{
+public class ToolComponent extends AbstractEntity{
 
 	// Serialisation identifier ----------------------
 
@@ -25,8 +26,11 @@ public class Tool extends AbstractEntity{
 	
 	// Attributes  ------------------------------------
 	
+	@NotNull
+	protected Type type;
+	
 	@NotBlank
-	@Length(max=101)
+	@Length(min=0,max=100)
 	protected String name;
 	
 	@Column(unique = true)
@@ -34,11 +38,11 @@ public class Tool extends AbstractEntity{
 	protected Integer code;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(min=0, max=100)
 	protected String technology;
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(min=0, max=255)
 	protected String description;
 	
 	@Valid
