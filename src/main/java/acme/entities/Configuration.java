@@ -1,5 +1,7 @@
 package acme.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
@@ -24,12 +26,18 @@ public class Configuration extends AbstractEntity{
 	@NotNull
 	protected String defaultCurrency;
 	
+	protected List<String> acceptedCurrencies;
+	
 	@Range(min=0, max=1)
-	@Digits(integer=1, fraction=2)
+	@Digits(integer=2, fraction=0)
 	protected double weakSpamTrheshold;
 	
 	@Range(min=0, max=1)
-	@Digits(integer=1, fraction=2)
+	@Digits(integer=2, fraction=0)
 	protected double strongSpamTrheshold;
+	
+	protected List<String> strongSpam;
+	
+	protected List<String> weakSpam;
 	
 }
