@@ -1,15 +1,19 @@
 package acme.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import acme.roles.Patron;
@@ -39,12 +43,15 @@ public class Patronage extends AbstractEntity{
 		protected String legalStuff;
 		
 		@NotBlank
-		@Size(min = 0)
-		protected Integer budget;
+		protected Money budget;
 		
+		@Temporal(TemporalType.TIMESTAMP)
 		@NotBlank
-		@Size(min = 1)
-		protected Integer timePeriod;
+		protected Date startDate;
+		
+		@Temporal(TemporalType.TIMESTAMP)
+		@NotBlank
+		protected Date finishDate;
 		
 		@URL
 		protected String furtherInformation;
