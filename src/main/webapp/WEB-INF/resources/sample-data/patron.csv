@@ -1,0 +1,3 @@
+key,key:user-account,company,statement,further-information
+patron-01,user-account-patron-01, "Edison Records", "Edison statement", null
+patron-02,user-account-patron-02, "Ford Motor Company", "Ford statement", null

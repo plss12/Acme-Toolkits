@@ -3,7 +3,6 @@ package acme.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Range;
@@ -28,13 +27,11 @@ public class Configuration extends AbstractEntity{
 	
 	protected List<String> acceptedCurrencies;
 	
-	@Range(min=0, max=1)
-	@Digits(integer=2, fraction=0)
-	protected double weakSpamTrheshold;
+	@Range(min=0, max=100)
+	protected Integer weakSpamTrheshold;
 	
-	@Range(min=0, max=1)
-	@Digits(integer=2, fraction=0)
-	protected double strongSpamTrheshold;
+	@Range(min=0, max=100)
+	protected Integer strongSpamTrheshold;
 	
 	protected List<String> strongSpam;
 	
