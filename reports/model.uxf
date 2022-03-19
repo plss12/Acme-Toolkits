@@ -154,7 +154,7 @@ bg=yellow</panel_attributes>
 DefaultUserIdentity
 --
 + name: String {NotBlank}
-+ surname: String {♫NotBlank}
++ surname: String {NotBlank}
 + email: String {NotBlank, Email}
 + / fullName: String {NotBlank}
 bg=yellow
@@ -211,15 +211,15 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>856</x>
+      <x>792</x>
       <y>152</y>
-      <w>224</w>
+      <w>304</w>
       <h>104</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Chirp
 --
-+ moment: Date {Temporal(TIMESTAMP)}
++ creationMoment: Date {NotNull, Temporal(TIMESTAMP)}
 + title: String {NotBlank, Max(100)}
 + author: String {NotBlank, Max(100)}
 + body: String {NotBlank, Max(255)}
@@ -289,8 +289,8 @@ give it to ^
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 PatronageReport
 --
-+ sequence: String {NotBlank, Pattern="\\d+:\\d+"}
-+ moment: Date {Temporal(TIMESTAMP), Past}
++ sequenceNumber: String {NotBlank, Pattern="\\d+:\\d+"}
++ creationMoment: Date {Temporal(TIMESTAMP), Past}
 + memorandum: String {NotBlank, Max(255)}
 + link: String {URL}
 bg=green</panel_attributes>
@@ -654,7 +654,7 @@ bg=pink</panel_attributes>
       <w>248</w>
       <h>104</h>
     </coordinates>
-    <panel_attributes>The sequence must match pattern:
+    <panel_attributes>The sequenceNumber must match pattern:
 “〈patronage-code〉:〈serial-number〉”, where 
 “〈patronage-code〉” denotes the code of 
 corresponding patronage and 

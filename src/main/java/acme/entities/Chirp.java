@@ -3,11 +3,11 @@ package acme.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -31,15 +31,15 @@ public class Chirp extends AbstractEntity{
 	protected Date creationMoment;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String title;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String author;
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(max=255)
 	protected String body;
 	
 	@Email
