@@ -1,7 +1,11 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.Map;
 
+import org.springframework.data.util.Pair;
+
+import acme.entities.PatronageStatus;
 import acme.framework.datatypes.Money;
 
 public class AdministratorDashboard implements Serializable{
@@ -12,38 +16,24 @@ public class AdministratorDashboard implements Serializable{
 
 	// Attributes -------------------------------------------------------------
 	
-	Integer						totalNumberOfComponents;
-	Money						averageRetailPriceOfComponents;
-	Money						retailPriceDeviationOfComponents;
-	Money						minimumRetailPriceOfComponents;
-	Money						maximumRetailPriceOfComponents;
-	Integer						numberOfComponentsGroupedByTechnology;
-	Integer						numberOfComponentsGroupedByCurrency;
+	Integer								totalNumberOfComponents;
+	Map<Pair<String, String>, Money>	averageRetailPriceOfComponents;
+	Map<Pair<String, String>, Money>	retailPriceDeviationOfComponents;
+	Map<Pair<String, String>, Money>	minimumRetailPriceOfComponents;
+	Map<Pair<String, String>, Money>	maximumRetailPriceOfComponents;
 	
-	Integer						totalNumberOftools;
-	Money						averageRetailPriceOfTools;
-	Money						retailPriceDeviationOfTools;
-	Money						minimumRetailPriceOfTools;
-	Money						maximumRetailPriceOfTools;
-	Integer						numberOftoolsGroupedByCurrency;
+	Integer								totalNumberOftools;
+	Map<Pair<String, String>, Money>	averageRetailPriceOfTools;
+	Map<Pair<String, String>, Money>	retailPriceDeviationOfTools;
+	Map<Pair<String, String>, Money>	minimumRetailPriceOfTools;
+	Map<Pair<String, String>, Money>	maximumRetailPriceOfTools;
 	
-	Integer						totalNumberOfProposedPatronages;
-	Double						averageOfProposedPatronages;
-	Double						deviationOfProposedPatronages;
-	Integer						minimumOfProposedPatronages;
-	Integer						maximumOfProposedPatronages;
 	
-	Integer						totalNumberOfAcceptedPatronages;
-	Double						averageOfAcceptedPatronages;
-	Double						deviationOfAcceptedPatronages;
-	Integer						minimumOfAcceptedPatronages;
-	Integer						maximumOfAcceptedPatronages;
-	
-	Integer						totalNumberOfDeniedPatronages;
-	Double						averageOfDeniedPatronages;	
-	Double						deviationOfDeniedPatronages;	
-	Integer						minimumOfDeniedPatronages;	
-	Integer						maximumOfDeniedPatronages;
+	Map<PatronageStatus, Integer>		totalNumberOfPatronages;
+	Map<PatronageStatus, Money>			averageBudgetOfPatronages;
+    Map<PatronageStatus, Money>			deviationBudgetOfPatronages;
+	Map<PatronageStatus, Money>			minimumBudgetOfPatronages;
+	Map<PatronageStatus, Money>			maximumBudgetOfPatronages;
 	
 	// Derived attributes -----------------------------------------------------
 
