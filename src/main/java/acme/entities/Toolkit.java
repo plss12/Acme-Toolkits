@@ -3,7 +3,6 @@ package acme.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -27,20 +26,21 @@ public class Toolkit  extends AbstractEntity{
 	// Attributes  ------------------------------------
 
 	@Column(unique = true)
+	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
-	protected Integer code;
+	protected String code;
 	
 	
 	@NotBlank
-	@Length(min=0,max=100)
+	@Length(max=100)
 	protected String title;
 	
 	@NotBlank
-	@Length(min=0,max=255)
+	@Length(max=255)
 	protected String description;
 	
 	@NotBlank
-	@Length(min=0,max=255)
+	@Length(max=255)
 	protected String assemblyNotes;
 	
 	@URL
@@ -50,9 +50,6 @@ public class Toolkit  extends AbstractEntity{
 	
     @Valid
     @ManyToOne
-    protected Component component;
+    protected ArtifactToolkit artifactToolkit;
 	
-	@Valid
-	@OneToOne
-	protected Tool tool;
 }
