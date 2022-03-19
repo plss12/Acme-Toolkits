@@ -8,7 +8,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -16,8 +15,6 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.AbstractEntity;
-import acme.roles.Inventor;
-import acme.roles.Patron;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -41,7 +38,7 @@ public class PatronageReport extends AbstractEntity{
 	protected Date creationMoment;
 	
 	@NotBlank
-	@Size(max=256)
+	@Size(max=255)
 	protected String memorandum;
 	
 	@URL
@@ -51,14 +48,9 @@ public class PatronageReport extends AbstractEntity{
 
 	// Relationships ----------------------------------------------------------	
 
-	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	protected Inventor inventor;
+	protected Patronage patronage;
 	
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	protected Patron patron;
 	
 }

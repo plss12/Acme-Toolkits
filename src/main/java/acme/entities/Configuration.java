@@ -1,9 +1,7 @@
 package acme.entities;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -22,19 +20,20 @@ public class Configuration extends AbstractEntity{
 	
 	// Attributes  ------------------------------------
 	
-	@NotNull
+	@NotBlank
 	protected String defaultCurrency;
 	
-	protected List<String> acceptedCurrencies;
+	@NotBlank
+	protected String acceptedCurrencies;
 	
-	@Range(min=0, max=100)
-	protected Integer weakSpamTrheshold;
+	@Range(min=1, max=100)
+	protected int weakSpamTrheshold;
 	
-	@Range(min=0, max=100)
-	protected Integer strongSpamTrheshold;
+	@Range(min=1, max=100)
+	protected int strongSpamTrheshold;
 	
-	protected List<String> strongSpam;
+	protected String strongSpam;
 	
-	protected List<String> weakSpam;
+	protected String weakSpam;
 	
 }

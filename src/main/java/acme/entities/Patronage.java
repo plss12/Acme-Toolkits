@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -30,7 +32,7 @@ public class Patronage extends AbstractEntity{
 
 		// Attributes -------------------------------------------------------------
 
-		@NotBlank
+		@NotNull
 		protected PatronageStatus patronageStatus;
 
 		@NotBlank
@@ -39,18 +41,17 @@ public class Patronage extends AbstractEntity{
 		protected String code;
 		
 		@NotBlank
-		@Length(max=256)
+		@Length(max=255)
 		protected String legalStuff;
 		
-		@NotBlank
 		protected Money budget;
 		
 		@Temporal(TemporalType.TIMESTAMP)
-		@NotBlank
+		@NotNull
 		protected Date startDate;
 		
 		@Temporal(TemporalType.TIMESTAMP)
-		@NotBlank
+		@NotNull
 		protected Date finishDate;
 		
 		@URL
@@ -59,11 +60,11 @@ public class Patronage extends AbstractEntity{
 		// Derived attributes -----------------------------------------------------
 
 		// Relationships ----------------------------------------------------------
-		@Column(name = "Patron")
+		@Valid
 		@ManyToOne
 		protected Patron patron;
 		
-		@Column(name = "Inventor")
+		@Valid
 		@ManyToOne
 		protected Inventor inventor;
 }
