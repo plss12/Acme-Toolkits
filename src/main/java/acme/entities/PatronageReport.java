@@ -30,7 +30,7 @@ public class PatronageReport extends AbstractEntity{
 	// Attributes -------------------------------------------------------------
 	
 	@NotBlank
-	@Pattern(regexp = "\\d+:\\d+", message = "default.error.conversion")
+	@Pattern(regexp = "\\d+:\\d+")
 	protected String sequenceNumber;
 	
 	@Temporal(TemporalType.TIMESTAMP)
