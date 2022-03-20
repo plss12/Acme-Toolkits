@@ -1,0 +1,2 @@
+key,patronage-status,code,legal-stuff,budget,start-date,finish-date,further-information,key:patron,key:inventor
+patronage-01,Proposed,EDN-418-X,"This is a sample patronage","EUR 50,000.00","2022/10/01 9:00","2022/12/12 11:00",null,patron-01,inventor-01
