@@ -1,4 +1,4 @@
-package acme.features.authenticated.toolkit;
+package acme.features.any.toolkit;
 
 import java.util.Collection;
 
@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedToolkitListService implements AbstractListService<Authenticated, Toolkit>{
+public class AnyToolkitListService implements AbstractListService<Any, Toolkit>{
 	
 	// Internal state -------------------------------------------------------------------
 	
 	@Autowired
-	protected AuthenticatedToolkitRepository repository;
+	protected AnyToolkitRepository repository;
 	
 	// AbstractListService<Authenticated, Toolkit> interface ----------------------------
 	
@@ -62,3 +62,4 @@ public class AuthenticatedToolkitListService implements AbstractListService<Auth
 	}
 
 }
+

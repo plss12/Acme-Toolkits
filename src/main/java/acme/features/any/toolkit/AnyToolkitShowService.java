@@ -1,4 +1,4 @@
-package acme.features.authenticated.toolkit;
+package acme.features.any.toolkit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,16 +6,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedToolkitShowService implements AbstractShowService<Authenticated, Toolkit>{
+public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 	
 	// Internal state -------------------------------------------------------------------
 	
 	@Autowired
-	protected AuthenticatedToolkitRepository repository;
+	protected AnyToolkitRepository repository;
 	
 	// AbstractShowService<Authenticated, Toolkit> interface ----------------------------
 
@@ -50,3 +50,4 @@ public class AuthenticatedToolkitShowService implements AbstractShowService<Auth
 	}
 
 }
+

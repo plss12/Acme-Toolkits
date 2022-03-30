@@ -1,4 +1,4 @@
-package acme.features.authenticated.toolkit;
+package acme.features.any.toolkit;
 
 import javax.annotation.PostConstruct;
 
@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.Toolkit;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Any;
 
 @Controller
 @RequestMapping("/authenticated/toolkits/")
-public class AuthenticatedToolkitController extends AbstractController<Authenticated,Toolkit>{
+public class AnyToolkitController extends AbstractController<Any,Toolkit>{
 	
 	// Internal state --------------------------------------------------------------
 	
 	@Autowired
-	protected AuthenticatedToolkitListService listService;
+	protected AnyToolkitListService listService;
 	
 	@Autowired
-	protected AuthenticatedToolkitShowService showService;
+	protected AnyToolkitShowService showService;
 	
 	// Constructors ----------------------------------------------------------------
 	
