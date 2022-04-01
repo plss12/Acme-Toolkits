@@ -1,0 +1,18 @@
+package acme.features.anonymous.chirp;
+
+import java.util.Collection;
+import java.util.Date;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import acme.entities.Chirp;
+import acme.framework.repositories.AbstractRepository;
+
+@Repository
+public interface AnonymousChirpRepository extends AbstractRepository{
+	
+	@Query("select c from Chirp j where c.creationMoment > :deadLine")
+	Collection<Chirp> findRecentsChirps(Date deadLine);
+
+}
