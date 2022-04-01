@@ -1,4 +1,4 @@
-package acme.features.anonymous.chirp;
+package acme.features.any.chirp;
 
 import java.util.Calendar;
 import java.util.Collection;
@@ -9,15 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.entities.Chirp;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
-public class AnonymousChirpListRecentService implements AbstractListService<Anonymous, Chirp> {
+public class AnyChirpListRecentService implements AbstractListService<Any, Chirp> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousChirpRepository repository;
+	protected AnyChirpRepository repository;
 
 	// AbstractListService<Anonymus, Chirp> interface ---------------------------
 

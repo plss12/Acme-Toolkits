@@ -1,4 +1,4 @@
-package acme.features.anonymous.chirp;
+package acme.features.any.chirp;
 
 import java.util.Collection;
 import java.util.Date;
@@ -10,9 +10,11 @@ import acme.entities.Chirp;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnonymousChirpRepository extends AbstractRepository{
+public interface AnyChirpRepository extends AbstractRepository{
 	
-	@Query("select c from Chirp j where c.creationMoment > :deadLine")
+	@Query("select c from Chirp c where c.creationMoment > :deadLine")
 	Collection<Chirp> findRecentsChirps(Date deadLine);
 
+	@Query("select c from Chirp c where c.id = :id")
+	Chirp findOneChirpById(int id);
 }

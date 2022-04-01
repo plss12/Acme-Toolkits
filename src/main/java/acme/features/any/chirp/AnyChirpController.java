@@ -1,4 +1,4 @@
-package acme.features.anonymous.chirp;
+package acme.features.any.chirp;
 
 import javax.annotation.PostConstruct;
 
@@ -7,14 +7,14 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Chirp;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 
 @Controller
-public class AnonymousChirpController extends AbstractController<Anonymous, Chirp>{
+public class AnyChirpController extends AbstractController<Any, Chirp>{
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousChirpListRecentService	listService;
+	protected AnyChirpListRecentService	listService;
 
 	// Constructors -----------------------------------------------------------
 
