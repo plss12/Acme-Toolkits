@@ -18,6 +18,11 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+			
+		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="47549618Q: Navarro Rodriguez, Julio" action="https://vandal.elespanol.com/"/>
