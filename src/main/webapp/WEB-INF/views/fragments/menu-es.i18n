@@ -21,10 +21,10 @@ master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.item.list-chirps = Chirps de este mes
 
-# master.menu.authenticated ########################################################
+# master.menu.any ########################################################
 
-master.menu.authenticated = Autentificado
-master.menu.authenticated.item.list-chirps = Chirps de este mes
+master.menu.any = Any
+master.menu.any.chirp.list = Chirps de este mes
 
 # master.menu.administrator ###################################################
 

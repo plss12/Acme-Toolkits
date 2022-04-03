@@ -19,12 +19,11 @@ master.menu.sign-out = Sign out
 
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
-master.menu.anonymous.item.list-chirps = Chirps of this month
 
-# master.menu.authenticated ########################################################
+# master.menu.any ########################################################
 
-master.menu.authenticated = Authenticated
-master.menu.authenticated.item.list-chirps = Chirps of this month
+master.menu.any = Any
+master.menu.any.chirp.list = Chirps of this month
 
 # master.menu.administrator ###################################################
 

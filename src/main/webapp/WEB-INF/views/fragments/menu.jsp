@@ -18,6 +18,11 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+			
+		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="47549618Q: Navarro Rodriguez, Julio" action="https://vandal.elespanol.com/"/>
@@ -26,12 +31,6 @@
 			<acme:menu-suboption code="49826018Z: Moreno Calderon, Alvaro" action="https://copilot.github.com/"/>
 			<acme:menu-suboption code="20063803Y: Martinez Jaen, Javier" action="http://www.realbetisbalompie.es/"/>
 			<acme:menu-suboption code="53912470X: Soto Santos, Pedro Luis" action="https://www.thingiverse.com/"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.anonymous.chirp.list-chirps" action="/anonymous/chirp/list-chirps"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.chirp.list-chirps" action="/authenticated/chirp/list-chirps"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.Chirp;
 import acme.framework.components.models.Model;
@@ -12,6 +13,7 @@ import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
+@Service
 public class AnyChirpListRecentService implements AbstractListService<Any, Chirp> {
 
 	// Internal state ---------------------------------------------------------
