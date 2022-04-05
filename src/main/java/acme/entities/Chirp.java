@@ -43,7 +43,7 @@ public class Chirp extends AbstractEntity{
 	protected String body;
 	
 	@Email
-	protected String emailAddress;
+	protected String email;
 	
 	// Derived attributes -----------------------------------------------------
 
