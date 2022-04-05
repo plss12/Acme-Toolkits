@@ -20,7 +20,7 @@
 	<acme:input-textbox code="any.chirp.form.label.title" path="title"/>	
 	<acme:input-textbox code="any.chirp.form.label.author" path="author"/>		
 	<acme:input-textarea code="any.chirp.form.label.body" path="body"/>
-	<acme:input-url code="any.chirp.form.label.emailAddress" path="emailAddress"/>
+	<acme:input-url code="any.chirp.form.label.email" path="email"/>
 	
 	<jstl:if test="${!readonly}">
 		<acme:input-checkbox code="any.chirp.form.label.confirmation" path="confirmation"/>
