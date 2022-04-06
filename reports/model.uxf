@@ -243,7 +243,7 @@ Announcement
 + moment: Date {Temporal(TIMESTAMP), Past}
 + title: String {NotBlank, Max(100)}
 + body: String {NotBlank, Max(255)}
-+ flag: boolean
++ status: AnnouncementStatus {NotNull}
 + link: String {URL}
 
 bg=green</panel_attributes>
@@ -650,5 +650,24 @@ bg=pink</panel_attributes>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1169</x>
+      <y>287</y>
+      <w>196</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+AnnouncementStatus
+--
++ INFO
++ WARNING
++ IMPORTANT
+
+
+bg=green</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
