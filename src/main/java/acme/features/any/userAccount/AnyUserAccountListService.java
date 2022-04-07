@@ -1,6 +1,6 @@
-package acme.features.any.user_accounts;
+package acme.features.any.userAccount;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
-import acme.framework.roles.Administrator;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
@@ -16,12 +15,8 @@ import acme.framework.services.AbstractListService;
 public class AnyUserAccountListService implements AbstractListService<Any, UserAccount>{
 	
 	// Internal state -------------------------------------------------------------------
-	protected AnyUserAccountRepository anyUserRepo;
-	
 	@Autowired
-	public AnyUserAccountListService(final AnyUserAccountRepository anyUserRepo) {
-		this.anyUserRepo = anyUserRepo;
-	}
+	protected AnyUserAccountRepository anyUserRepo;
 
 	// AbstractListService<Any, UserAccount> interface ----------------------------
 	
@@ -32,15 +27,12 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 	}
 
 	@Override
-	public Collection<UserAccount> findMany(final Request<UserAccount> request) {
+	public List<UserAccount> findMany(final Request<UserAccount> request) {
 		assert request != null;
-		Collection<UserAccount> res;
-		res = this.anyUserRepo.findAllUserAccounts();
-		for(final UserAccount ua:res) {
-			if(ua.isAnonymous() || ua.hasRole(Administrator.class)) {
-				res.remove(ua);
-			}
-		}
+		List<UserAccount> res;
+		final String anonymous = "anonymous";
+		final String administrator = "administrator";
+		res = this.anyUserRepo.findAllUserAccountsAllowed(anonymous, administrator);
 		return res;
 	}
 
