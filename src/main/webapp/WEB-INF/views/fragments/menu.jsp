@@ -46,7 +46,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="Any">
-			<acme:menu-suboption code="List User Accounts" action="/any/user_accounts/list"/>
+			<acme:menu-suboption code="List User Accounts" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

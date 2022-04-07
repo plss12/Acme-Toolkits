@@ -1,5 +1,5 @@
 <%--
-- list.jsp
+- form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
 -
@@ -15,6 +15,8 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:list>
-	<acme:list-column code="any.user_account" path="username" width="20%"/>
-</acme:list>
+<acme:form>
+	<acme:input-textbox code="any.user_account.form.name" path="identity.name"/>
+	<acme:input-textbox code="any.user_account.form.surname" path="identity.surname"/>
+	<acme:input-textbox code="any.user_account.form.email" path="identity.email"/>
+</acme:form>
