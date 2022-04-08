@@ -1,4 +1,4 @@
-<%--
+	<%--
 - menu.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
@@ -56,6 +56,7 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list-recent" action="/authenticated/announcement/list-recent"/>
+			<acme:menu-suboption code="master.menu.authenticated.patronage.list" action="/authenticated/patronage/list"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

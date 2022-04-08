@@ -28,6 +28,7 @@ master.menu.any.chirp.list = Chirps of this month
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list-recent = Recent Announcements
+master.menu.authenticated.patronage.list = Inventor's Patronages
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
