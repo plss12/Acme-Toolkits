@@ -51,7 +51,11 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="Any">
-			<acme:menu-suboption code="List User Accounts" action="/any/user_accounts/list"/>
+			<acme:menu-suboption code="List User Accounts" action="/any/user-account/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
+			<acme:menu-suboption code="master.menu.authenticated.announcement.list-recent" action="/authenticated/announcement/list-recent"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

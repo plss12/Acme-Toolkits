@@ -1,0 +1,10 @@
+authenticated.announcement.list.label.moment = Moment
+authenticated.announcement.list.label.status = Status
+authenticated.announcement.list.label.title = Title
+authenticated.announcement.list.label.body = Body
+authenticated.announcement.list.label.link = Further Information
+
+authenticated.announcement.form.label.title = Title
+authenticated.announcement.form.label.status = Status
+authenticated.announcement.form.label.body = Body
+authenticated.announcement.form.label.link = Further Information

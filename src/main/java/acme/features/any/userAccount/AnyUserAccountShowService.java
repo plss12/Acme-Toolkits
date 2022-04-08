@@ -1,4 +1,4 @@
-package acme.features.any.user_accounts;
+package acme.features.any.userAccount;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +13,8 @@ import acme.framework.services.AbstractShowService;
 public class AnyUserAccountShowService implements AbstractShowService<Any, UserAccount>{
 	
 	// Internal state -------------------------------------------------------------------
-	protected AnyUserAccountRepository anyUserRepo;
-	
 	@Autowired
-	public AnyUserAccountShowService(final AnyUserAccountRepository anyUserRepo) {
-		this.anyUserRepo = anyUserRepo;
-	}
+	protected AnyUserAccountRepository anyUserRepo;
 
 	@Override
 	public boolean authorise(final Request<UserAccount> request) {
@@ -39,7 +35,11 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 
 	@Override
 	public void unbind(final Request<UserAccount> request, final UserAccount entity, final Model model) {
-		request.unbind(entity, model, "identity");
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		request.unbind(entity, model, "identity.name", "identity.surname", "identity.email");
 		
 	}
 

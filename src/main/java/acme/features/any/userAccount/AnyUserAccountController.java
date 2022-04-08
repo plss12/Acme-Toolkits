@@ -1,30 +1,26 @@
-package acme.features.any.user_accounts;
+package acme.features.any.userAccount;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.UserAccount;
 import acme.framework.roles.Any;
 
 @Controller
-@RequestMapping("/any/user_accounts/")
+//@RequestMapping("/any/userAccount/")
 public class AnyUserAccountController extends AbstractController<Any, UserAccount>{
 	
 	// Internal state --------------------------------------------------------------
 	
+	@Autowired
 	protected AnyUserAccountListService listService;
 	
+	@Autowired
 	protected AnyUserAccountShowService showService;
 	
-	@Autowired
-	public AnyUserAccountController(final AnyUserAccountListService listService, final AnyUserAccountShowService showService) {
-		this.listService = listService;
-		this.showService = showService;
-	}
 	
 	// Constructors ----------------------------------------------------------------
 	

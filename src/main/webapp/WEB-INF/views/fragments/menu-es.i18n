@@ -26,6 +26,10 @@ master.menu.anonymous.item.list-chirps = Chirps de este mes
 master.menu.any = Any
 master.menu.any.chirp.list = Chirps de este mes
 
+# master.menu.authenticated ###################################################
+master.menu.authenticated = Autenticado
+master.menu.authenticated.announcement.list-recent = Anuncios Recientes
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
