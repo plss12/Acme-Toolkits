@@ -19,7 +19,8 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 			
-		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="List User Accounts" action="/any/user_accounts/list"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 		</acme:menu-option>
 		
@@ -41,6 +42,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.patronage_report.list" action="/patron/patronage/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
@@ -48,10 +53,6 @@
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="Any">
-			<acme:menu-suboption code="List User Accounts" action="/any/user_accounts/list"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

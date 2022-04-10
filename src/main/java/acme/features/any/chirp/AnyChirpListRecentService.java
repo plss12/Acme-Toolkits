@@ -21,7 +21,7 @@ public class AnyChirpListRecentService implements AbstractListService<Any, Chirp
 	@Autowired
 	protected AnyChirpRepository repository;
 
-	// AbstractListService<Anonymus, Chirp> interface ---------------------------
+	// AbstractListService<Any, Chirp> interface ---------------------------
 
 
 	@Override

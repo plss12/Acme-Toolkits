@@ -1,28 +1,29 @@
-package acme.features.any.chirp;
+package acme.features.patron.patronageReport;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.Chirp;
+import acme.entities.PatronageReport;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Any;
+import acme.roles.Patron;
 
 @Controller
-@RequestMapping("/any/chirps/")
-public class AnyChirpController extends AbstractController<Any, Chirp>{
+public class PatronPatronageReportController extends AbstractController<Patron, PatronageReport>{
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyChirpListRecentService	listService;
+	protected PatronPatronageReportListService	listService;
 
+	@Autowired
+	protected PatronPatronageReportShowService	showService;
 	
 	// Constructors -----------------------------------------------------------
 
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
 	}
 }
