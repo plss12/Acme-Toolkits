@@ -25,6 +25,7 @@ master.menu.anonymous.item.list-chirps = Chirps de este mes
 
 master.menu.any = Any
 master.menu.any.chirp.list = Chirps de este mes
+master.menu.any.toolkit.list = Lista de Toolkits
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Autenticado

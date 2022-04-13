@@ -24,6 +24,7 @@ master.menu.anonymous.favourite-link = Favourite link
 
 master.menu.any = Any
 master.menu.any.chirp.list = Chirps of this month
+master.menu.any.toolkit.list = List of Toolkits
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Authenticated

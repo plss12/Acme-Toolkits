@@ -21,6 +21,7 @@
 			
 		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">

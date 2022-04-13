@@ -16,6 +16,6 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="any.toolkit" path="title" width="80%"/>	
-	<acme:list-column code="any.toolkit" path="workLoad" width="20%"/>
+	<acme:list-column code="any.toolkit.list.title" path="title"/>	
+	<acme:list-column code="any.toolkit" path="workLoad"/>
 </acme:list>
