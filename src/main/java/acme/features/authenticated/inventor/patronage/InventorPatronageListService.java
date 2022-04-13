@@ -10,6 +10,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
+import acme.roles.Inventor;
 
 @Service
 public class InventorPatronageListService implements AbstractListService<Authenticated, Patronage>{
@@ -20,7 +21,15 @@ public class InventorPatronageListService implements AbstractListService<Authent
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-		return true;
+		boolean result;
+			
+		Inventor inventor;
+			
+		final int userAccountId = request.getPrincipal().getAccountId();
+		inventor = this.repository.findInventorByUserAccountId(userAccountId);
+		result = (inventor != null);
+			
+		return result;
 	}
 
 	@Override
