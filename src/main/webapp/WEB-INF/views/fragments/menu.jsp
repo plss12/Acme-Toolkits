@@ -53,10 +53,10 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list-recent" action="/authenticated/announcement/list-recent"/>
-			<acme:menu-suboption code="master.menu.authenticated.patronage.list" action="/authenticated/patronage/list"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.artifact.list" action="/inventor/artifact/list"/>
+			<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>
