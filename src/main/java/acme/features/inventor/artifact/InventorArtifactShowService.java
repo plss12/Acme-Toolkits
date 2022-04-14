@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.artifact;
+package acme.features.inventor.artifact;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.Artifact;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 
 @Service
-public class InventorArtifactShowService implements AbstractShowService<Authenticated, Artifact>{
+public class InventorArtifactShowService implements AbstractShowService<Inventor, Artifact>{
 
 	@Autowired
 	protected InventorArtifactRepository repository;
@@ -18,7 +18,18 @@ public class InventorArtifactShowService implements AbstractShowService<Authenti
 	@Override
 	public boolean authorise(final Request<Artifact> request) {
 		assert request != null;
-		return true;
+		
+		boolean result;
+		int id;
+		
+		Artifact artifact;
+		
+		id = request.getModel().getInteger("id");
+		artifact = this.repository.findArtifactById(id);
+		
+		result = (artifact != null && (request.isPrincipal(artifact.getInventor())));
+		
+		return result;
 	}
 
 	@Override
@@ -40,8 +51,8 @@ public class InventorArtifactShowService implements AbstractShowService<Authenti
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "artifact_type", "name", "code", "technology", "description", 
-			"retail_price.amount", "retail_price.currency", "link");
+		request.unbind(entity, model, "artifactType", "name", "code", "technology", "description", 
+			"retailPrice.amount", "retailPrice.currency", "link");
 		model.setAttribute("readonly",true);
 		model.setAttribute("confirmation", false);
 	}

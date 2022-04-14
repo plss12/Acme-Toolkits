@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.patronage;
+package acme.features.inventor.patronage;
 
 import java.util.Collection;
 
@@ -8,12 +8,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorPatronageListService implements AbstractListService<Authenticated, Patronage>{
+public class InventorPatronageListService implements AbstractListService<Inventor, Patronage>{
 
 	@Autowired
 	protected InventorPatronageRepository repository;

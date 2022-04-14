@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.artifact;
+package acme.features.inventor.artifact;
 
 import javax.annotation.PostConstruct;
 
@@ -7,10 +7,10 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Artifact;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated;
+import acme.roles.Inventor;
 
 @Controller
-public class InventorArtifactController extends AbstractController<Authenticated, Artifact>{
+public class InventorArtifactController extends AbstractController<Inventor, Artifact>{
 
 	// Internal state -----------------------------------------------------------
 	

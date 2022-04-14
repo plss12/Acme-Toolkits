@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.patronage;
+package acme.features.inventor.patronage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 
 @Service
-public class InventorPatronageShowService implements AbstractShowService<Authenticated, Patronage>{
+public class InventorPatronageShowService implements AbstractShowService<Inventor, Patronage>{
 
 	@Autowired
 	protected InventorPatronageRepository repository;

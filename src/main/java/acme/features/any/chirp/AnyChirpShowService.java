@@ -23,7 +23,15 @@ public class AnyChirpShowService implements AbstractShowService<Any, Chirp>{
 	public boolean authorise(final Request<Chirp> request) {
 		assert request != null;
 		
-		return true;
+		final boolean result;
+		int id;		
+		id = request.getModel().getInteger("id");
+		
+		Chirp chirp;		
+		chirp = this.repository.findOneChirpById(id);
+		
+		result = chirp != null;
+		return result;
 	}
 
 	@Override
@@ -46,5 +54,7 @@ public class AnyChirpShowService implements AbstractShowService<Any, Chirp>{
 		assert model != null;
 
 		request.unbind(entity, model, "creationMoment", "title", "author", "body", "email");
+		model.setAttribute("confirmation", false);
+		model.setAttribute("readonly", true);
 	}
 }
