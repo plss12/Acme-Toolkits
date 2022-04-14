@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.artifact;
+package acme.features.inventor.artifact;
 
 import java.util.Collection;
 
@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.Artifact;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
+import acme.roles.Inventor;
 
 @Service
-public class InventorArtifactListService implements AbstractListService<Authenticated, Artifact>{
+public class InventorArtifactListService implements AbstractListService<Inventor, Artifact>{
 
 	@Autowired
 	protected InventorArtifactRepository repository;
