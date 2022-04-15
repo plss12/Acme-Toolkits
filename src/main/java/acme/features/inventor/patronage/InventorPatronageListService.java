@@ -20,15 +20,8 @@ public class InventorPatronageListService implements AbstractListService<Invento
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-		boolean result;
 			
-		Inventor inventor;
-			
-		final int userAccountId = request.getPrincipal().getAccountId();
-		inventor = this.repository.findInventorByUserAccountId(userAccountId);
-		result = (inventor != null);
-			
-		return result;
+		return true;
 	}
 
 	@Override
