@@ -46,13 +46,16 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.any">
+		<acme:menu-option code="master.menu.any" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list-recent" action="/authenticated/announcement/list-recent"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.artifact.list" action="/inventor/artifact/list"/>
