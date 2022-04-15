@@ -20,6 +20,9 @@
 	<acme:menu-left>
 		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="47549618Q: Navarro Rodriguez, Julio" action="https://vandal.elespanol.com/"/>
 			<acme:menu-suboption code="29552748W: Parejo Ramos, Salvador" action="https://sevillafc.es"/>
@@ -44,11 +47,6 @@
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.any" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
-			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
