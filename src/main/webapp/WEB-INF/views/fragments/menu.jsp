@@ -49,6 +49,10 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.patron.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.patronages" action="/patron/patronage/list-mine"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list-recent" action="/authenticated/announcement/list-recent"/>
 			<acme:menu-separator/>
