@@ -10,6 +10,7 @@
 
 any.user_account.list.accounts = Accounts
 
+any.user_account.form.username = Username
 any.user_account.form.name = Name
 any.user_account.form.surname = Surname
 any.user_account.form.email = Email
