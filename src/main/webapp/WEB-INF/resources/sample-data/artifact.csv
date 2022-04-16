@@ -1,2 +1,3 @@
 key,artifact-type,name,code,technology,description,retail-price,link,key:artifact-toolkit,key:inventor
-artifact-01,TOOL,"Metro","FRS-097-T","Messure","This is a sample artifact", "EUR 10.00",null,artifact-toolkit-01,inventor-01
+artifact-01,TOOL,"Metro","FRS-097-T","Messure","This is a sample TOOL", "EUR 10.00","https://www.google.es",artifact-toolkit-01,inventor-01
+artifact-02,COMPONENT,"Ruler","FRS-098-T","Messure","This is a sample COMPONENT", "EUR 12.00","https://www.google.es",artifact-toolkit-01,inventor-01

@@ -18,8 +18,16 @@ public class AuthenticatedAnnouncementShowService implements AbstractShowService
 	@Override
 	public boolean authorise(final Request<Announcement> request) {
 		assert request != null;
-
-		return true;
+		
+		final boolean result;
+		int id;
+		
+		Announcement announcement;
+		id = request.getModel().getInteger("id");
+		announcement = this.repository.findOneAnnouncementById(id);
+		result = (announcement != null);
+		
+		return result;
 	}
 
 	@Override

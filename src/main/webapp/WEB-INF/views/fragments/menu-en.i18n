@@ -25,10 +25,17 @@ master.menu.anonymous.favourite-link = Favourite link
 master.menu.any = Any
 master.menu.any.list.user-accounts = List User Accounts
 master.menu.any.chirp.list = Chirps of this month
+master.menu.any.user-accounts.list = User's Accounts
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list-recent = Recent Announcements
+
+# master.menu.inventor ########################################################
+master.menu.inventor = Inventor
+master.menu.inventor.artifact.list = Inventor's Artifacts
+master.menu.inventor.patronage.list = Inventor's Patronages
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
