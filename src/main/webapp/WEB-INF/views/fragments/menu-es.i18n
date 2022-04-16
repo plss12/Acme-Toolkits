@@ -65,7 +65,7 @@ master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 
-# master.menu.patron.patronages ####################################################
+# master.menu.patron ####################################################
 
 master.menu.patron.patron = Patrocinador
-master.menu.patron.patronages = Listar mis patrocinios
+master.menu.patron.patronages = Patrocinios del Patrocinador

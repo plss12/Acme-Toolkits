@@ -66,7 +66,7 @@ master.menu.user-account.become-consumer = Become a consumer
 
 
 
-# master.menu.patron.patronages ####################################################
+# master.menu.patron ####################################################
 
 master.menu.patron.patron = Patron
-master.menu.patron.patronages = List my patronages
+master.menu.patron.patronages = Patron's Patronages

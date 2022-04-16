@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Patron;
 
@@ -21,18 +20,15 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-
-		boolean result;
-		int masterId;
-		Principal principal;
-		Patronage patronage;
-		Patron patron;
 		
-		masterId = request.getModel().getInteger("id");
-		principal = request.getPrincipal();
-		patronage = this.repository.findPatronageById(masterId);
-		patron = patronage.getPatron();
-		result = principal.getAccountId() == patron.getId();
+		boolean result;
+		int id;
+		id = request.getModel().getInteger("id");
+		
+		Patronage patronage;
+		patronage = this.repository.findPatronageById(id);
+		
+		result = (patronage != null &&(request.isPrincipal(patronage.getPatron())));
 		
 		return result;
 	}
@@ -58,6 +54,8 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 
 		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "finishDate", "link", 
 			"inventor.company", "inventor.statement", "inventor.link");
+		model.setAttribute("readonly",true);
+		model.setAttribute("confirmation", false);
 		
 	}
 
