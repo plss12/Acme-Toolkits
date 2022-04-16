@@ -23,7 +23,8 @@ master.menu.anonymous.item.list-chirps = Chirps de este mes
 
 # master.menu.any ########################################################
 
-master.menu.any = Any
+master.menu.any = Cualquiera
+master.menu.any.list.user-accounts = Listar cuentas
 master.menu.any.chirp.list = Chirps de este mes
 
 # master.menu.authenticated ###################################################

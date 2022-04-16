@@ -19,7 +19,8 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 			
-		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
+		<acme:menu-option code="master.menu.any">
+			<acme:menu-suboption code="master.menu.any.list.user-accounts" action="/any/user-account/list"/>
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 		</acme:menu-option>
 		
@@ -48,10 +49,6 @@
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="Any">
-			<acme:menu-suboption code="List User Accounts" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
