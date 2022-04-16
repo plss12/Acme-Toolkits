@@ -8,9 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.user_account.list.accounts = Accounts
+master.menu.authenticated.system-configuration.show = System Configuration
 
-any.user_account.form.username = Username
-any.user_account.form.name = Name
-any.user_account.form.surname = Surname
-any.user_account.form.email = Email
+authenticated.system_configuration.form.acceptedCurrencies = Accepted Currencies
+authenticated.system_configuration.form.defaultCurrency = Default currency
