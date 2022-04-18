@@ -8,16 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-patron.patronages.label.id = Id
-patron.patronages.label.code = Código
+patron.patronages.list.label.id = Id
+patron.patronages.list.label.code = Código
 
-patronage.label.code = Código
-patronage.label.legalStuff = Cosas legales
-patronage.label.budget = Presupuesto
-patronage.label.startDate = Fecha inicial
-patronage.label.finishDate = Fecha final
-patronage.label.link = Link
-patronage.label.inventor.company = Empresa del inventor
-patronage.label.inventor.statement = Declaración del inventor
-patronage.label.inventor.link = Link del inventor
-patron.patronage.form.button.patronageReport = Informe
+patronage.form.label.code = Código
+patronage.form.label.legalStuff = Cosas legales
+patronage.form.label.budget = Presupuesto
+patronage.form.label.startDate = Fecha inicial
+patronage.form.label.finishDate = Fecha final
+patronage.form.label.link = Link
+patronage.form.label.inventor.company = Empresa del inventor
+patronage.form.label.inventor.statement = Declaración del inventor
+patronage.form.label.inventor.link = Link del inventor
