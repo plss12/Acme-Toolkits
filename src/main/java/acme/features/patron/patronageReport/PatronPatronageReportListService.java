@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Patronage;
 import acme.entities.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -26,7 +27,16 @@ public class PatronPatronageReportListService implements AbstractListService<Pat
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int masterId;
+		
+		Patronage patronage;
+		
+		masterId = request.getModel().getInteger("masterId");
+		patronage = this.repository.findOnePatronageById(masterId);
+		result = (patronage != null && (request.isPrincipal(patronage.getPatron())));
+		
+		return result;
 	}
 
 	@Override
@@ -34,11 +44,11 @@ public class PatronPatronageReportListService implements AbstractListService<Pat
 		assert request != null;
 
 		Collection<PatronageReport> result;
-		int patronageId;
+		int masterId;
 		
-		patronageId=request.getModel().getInteger("patronageId");
+		masterId=request.getModel().getInteger("masterId");
 		
-		result=this.repository.findPatronageReportsByPatronageId(patronageId);
+		result=this.repository.findPatronageReportsByPatronageId(masterId);
 
 		return result;
 	}
@@ -49,6 +59,6 @@ public class PatronPatronageReportListService implements AbstractListService<Pat
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "sequenceNumber", "creationMoment");
+		request.unbind(entity, model, "sequenceNumber", "creationMoment", "patronage.code");
 	}
 }

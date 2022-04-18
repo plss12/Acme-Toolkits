@@ -23,8 +23,19 @@ master.menu.anonymous.item.list-chirps = Chirps de este mes
 
 # master.menu.any ########################################################
 
-master.menu.any = Any
+master.menu.any = Cualquiera
+master.menu.any.list.user-accounts = Listar cuentas
 master.menu.any.chirp.list = Chirps de este mes
+master.menu.any.user-accounts.list = User's Accounts
+
+# master.menu.authenticated ###################################################
+master.menu.authenticated = Autenticado
+master.menu.authenticated.announcement.list-recent = Anuncios Recientes
+
+# master.menu.inventor ########################################################
+master.menu.inventor = Inventor
+master.menu.inventor.artifact.list = Artefactos del Inventor
+master.menu.inventor.patronage.list = Patrocionios del Inventor
 
 # master.menu.administrator ###################################################
 
@@ -58,3 +69,8 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+# master.menu.patron ####################################################
+
+master.menu.patron.patron = Patrocinador
+master.menu.patron.patronages = Patrocinios del Patrocinador

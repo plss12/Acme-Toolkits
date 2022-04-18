@@ -1,4 +1,4 @@
-<%--
+	<%--
 - menu.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
@@ -18,13 +18,11 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-			
-		<acme:menu-option code="master.menu.any">
-			<acme:menu-suboption code="List User Accounts" action="/any/user_accounts/list"/>
-			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
-		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="47549618Q: Navarro Rodriguez, Julio" action="https://vandal.elespanol.com/"/>
 			<acme:menu-suboption code="29552748W: Parejo Ramos, Salvador" action="https://sevillafc.es"/>
@@ -42,10 +40,6 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.patronage_report.list" action="/patron/patronage/list"/>
-		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
@@ -53,6 +47,23 @@
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.patronages" action="/patron/patronage/list-mine"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
+			<acme:menu-suboption code="master.menu.authenticated.announcement.list-recent" action="/authenticated/announcement/list-recent"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.authenticated.system-configuration.show" action="/authenticated/configuration/show"/>
+		</acme:menu-option>
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.artifact.list" action="/inventor/artifact/list"/>
+			<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>
