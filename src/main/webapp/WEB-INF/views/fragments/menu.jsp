@@ -18,6 +18,7 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+		
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>

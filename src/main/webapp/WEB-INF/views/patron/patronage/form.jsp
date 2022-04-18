@@ -15,7 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form readonly="${readonly}">
+<acme:form>
 	<acme:input-textbox code="patronage.label.code" path="code"/>
 	<acme:input-textbox code="patronage.label.legalStuff" path="legalStuff"/>
 	<acme:input-textbox code="patronage.label.budget" path="budget"/>
@@ -25,4 +25,5 @@
 	<acme:input-textbox code="patronage.label.inventor.company" path="inventor.company"/>
 	<acme:input-textbox code="patronage.label.inventor.statement" path="inventor.statement"/>
 	<acme:input-textbox code="patronage.label.inventor.link" path="inventor.link"/>
+	<acme:button code="patron.patronage.form.button.patronageReport" action="/patron/patronage-report/list?masterId=${id}"/>
 </acme:form>

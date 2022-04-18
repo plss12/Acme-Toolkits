@@ -8,12 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+patron.patronageReport.list.label.sequenceNumber = Número de Secuencia
+patron.patronageReport.list.label.creationMoment = Fecha Creación
+patron.patronageReport.list.label.asociatedPatronage = Patrocinio Asociado
 
-any.chirp.form.label.creationMoment = Fecha:
-any.chirp.form.label.title = Titulo:
-any.chirp.form.label.author = Autor:
-any.chirp.form.label.body = Cuerpo:
-any.chirp.form.label.email = Email:
-
-any.consumer.consumer.form.button.create = Registrar
-any.consumer.consumer.form.button.update = Actualizar
+patron.patronageReport.form.label.sequenceNumber = Número de Secuencia
+patron.patronageReport.form.label.creationMoment = Fecha Creación
+patron.patronageReport.form.label.memorandum = Memorandum
+patron.patronageReport.form.label.link = Link
