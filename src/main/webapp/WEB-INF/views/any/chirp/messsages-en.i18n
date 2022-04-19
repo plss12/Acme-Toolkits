@@ -9,11 +9,8 @@
 # they accept any liabilities with respect to them.
 
 
-any.chirp.form.label.creationMoment = Date:
-any.chirp.form.label.title = Title:
-any.chirp.form.label.author = Author:
-any.chirp.form.label.body = Body:
-any.chirp.form.label.email = Email:
-
-any.consumer.consumer.form.button.create = Register
-any.consumer.consumer.form.button.update = Update
+any.chirp.list.label.creationMoment = Date:
+any.chirp.list.label.title = Title:
+any.chirp.list.label.author = Author:
+any.chirp.list.label.body = Body:
+any.chirp.list.label.email = Email:
