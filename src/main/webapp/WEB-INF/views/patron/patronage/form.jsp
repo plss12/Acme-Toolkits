@@ -16,14 +16,13 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="patronage.label.code" path="code"/>
-	<acme:input-textbox code="patronage.label.legalStuff" path="legalStuff"/>
-	<acme:input-textbox code="patronage.label.budget" path="budget"/>
-	<acme:input-textbox code="patronage.label.startDate" path="startDate"/>
-	<acme:input-textbox code="patronage.label.finishDate" path="finishDate"/>
-	<acme:input-textbox code="patronage.label.link" path="link"/>
-	<acme:input-textbox code="patronage.label.inventor.company" path="inventor.company"/>
-	<acme:input-textbox code="patronage.label.inventor.statement" path="inventor.statement"/>
-	<acme:input-textbox code="patronage.label.inventor.link" path="inventor.link"/>
-	<acme:button code="patron.patronage.form.button.patronageReport" action="/patron/patronage-report/list?masterId=${id}"/>
+	<acme:input-textbox code="patronage.form.label.code" path="code"/>
+	<acme:input-textbox code="patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-textbox code="patronage.form.label.budget" path="budget"/>
+	<acme:input-textbox code="patronage.form.label.startDate" path="startDate"/>
+	<acme:input-textbox code="patronage.form.label.finishDate" path="finishDate"/>
+	<acme:input-textbox code="patronage.form.label.link" path="link"/>
+	<acme:input-textbox code="patronage.form.label.inventor.company" path="inventor.company"/>
+	<acme:input-textbox code="patronage.form.label.inventor.statement" path="inventor.statement"/>
+	<acme:input-textbox code="patronage.form.label.inventor.link" path="inventor.link"/>
 </acme:form>
