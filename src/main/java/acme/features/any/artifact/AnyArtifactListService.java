@@ -33,7 +33,8 @@ public class AnyArtifactListService implements AbstractListService<Any, Artifact
 	public Collection<Artifact> findMany(final Request<Artifact> request) {
 		assert request != null;
 		Collection<Artifact> result;
-		result = this.repo.findAllArtifacts();
+		final Boolean b = true;
+		result = this.repo.findAllPublishedArtifacts(b);
 		return result;
 		
 	}

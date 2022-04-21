@@ -18,10 +18,6 @@
 <acme:list>
 	<acme:list-column code="inventor.artifact.list.label.artifact_type" path="artifactType"/>	
 	<acme:list-column code="inventor.artifact.list.label.name" path="name"/>
-	<acme:list-column code="inventor.artifact.list.label.code" path="code"/>
 	<acme:list-column code="inventor.artifact.list.label.technology" path="technology"/>
 	<acme:list-column code="inventor.artifact.list.label.description" path="description"/>
-	<acme:list-column code="inventor.artifact.list.label.retail_price.amount" path="retailPrice.amount"/>
-	<acme:list-column code="inventor.artifact.list.label.retail_price.currency" path="retailPrice.currency"/>
-	<acme:list-column code="inventor.artifact.list.label.link" path="link"/>
 </acme:list>
