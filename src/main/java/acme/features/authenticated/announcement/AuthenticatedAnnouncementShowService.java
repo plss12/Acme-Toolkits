@@ -1,5 +1,8 @@
 package acme.features.authenticated.announcement;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +27,16 @@ public class AuthenticatedAnnouncementShowService implements AbstractShowService
 		
 		Announcement announcement;
 		id = request.getModel().getInteger("id");
+		
+		Calendar calendar;
+		Date deadline;
+
+		calendar = Calendar.getInstance();
+		calendar.add(Calendar.MONTH, -1);
+		deadline = calendar.getTime();
+		
 		announcement = this.repository.findOneAnnouncementById(id);
-		result = (announcement != null);
+		result = (announcement != null && announcement.getMoment().after(deadline));
 		
 		return result;
 	}
