@@ -27,7 +27,7 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 		UserAccount userAccount;
 		userAccount = this.anyUserRepo.findUserAccountById(id);
 		
-		result = userAccount != null;
+		result = (userAccount != null && !(userAccount.getUsername().equals("administrator") || userAccount.isAnonymous() || !userAccount.isEnabled()));
 		return result;
 	}
 
