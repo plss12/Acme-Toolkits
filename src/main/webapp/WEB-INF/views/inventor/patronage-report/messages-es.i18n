@@ -1,0 +1,11 @@
+inventor.patronageReport.list.label.sequenceNumber = Número de Secuencia
+inventor.patronageReport.list.label.creationMoment = Fecha de Creación
+inventor.patronageReport.list.label.memorandum = Memorándum
+inventor.patronageReport.list.label.link = Más Información
+inventor.patronageReport.list.label.asociatedPatronage = Patrocinio Asociado
+
+inventor.patronageReport.form.label.sequenceNumber = Número de Secuencia
+inventor.patronageReport.form.label.creationMoment = Fecha de Creación
+inventor.patronageReport.form.label.memorandum = Memorándum
+inventor.patronageReport.form.label.link = Más Información
+inventor.patronageReport.form.label.asociatedPatronage = Patrocinio Asociado

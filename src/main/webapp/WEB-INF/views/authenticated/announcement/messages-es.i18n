@@ -8,3 +8,4 @@ authenticated.announcement.form.label.title = Título
 authenticated.announcement.form.label.status = Estado
 authenticated.announcement.form.label.body = Cuerpo
 authenticated.announcement.form.label.link = Más Información
+authenticated.announcement.form.label.moment = Fecha

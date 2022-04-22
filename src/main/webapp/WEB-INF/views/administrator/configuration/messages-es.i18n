@@ -1,0 +1,18 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+master.menu.authenticated.system-configuration.show = Configuración del sistema
+
+administrator.system_configuration.form.acceptedCurrencies = Monedas Aceptadas
+administrator.system_configuration.form.defaultCurrency = Divisa por Defecto
+administrator.system_configuration.form.weakSpamThreshold = Límite de Palabras de Spam Débiles
+administrator.system_configuration.form.weakSpam = Palabras de Spam Débiles
+administrator.system_configuration.form.strongSpamThreshold = Límite de Palabras de Spam Fuertes
+administrator.system_configuration.form.strongSpam = Palabras de Spam Fuertes

@@ -8,3 +8,4 @@ authenticated.announcement.form.label.title = Title
 authenticated.announcement.form.label.status = Status
 authenticated.announcement.form.label.body = Body
 authenticated.announcement.form.label.link = Further Information
+authenticated.announcement.form.label.moment = Moment

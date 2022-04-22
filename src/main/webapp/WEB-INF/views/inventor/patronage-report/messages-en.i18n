@@ -1,0 +1,11 @@
+inventor.patronageReport.list.label.sequenceNumber = Sequence Number
+inventor.patronageReport.list.label.creationMoment = Creation Moment
+inventor.patronageReport.list.label.memorandum = Memorandum
+inventor.patronageReport.list.label.link = Further Information
+inventor.patronageReport.list.label.asociatedPatronage = Asociated Patronage
+
+inventor.patronageReport.form.label.sequenceNumber = Sequence Number
+inventor.patronageReport.form.label.creationMoment = Creation Moment
+inventor.patronageReport.form.label.memorandum = Memorandum
+inventor.patronageReport.form.label.link = Further Information
+inventor.patronageReport.form.label.asociatedPatronage = Asociated Patronage

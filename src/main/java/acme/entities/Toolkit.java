@@ -29,8 +29,7 @@ public class Toolkit  extends AbstractEntity{
 	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
-	protected String code;
-	
+	protected String code;	
 	
 	@NotBlank
 	@Length(max=100)
@@ -48,7 +47,8 @@ public class Toolkit  extends AbstractEntity{
 	protected String link;
 	
 	@NotNull
-	protected Boolean published;
+	protected Boolean isPublic;
+
 	
 	// Relationships ---------------------------------
 	

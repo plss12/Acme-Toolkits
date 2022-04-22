@@ -23,13 +23,21 @@ master.menu.anonymous.favourite-link = Favourite link
 # master.menu.any ########################################################
 
 master.menu.any = Any
+master.menu.any.list.user-accounts = List User Accounts
 master.menu.any.chirp.list = Chirps of this month
 master.menu.any.toolkit.list = List of Toolkits
+master.menu.any.user-accounts.list = User's Accounts-
+master.menu.any.artifact.list = Tools & Components
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list-recent = Recent Announcements
-master.menu.authenticated.patronage.list = Inventor's Patronages
+
+# master.menu.inventor ########################################################
+master.menu.inventor = Inventor
+master.menu.inventor.artifact.list = Inventor's Artifacts
+master.menu.inventor.patronage.list = Inventor's Patronages
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -37,7 +45,13 @@ master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
+master.menu.administrator.systemConfiguration = System Configuration
 master.menu.administrator.shut-down = Shut down
+
+# master.menu.patron ##########################################################
+
+master.menu.patron = Patron
+master.menu.patron.patronage_report.list = Patronage Reports
 
 # master.menu.provider ########################################################
 
@@ -57,3 +71,10 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+
+
+# master.menu.patron ####################################################
+
+master.menu.patron.patron = Patron
+master.menu.patron.patronages = Patron's Patronages
