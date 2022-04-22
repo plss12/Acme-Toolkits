@@ -8,9 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-master.menu.authenticated.system-configuration.show = Configuración del sistema
+authenticated.money-exchange.form.label.source = Cantidad origen:
+authenticated.money-exchange.form.label.target-currency = Moneda destino:
+authenticated.money-exchange.form.label.date = Fecha del cambio:
+authenticated.money-exchange.form.label.target = Cantidad destino:
+	
+authenticated.money-exchange.form.button.perform = Realizar cambio
 
-
-authenticated.system-configuration.form.label.acceptedCurrencies = Monedas aceptadas
-authenticated.system-configuration.form.label.defaultCurrency = Moneda por defecto
-authenticated.system-configuration.form.button.money-exchange = Intercambio de moneda
+authenticated.money-exchange.form.label.api-error = Lo sentimos, no se pudo hacer este cambio
