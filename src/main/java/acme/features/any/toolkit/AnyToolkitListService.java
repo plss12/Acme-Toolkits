@@ -42,8 +42,8 @@ public class AnyToolkitListService implements AbstractListService<Any, Toolkit>{
 		assert request != null;
 		
 		Collection<Toolkit> result;
-		
-		result = this.repository.findAllToolkits();
+		final boolean b = true;
+		result = this.repository.findAllToolkits(b);
 		
 		return result;
 	}
