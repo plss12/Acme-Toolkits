@@ -1,13 +1,13 @@
 package acme.features.administrator.dashboard;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
-import acme.entities.PatronageStatus;
-import acme.framework.datatypes.Money;
 import acme.framework.repositories.AbstractRepository;
 
+@Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select count(a) from Artifact a where a.artifactType = acme.entities.ArtifactType.COMPONENT")
@@ -16,9 +16,18 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(a) from Artifact a where a.artifactType = acme.entities.ArtifactType.TOOL")
 	int totalNumberOfTools();
 	
-	@Query("select p.patronageStatus,count(p) from Patronage p group by p.patronageStatus")
-	Map<PatronageStatus,Integer> totalNumberOfPatronages();
-	@Query("select p.patronageStatus,p.budget from Patronage p group by p.patronageStatus")
-	Map<PatronageStatus,Money> averageBudgetOfPatronages();
+	@Query("select p.status,count(p) from Patronage p group by p.status")
+	List<Object[]> totalNumberOfPatronages();
+	
+	//
+	
+	@Query("select a.technology,a.retailPrice.currency,avg(a.retailPrice.amount),min(a.retailPrice.amount),max(a.retailPrice.amount),stddev(a.retailPrice.amount) from Artifact a where a.artifactType = acme.entities.ArtifactType.COMPONENT group by a.retailPrice.currency, a.technology")
+	List<Object[]> statsOfComponents();
+	
+	@Query("select a.retailPrice.currency,avg(a.retailPrice.amount),min(a.retailPrice.amount),max(a.retailPrice.amount),stddev(a.retailPrice.amount) from Artifact a where a.artifactType = acme.entities.ArtifactType.TOOL group by a.retailPrice.currency")
+	List<Object[]> statsOfTools();
+	
+	@Query("select p.status,avg(p.budget.amount),min(p.budget.amount),max(p.budget.amount),stddev(p.budget.amount) from Patronage p group by p.status")
+	List<Object[]> statsOfPatronages();
 
 }
