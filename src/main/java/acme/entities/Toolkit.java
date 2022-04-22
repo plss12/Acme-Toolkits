@@ -48,6 +48,7 @@ public class Toolkit  extends AbstractEntity{
 	
 	@NotNull
 	protected Boolean isPublic;
+
 	
 	// Relationships ---------------------------------
 	
