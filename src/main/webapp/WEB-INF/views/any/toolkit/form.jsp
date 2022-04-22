@@ -15,10 +15,10 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:list>
-	<acme:list-column code="any.toolkit.list.label.title" path="title"/>	
-	<acme:list-column code="any.toolkit.list.label.description" path="description"/>
-	<acme:list-column code="any.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
-	<acme:list-column code="any.toolkit.list.label.link" path="link"/>
-	<acme:list-column code="any.toolkit.list.label.artifactToolkits" path="artifactToolkits"/>
-</acme:list>
+<acme:form>
+	<acme:input-textbox code="any.toolkit.form.label.title" path="title"/>	
+	<acme:input-textarea code="any.toolkit.form.label.description" path="description"/>
+	<acme:input-textarea code="any.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
+	<acme:input-url code="any.toolkit.form,label.link" path="link"/>
+	<acme:input-textarea code="any.toolkit.form.label.artifactToolkits" path="artifactToolkits"/>
+</acme:form>
