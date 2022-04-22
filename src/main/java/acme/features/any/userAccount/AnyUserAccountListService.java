@@ -29,11 +29,10 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 	@Override
 	public List<UserAccount> findMany(final Request<UserAccount> request) {
 		assert request != null;
-		List<UserAccount> res;
-		final String anonymous = "anonymous";
-		final String administrator = "administrator";
-		res = this.anyUserRepo.findAllUserAccountsAllowed(anonymous, administrator);
-		return res;
+		List<UserAccount> allAccounts;
+		final Boolean enabled = true;
+		allAccounts = this.anyUserRepo.findAllUserAccountsAllowed("anonymous", "administrator",enabled);
+		return allAccounts;
 	}
 
 	@Override

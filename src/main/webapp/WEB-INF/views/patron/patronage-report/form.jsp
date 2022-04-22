@@ -15,15 +15,9 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form readonly="${readonly}">
-	<acme:input-moment code="any.chirp.form.label.creationMoment" path="creationMoment"/>
-	<acme:input-textbox code="any.chirp.form.label.title" path="title"/>	
-	<acme:input-textbox code="any.chirp.form.label.author" path="author"/>		
-	<acme:input-textarea code="any.chirp.form.label.body" path="body"/>
-	<acme:input-url code="any.chirp.form.label.email" path="email"/>
-	
-	<jstl:if test="${!readonly}">
-		<acme:input-checkbox code="any.chirp.form.label.confirmation" path="confirmation"/>
-		<acme:submit code="any.chirp.form.button.create" action="/any/chirp/create"/>
-	</jstl:if>
+<acme:form>
+	<acme:input-textbox code="patron.patronageReport.form.label.sequenceNumber" path="sequenceNumber" />
+	<acme:input-textbox code="patron.patronageReport.form.label.creationMoment" path="creationMoment" />
+	<acme:input-textbox code="patron.patronageReport.form.label.memorandum" path="memorandum" />
+	<acme:input-url code="patron.patronageReport.form.label.link" path="link" />
 </acme:form>

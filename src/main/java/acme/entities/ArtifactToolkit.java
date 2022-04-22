@@ -17,8 +17,8 @@ public class ArtifactToolkit extends AbstractEntity{
 	
 	// Attributes  ------------------------------------
 	
-	protected int artifactCode;
+	protected int artifactAmount;
 	
-	protected int toolkitCode;
+	protected int toolkitAmount;
 
 }

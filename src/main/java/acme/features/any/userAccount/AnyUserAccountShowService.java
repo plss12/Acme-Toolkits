@@ -20,7 +20,15 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 	public boolean authorise(final Request<UserAccount> request) {
 		assert request != null;
 		
-		return true;
+		boolean result;
+		final int id;
+		id = request.getModel().getInteger("id");
+		
+		UserAccount userAccount;
+		userAccount = this.anyUserRepo.findUserAccountById(id);
+		
+		result = (userAccount != null && !(userAccount.getUsername().equals("administrator") || userAccount.isAnonymous() || !userAccount.isEnabled()));
+		return result;
 	}
 
 	@Override
@@ -39,7 +47,7 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "identity.name", "identity.surname", "identity.email");
+		request.unbind(entity, model, "username", "identity.name", "identity.surname", "identity.email");
 		
 	}
 

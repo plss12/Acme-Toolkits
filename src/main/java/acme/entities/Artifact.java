@@ -52,6 +52,9 @@ public class Artifact extends AbstractEntity{
 	
 	@URL
 	protected String link;
+	
+	@NotNull
+	protected Boolean isPublic;
 
 	// Relationships ---------------------------------
 	
