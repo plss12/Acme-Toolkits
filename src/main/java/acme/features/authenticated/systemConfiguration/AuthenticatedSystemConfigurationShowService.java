@@ -31,8 +31,6 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 	@Override
 	public Configuration findOne(final Request<Configuration> request) {
 		assert request != null;
-//		int id;
-//		id = request.getModel().getInteger("id");
 		Configuration configuration;
 		configuration = this.authConfRepo.findOneConf();
 		return configuration;
