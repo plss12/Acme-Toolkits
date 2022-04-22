@@ -6,8 +6,11 @@ import java.util.Map;
 import org.springframework.data.util.Pair;
 
 import acme.entities.PatronageStatus;
-import acme.framework.datatypes.Money;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class AdministratorDashboard implements Serializable{
 	
 	// Serialisation identifier -----------------------------------------------
@@ -16,24 +19,24 @@ public class AdministratorDashboard implements Serializable{
 
 	// Attributes -------------------------------------------------------------
 	
-	Integer								totalNumberOfComponents;
-	Map<Pair<String, String>, Money>	averageRetailPriceOfComponents;
-	Map<Pair<String, String>, Money>	retailPriceDeviationOfComponents;
-	Map<Pair<String, String>, Money>	minimumRetailPriceOfComponents;
-	Map<Pair<String, String>, Money>	maximumRetailPriceOfComponents;
+	int										totalNumberOfComponents;
+	Map<Pair<String, String>, Double>		averageRetailPriceOfComponents;
+	Map<Pair<String, String>, Double>		retailPriceDeviationOfComponents;
+	Map<Pair<String, String>, Double>		minimumRetailPriceOfComponents;
+	Map<Pair<String, String>, Double>		maximumRetailPriceOfComponents;
 	
-	Integer								totalNumberOftools;
-	Map<Pair<String, String>, Money>	averageRetailPriceOfTools;
-	Map<Pair<String, String>, Money>	retailPriceDeviationOfTools;
-	Map<Pair<String, String>, Money>	minimumRetailPriceOfTools;
-	Map<Pair<String, String>, Money>	maximumRetailPriceOfTools;
+	int										totalNumberOfTools;
+	Map<String, Double>						averageRetailPriceOfTools;
+	Map<String, Double>						retailPriceDeviationOfTools;
+	Map<String, Double>						minimumRetailPriceOfTools;
+	Map<String, Double>						maximumRetailPriceOfTools;
 	
 	
-	Map<PatronageStatus, Integer>		totalNumberOfPatronages;
-	Map<PatronageStatus, Money>			averageBudgetOfPatronages;
-    Map<PatronageStatus, Money>			deviationBudgetOfPatronages;
-	Map<PatronageStatus, Money>			minimumBudgetOfPatronages;
-	Map<PatronageStatus, Money>			maximumBudgetOfPatronages;
+	Map<PatronageStatus, Long>				totalNumberOfPatronages;
+	Map<PatronageStatus, Double>			averageBudgetOfPatronages;
+    Map<PatronageStatus, Double>			deviationBudgetOfPatronages;
+	Map<PatronageStatus, Double>			minimumBudgetOfPatronages;
+	Map<PatronageStatus, Double>			maximumBudgetOfPatronages;
 	
 	// Derived attributes -----------------------------------------------------
 
