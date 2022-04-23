@@ -19,4 +19,7 @@ public interface AnyArtifactRepository extends AbstractRepository{
 	
 	@Query("select a from Artifact a where a.isPublic=:p")
 	Collection<Artifact> findAllPublishedArtifacts(Boolean p);
+	
+	@Query("select at.artifact from ArtifactToolkit at where at.toolkit.id = :id")
+	Collection<Artifact> findArtifactsByToolkit(int id);
 }

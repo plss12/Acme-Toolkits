@@ -33,8 +33,8 @@ public class AnyArtifactListToolkitService implements AbstractListService<Any, A
 	public Collection<Artifact> findMany(final Request<Artifact> request) {
 		assert request != null;
 		Collection<Artifact> result;
-		final Boolean b = true;
-		result = this.repo.findAllPublishedArtifacts(b);
+		final int id= request.getModel().getInteger("masterId");
+		result = this.repo.findArtifactsByToolkit(id);
 		return result;
 		
 	}
