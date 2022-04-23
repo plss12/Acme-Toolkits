@@ -20,6 +20,7 @@ public class ArtifactToolkit extends AbstractEntity{
 	
 	// Attributes  ------------------------------------
 	
+	@NotNull
 	protected int artifactAmount;
 	
 	@NotNull
@@ -31,5 +32,4 @@ public class ArtifactToolkit extends AbstractEntity{
 	@Valid
 	@ManyToOne(optional=false)
 	protected Artifact artifact;
-
 }
