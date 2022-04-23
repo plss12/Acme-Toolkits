@@ -27,85 +27,105 @@
 </table>
 
 <table class="table table-sm">
-	<h4>
-		<acme:message code="patron.dashboard.form.label.averageBudgetOfPatronages"/>
-	</h4>
-	<table class="table table-sm" id="id-averageBudgetOfPatronages">
-		<caption>
-			<acme:message code="patron.dashboard.form.label.averageBudgetOfPatronages"/>
-		</caption>
-		<jstl:forEach items="${averageBudgetOfPatronages.keySet()}" var="key">
-			<tr>
-				<jstl:set value="${averageBudgetOfPatronages.get(key)}" var="amount"/>
-				<jstl:if test="${amount>0}">
-					<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
-					<td><acme:print value="${amount}"/></td>
-					<td><acme:print value="${key.second}"/></td>
-				</jstl:if>
-			</tr>
-		</jstl:forEach>
-	</table>
+<caption></caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="patron.dashboard.form.label.averageBudgetOfPatronages"/>
+			</h4>
+			<table class="table table-sm" id="id-averageBudgetOfPatronages">
+				<caption>
+					<acme:message code="patron.dashboard.form.label.averageBudgetOfPatronages"/>
+				</caption>
+				<jstl:forEach items="${averageBudgetOfPatronages.keySet()}" var="key">
+					<tr>
+						<jstl:set value="${averageBudgetOfPatronages.get(key)}" var="amount"/>
+						<jstl:if test="${amount>0}">
+							<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
+							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
 </table>
 
 <table class="table table-sm">
-	<h4>
-		<acme:message code="patron.dashboard.form.label.deviationBudgetOfPatronages"/>
-	</h4>
-	<table class="table table-sm" id="id-deviationBudgetOfPatronages">
-		<caption>
-			<acme:message code="patron.dashboard.form.label.deviationBudgetOfPatronages"/>
-		</caption>
-		<jstl:forEach items="${deviationBudgetOfPatronages.keySet()}" var="key">
-			<tr>
-				<jstl:set value="${deviationBudgetOfPatronages.get(key)}" var="amount"/>
-				<jstl:if test="${amount>=0}">
-					<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
-					<td><acme:print value="${amount}"/></td>
-					<td><acme:print value="${key.second}"/></td>
-				</jstl:if>
-			</tr>
-		</jstl:forEach>
-	</table>
+<caption></caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="patron.dashboard.form.label.deviationBudgetOfPatronages"/>
+			</h4>
+			<table class="table table-sm" id="id-deviationBudgetOfPatronages">
+				<caption>
+					<acme:message code="patron.dashboard.form.label.deviationBudgetOfPatronages"/>
+				</caption>
+				<jstl:forEach items="${deviationBudgetOfPatronages.keySet()}" var="key">
+					<tr>
+						<jstl:set value="${deviationBudgetOfPatronages.get(key)}" var="amount"/>
+						<jstl:if test="${amount>=0}">
+							<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
+							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
 </table>
 
 <table class="table table-sm">
-	<h4>
-		<acme:message code="patron.dashboard.form.label.minimumBudgetOfPatronages"/>
-	</h4>
-	<table class="table table-sm" id="id-minimumBudgetOfPatronages">
-		<caption>
-			<acme:message code="patron.dashboard.form.label.minimumBudgetOfPatronages"/>
-		</caption>
-		<jstl:forEach items="${minimumBudgetOfPatronages.keySet()}" var="key">
-			<tr>
-				<jstl:set value="${minimumBudgetOfPatronages.get(key)}" var="amount"/>
-				<jstl:if test="${amount>0}">
-					<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
-					<td><acme:print value="${amount}"/></td>
-					<td><acme:print value="${key.second}"/></td>
-				</jstl:if>
-			</tr>
-		</jstl:forEach>
-	</table>
+<caption></caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="patron.dashboard.form.label.minimumBudgetOfPatronages"/>
+			</h4>
+			<table class="table table-sm" id="id-minimumBudgetOfPatronages">
+				<caption>
+					<acme:message code="patron.dashboard.form.label.minimumBudgetOfPatronages"/>
+				</caption>
+				<jstl:forEach items="${minimumBudgetOfPatronages.keySet()}" var="key">
+					<tr>
+						<jstl:set value="${minimumBudgetOfPatronages.get(key)}" var="amount"/>
+						<jstl:if test="${amount>0}">
+							<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
+							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
 </table>
 
 <table class="table table-sm">
-	<h4>
-		<acme:message code="patron.dashboard.form.label.maximumBudgetOfPatronages"/>
-	</h4>
-	<table class="table table-sm" id="id-maximumBudgetOfPatronages">
-		<caption>
-			<acme:message code="patron.dashboard.form.label.maximumBudgetOfPatronages"/>
-		</caption>
-		<jstl:forEach items="${maximumBudgetOfPatronages.keySet()}" var="key">
-			<tr>
-				<jstl:set value="${maximumBudgetOfPatronages.get(key)}" var="amount"/>
-				<jstl:if test="${amount>0}">
-					<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
-					<td><acme:print value="${amount}"/></td>
-					<td><acme:print value="${key.second}"/></td>
-				</jstl:if>
-			</tr>
-		</jstl:forEach>
-	</table>
+<caption></caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="patron.dashboard.form.label.maximumBudgetOfPatronages"/>
+			</h4>
+			<table class="table table-sm" id="id-maximumBudgetOfPatronages">
+				<caption>
+					<acme:message code="patron.dashboard.form.label.maximumBudgetOfPatronages"/>
+				</caption>
+				<jstl:forEach items="${maximumBudgetOfPatronages.keySet()}" var="key">
+					<tr>
+						<jstl:set value="${maximumBudgetOfPatronages.get(key)}" var="amount"/>
+						<jstl:if test="${amount>0}">
+							<th scope="row" style="width: 10%"><acme:message code="patron.dashboard.form.status.${key.first}"/></th>
+							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
 </table>
