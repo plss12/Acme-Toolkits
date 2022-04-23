@@ -16,10 +16,15 @@ public class AuthenticatedSystemConfigurationShowTest extends TestHarness{
 		public void positiveTest(final int recordIndex, final String defaultCurrency, final String acceptedCurrencies) {
 			
 			super.signIn("administrator", "administrator");
+			
 			super.clickOnMenu("Authenticated", "System Configuration");
 			super.checkFormExists();
 			super.checkInputBoxHasValue("acceptedCurrencies", acceptedCurrencies);
 			super.checkInputBoxHasValue("defaultCurrency", defaultCurrency);
+			super.checkButtonExists("Money Exchange");
+			super.clickOnButton("Money Exchange");
+			super.checkFormExists();
+			
 			super.signOut();
 		}
 
