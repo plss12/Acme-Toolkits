@@ -52,6 +52,7 @@ master.menu.administrator.shut-down = Shut down
 
 master.menu.patron = Patron
 master.menu.patron.patronage_report.list = Patronage Reports
+master.menu.patron.dashboard = Patron Dashboard
 
 # master.menu.provider ########################################################
 
