@@ -23,7 +23,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 	protected AnyToolkitRepository repository;
 	
 	@Autowired
-	protected InventorToolkitShowService InventorShowService;
+	protected InventorToolkitShowService inventorShowService;
 	
 	@Autowired
 	protected AuthenticatedMoneyExchangePerformService moneyService;
@@ -64,7 +64,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		assert model != null;
 		
 		model.setAttribute("id", entity.getId());
-		model.setAttribute("price", this.InventorShowService.calculatePriceOfToolkit(entity.getId()));
+		model.setAttribute("price", this.inventorShowService.calculatePriceOfToolkit(entity.getId()));
 		request.unbind(entity, model, "title", "description", "assemblyNotes", "link");	
 	}
 	
