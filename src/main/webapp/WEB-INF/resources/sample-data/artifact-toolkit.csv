@@ -1,3 +1,2 @@
-key,artifact-amount
-artifact-toolkit-01,2
-
+key,artifact-amount,key:artifact,key:toolkit
+artifact-toolkit-01,2,artifact-01,toolkit-01
