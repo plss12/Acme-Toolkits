@@ -19,6 +19,6 @@
 	<acme:input-textbox code="any.toolkit.form.label.title" path="title"/>	
 	<acme:input-textarea code="any.toolkit.form.label.description" path="description"/>
 	<acme:input-textarea code="any.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
-	<acme:input-url code="any.toolkit.form,label.link" path="link"/>
+	<acme:input-url code="any.toolkit.form.label.link" path="link"/>
 	<acme:input-textarea code="any.toolkit.form.label.artifactToolkits" path="artifactToolkits"/>
 </acme:form>

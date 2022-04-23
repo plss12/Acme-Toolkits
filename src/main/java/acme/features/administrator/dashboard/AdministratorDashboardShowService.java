@@ -1,5 +1,6 @@
 package acme.features.administrator.dashboard;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -95,11 +96,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final List<Object[]> totalNumberOfPatronagesGrouped;
 		totalNumberOfPatronagesGrouped = this.repository.totalNumberOfPatronages();
 		
-		final Map<PatronageStatus,Long> totalNumberOfPatronages = new HashMap<>();
-		final Map<PatronageStatus,Double> averageBudgetOfPatronages = new HashMap<>();
-		final Map<PatronageStatus,Double> deviationBudgetOfPatronages = new HashMap<>();
-		final Map<PatronageStatus,Double> minimumBudgetOfPatronages = new HashMap<>();
-		final Map<PatronageStatus,Double> maximumBudgetOfPatronages = new HashMap<>();
+		final EnumMap<PatronageStatus,Long> totalNumberOfPatronages = new EnumMap<>(PatronageStatus.class);
+		final EnumMap<PatronageStatus,Double> averageBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
+		final EnumMap<PatronageStatus,Double> deviationBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
+		final EnumMap<PatronageStatus,Double> minimumBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
+		final EnumMap<PatronageStatus,Double> maximumBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
 		
 		final List<Object[]> statsOfPatronages;
 		statsOfPatronages = this.repository.statsOfPatronages();
