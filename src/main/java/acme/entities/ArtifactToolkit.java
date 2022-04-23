@@ -1,6 +1,7 @@
 package acme.entities;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
@@ -17,8 +18,7 @@ public class ArtifactToolkit extends AbstractEntity{
 	
 	// Attributes  ------------------------------------
 	
+	@NotNull
 	protected int artifactAmount;
-	
-	protected int toolkitAmount;
 
 }
