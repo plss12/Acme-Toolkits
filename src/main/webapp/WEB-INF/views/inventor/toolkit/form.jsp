@@ -16,9 +16,11 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="any.toolkit.form.label.title" path="title"/>	
-	<acme:input-textarea code="any.toolkit.form.label.description" path="description"/>
-	<acme:input-textarea code="any.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
-	<acme:input-url code="any.toolkit.form.label.link" path="link"/>
-	<acme:button code="any.toolkit.form.button.artifact" action="/any/artifact/list-toolkit?masterId=${id}"/>		
+	<acme:input-textbox code="inventor.toolkit.form.label.title" path="title"/>	
+	<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
+	<acme:input-textarea code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
+	<acme:input-url code="inventor.toolkit.form.label.link" path="link"/>
+	<acme:input-url code="inventor.toolkit.form.label.price" path="price"/>
+	<acme:input-url code="inventor.toolkit.form.label.isPublic" path="isPublic"/>
+	<acme:button code="inventor.toolkit.form.button.artifact" action="/any/artifact/list-toolkit?masterId=${id}"/>		
 </acme:form>

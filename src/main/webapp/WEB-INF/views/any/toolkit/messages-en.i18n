@@ -13,6 +13,7 @@ any.toolkit.form.label.description = Description
 any.toolkit.form.label.assemblyNotes = Notes
 any.toolkit.form.label.link = Link
 any.toolkit.form.label.artifactToolkits = Artifacts
+any.toolkit.form.label.price = Price (System Default Currency)
 
 any.toolkit.list.label.title = Title
 any.toolkit.list.label.description = Description

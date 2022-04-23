@@ -13,6 +13,7 @@ any.toolkit.form.label.description = Descripción
 any.toolkit.form.label.assemblyNotes = Notas
 any.toolkit.form.label.link = Link
 any.toolkit.form.label.artifactToolkits = Artefactos
+any.toolkit.form.label.price = Precio total (Divisa por defecto del sistema)
 
 any.toolkit.list.label.title = Título
 any.toolkit.list.label.description = Descripción

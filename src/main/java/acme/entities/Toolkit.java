@@ -50,6 +50,7 @@ public class Toolkit  extends AbstractEntity{
 	@NotNull
 	protected Boolean isPublic;
 	
+	
 	@Valid
     @ManyToOne
     protected Inventor inventor;

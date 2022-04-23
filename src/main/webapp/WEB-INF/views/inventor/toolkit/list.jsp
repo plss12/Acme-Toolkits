@@ -20,4 +20,5 @@
 	<acme:list-column code="any.toolkit.list.label.description" path="description"/>
 	<acme:list-column code="any.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:list-column code="any.toolkit.list.label.link" path="link"/>
+	<acme:list-column code="any.toolkit.list.label.isPublic" path="isPublic"/>
 </acme:list>

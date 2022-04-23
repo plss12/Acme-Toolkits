@@ -1,6 +1,7 @@
 package acme.features.inventor.toolkit;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -20,5 +21,11 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	
 	@Query("select t from Toolkit t where t.inventor.id = :id")
 	Collection<Toolkit> findToolkitByInventorId(int id);
+	
+	@Query("select at.artifact,at.artifactAmount from ArtifactToolkit at where at.toolkit.id = :id")
+	List<Object[]> findPricesAndNumberOfArtifactsByToolkit(int id);
+	
+	@Query("select c.defaultCurrency from Configuration c")
+	String defaultCurrency();
 
 }

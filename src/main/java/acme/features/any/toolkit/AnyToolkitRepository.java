@@ -2,6 +2,7 @@ package acme.features.any.toolkit;
 
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -21,6 +22,12 @@ public interface AnyToolkitRepository extends AbstractRepository {
 	
 	@Query("select at.artifact from ArtifactToolkit at where at.toolkit.id = :id")
 	Collection<Artifact> findArtifactsByToolkit(int id);
+	
+	@Query("select at.artifact,at.artifactAmount from ArtifactToolkit at where at.toolkit.id = :id")
+	List<Object[]> findPricesAndNumberOfArtifactsByToolkit(int id);
+	
+	@Query("select c.defaultCurrency from Configuration c")
+	String defaultCurrency();
 
 }
 
