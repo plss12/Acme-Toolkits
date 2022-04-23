@@ -19,7 +19,7 @@ public class AnyArtifactController extends AbstractController<Any, Artifact> {
 
 	@Autowired
 	protected AnyArtifactShowService		showService;
-	
+	 
 	@Autowired
 	protected AnyArtifactListToolkitService		listToolkitService;
 	// Constructors -----------------------------------------------------------
