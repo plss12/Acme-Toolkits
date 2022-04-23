@@ -55,12 +55,6 @@ public class Artifact extends AbstractEntity{
 	
 	@NotNull
 	protected Boolean isPublic;
-
-	// Relationships ---------------------------------
-	
-    @Valid
-    @ManyToOne
-    protected ArtifactToolkit artifactToolkit;
     
     @Valid
     @ManyToOne

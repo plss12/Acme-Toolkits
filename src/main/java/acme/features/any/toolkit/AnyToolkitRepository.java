@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.Artifact;
 import acme.entities.Toolkit;
 import acme.framework.repositories.AbstractRepository;
 
@@ -17,6 +18,9 @@ public interface AnyToolkitRepository extends AbstractRepository {
 	
 	@Query("select t from Toolkit t where t.id = :id")
 	Toolkit findOneToolkitById(int id);
+	
+	@Query("select at.artifact from ArtifactToolkit at where at.toolkit.id = :id")
+	Collection<Artifact> findArtifactsByToolkit(int id);
 
 }
 

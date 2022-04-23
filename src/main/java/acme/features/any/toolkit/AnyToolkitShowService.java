@@ -1,8 +1,11 @@
 package acme.features.any.toolkit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Artifact;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -45,9 +48,8 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "description", "assemblyNotes", "link", "artifactToolkits");
-		
+		final Collection<Artifact> artifactToolkits=this.repository.findArtifactsByToolkit(entity.getId());
+		model.setAttribute("artifactToolkits",artifactToolkits);
+		request.unbind(entity, model, "title", "description", "assemblyNotes", "link");	
 	}
-
 }
-

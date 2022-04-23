@@ -18,4 +18,5 @@ any.toolkit.list.label.title = Title
 any.toolkit.list.label.description = Description
 any.toolkit.list.label.assemblyNotes = Notes
 any.toolkit.list.label.link = Link
-any.toolkit.list.label.artifactToolkits = Artifacts
+
+any.toolkit.form.button.artifact = Artifacts
