@@ -1,9 +1,13 @@
 package acme.features.inventor.toolkit;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Artifact;
 import acme.entities.Toolkit;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -14,6 +18,8 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 	
 	@Autowired
 	protected InventorToolkitRepository repository;
+	@Autowired
+	protected AuthenticatedMoneyExchangePerformService moneyService;
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -35,10 +41,8 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		Toolkit result;
 		int id;
-		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findToolkitById(id);
-		
 		return result;
 	}
 
@@ -49,7 +53,19 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert model != null;
 		
 		model.setAttribute("id", entity.getId());
-		request.unbind(entity, model, "title", "description", "assemblyNotes", "link");	
+		model.setAttribute("price", this.calculatePriceOfToolkit(entity.getId()));
+		request.unbind(entity, model, "title", "description", "assemblyNotes", "link", "isPublic");	
+	}
+	
+	public Double calculatePriceOfToolkit(final int id) {
+		final String defaultCurrency = this.repository.defaultCurrency();
+		final List<Object[]> prices = this.repository.findPricesAndNumberOfArtifactsByToolkit(id);
+		Double totalAmount = 0.0;
+		for (final Object[] price:prices) {
+			totalAmount = totalAmount + (this.moneyService.computeMoneyExchange(((Artifact) price[0]).getRetailPrice(), defaultCurrency).getTarget().getAmount()) * (Integer) price[1];
+		}
+		return totalAmount;
+		
 	}
 	
 

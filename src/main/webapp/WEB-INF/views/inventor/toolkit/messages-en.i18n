@@ -8,15 +8,19 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.toolkit.form.label.title = Title
-any.toolkit.form.label.description = Description
-any.toolkit.form.label.assemblyNotes = Notes
-any.toolkit.form.label.link = Link
-any.toolkit.form.label.artifactToolkits = Artifacts
+inventor.toolkit.form.label.title = Title
+inventor.toolkit.form.label.description = Description
+inventor.toolkit.form.label.assemblyNotes = Notes
+inventor.toolkit.form.label.link = Link
+inventor.toolkit.form.label.artifactToolkits = Artifacts
+inventor.toolkit.form.label.isPublic = Status of published
+inventor.toolkit.form.label.price = Price (System Default Currency)
 
-any.toolkit.list.label.title = Title
-any.toolkit.list.label.description = Description
-any.toolkit.list.label.assemblyNotes = Notes
-any.toolkit.list.label.link = Link
+inventor.toolkit.list.label.title = Title
+inventor.toolkit.list.label.description = Description
+inventor.toolkit.list.label.assemblyNotes = Notes
+inventor.toolkit.list.label.link = Link
+inventor.toolkit.list.label.isPublic = Estado de publicación
 
-any.toolkit.form.button.artifact = Artifacts
+
+inventor.toolkit.form.button.artifact = Artifacts
