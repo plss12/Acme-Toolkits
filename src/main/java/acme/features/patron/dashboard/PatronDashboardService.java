@@ -1,5 +1,6 @@
 package acme.features.patron.dashboard;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +37,7 @@ public class PatronDashboardService implements AbstractShowService<Patron, Patro
 		assert request != null;
 
 		PatronDashboard result;
-		final Map<PatronageStatus,Long> totalNumberOfPatronages = new HashMap<PatronageStatus, Long>();
+		final EnumMap<PatronageStatus,Long> totalNumberOfPatronages = new EnumMap<>(PatronageStatus.class);
 		final Map<Pair<PatronageStatus,String>,Double> averageBudgetOfPatronages = new HashMap<Pair<PatronageStatus,String>, Double>();
 		final Map<Pair<PatronageStatus,String>,Double> deviationBudgetOfPatronages = new HashMap<Pair<PatronageStatus,String>, Double>();
 		final Map<Pair<PatronageStatus,String>,Double> minimumBudgetOfPatronages = new HashMap<Pair<PatronageStatus,String>, Double>();
