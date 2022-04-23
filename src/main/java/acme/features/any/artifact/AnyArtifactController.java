@@ -30,5 +30,5 @@ public class AnyArtifactController extends AbstractController<Any, Artifact> {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
 		super.addCommand("list-toolkit","list", this.listToolkitService);
-	}
+	} 
 }
