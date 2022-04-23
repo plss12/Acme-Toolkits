@@ -37,6 +37,7 @@ master.menu.authenticated.announcement.list-recent = Recent Announcements
 master.menu.inventor = Inventor
 master.menu.inventor.artifact.list = Inventor Artifacts
 master.menu.inventor.patronage.list = Inventor Patronages
+master.menu.inventor.toolkit.list = List of Toolkits
 
 # master.menu.administrator ###################################################
 
