@@ -10,7 +10,7 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-public class InventorToolkitController  extends AbstractController<Inventor, Toolkit>{
+public class InventorToolkitController extends AbstractController<Inventor, Toolkit>{
 	// Internal state -----------------------------------------------------------
 	
 		@Autowired
@@ -25,7 +25,7 @@ public class InventorToolkitController  extends AbstractController<Inventor, Too
 		@PostConstruct
 		protected void initialise() {
 			super.addCommand("list", this.listService);
-			super.addCommand("show", this.listService);
+			super.addCommand("show", this.showService);
 		}
 
 }

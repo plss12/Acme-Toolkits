@@ -15,7 +15,7 @@ import acme.roles.Inventor;
 public class InventorToolkitListService implements  AbstractListService<Inventor,Toolkit>{
 	
 	@Autowired
-	InventorToolkitRepository repository;
+	protected InventorToolkitRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -41,7 +41,7 @@ public class InventorToolkitListService implements  AbstractListService<Inventor
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model,"title","description","assemblyNotes","link","inventor_id","artifactToolkits");
+		request.unbind(entity, model,"title","description","assemblyNotes","link");
 		
 	}
 	
