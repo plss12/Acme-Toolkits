@@ -1,0 +1,33 @@
+# i18n-e2.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title = Panel de Administración
+administrator.dashboard.form.label.totalNumberOfComponents = Número Total de Componentes
+administrator.dashboard.form.label.averageRetailPriceOfComponents = Precio Medio de Componentes
+administrator.dashboard.form.label.deviationRetailPriceOfComponents = Desviación del Precio de Componentes
+administrator.dashboard.form.label.minimumRetailPriceOfComponents = Precio Mínimo de Componentes
+administrator.dashboard.form.label.maximumRetailPriceOfComponents = Precio Máximo de Componentes
+administrator.dashboard.form.technology.beta = Beta
+administrator.dashboard.form.technology.alpha = Alpha
+administrator.dashboard.form.technology.zeta = Zeta
+administrator.dashboard.form.technology.gamma = Gamma
+administrator.dashboard.form.label.totalNumberOfTools = Número Total de Herramientas
+administrator.dashboard.form.label.averageRetailPriceOfTools = Precio Medio de Herramientas
+administrator.dashboard.form.label.deviationRetailPriceOfTools = Desviación del Precio de Herramientas
+administrator.dashboard.form.label.minimumRetailPriceOfTools = Precio Mínimo de Herramientas
+administrator.dashboard.form.label.maximumRetailPriceOfTools = Precio Máximo de Herramientas
+administrator.dashboard.form.status.PROPOSED = PROPUESTO
+administrator.dashboard.form.status.ACCEPTED = ACEPTADO
+administrator.dashboard.form.status.DENIED = DENEGADO
+administrator.dashboard.form.label.totalNumberOfPatronages = Número Total de Patrocinios
+administrator.dashboard.form.label.averageBudgetOfPatronages = Presupuesto Medio de Patrocinios
+administrator.dashboard.form.label.deviationBudgetOfPatronages = Desviación del Presupuesto de Patrocinios
+administrator.dashboard.form.label.maximumBudgetOfPatronages = Presupuesto Máximo de Patrocinios
+administrator.dashboard.form.label.minimumBudgetOfPatronages = Presupuesto Mínimo de Patrocinios

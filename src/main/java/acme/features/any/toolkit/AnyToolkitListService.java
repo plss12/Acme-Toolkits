@@ -36,27 +36,14 @@ public class AnyToolkitListService implements AbstractListService<Any, Toolkit>{
 		
 		request.unbind(entity, model, "title", "description", "assemblyNotes", "link", "artifactToolkits");
 	}
-	
-	/*@Override 
-	public Collection<Toolkit> findToolkitsByArtifact(final Request<Toolkit> request, final ArtifactToolkit artifactToolkit) {
-		assert request != null;
-		assert artifactToolkit != null;
-		
-		Collection<Toolkit> result;
-		final ArtifactToolkit artifact = artifactToolkit;
-		
-		result = this.repository.findAllToolkitsWithComponentOrTool(artifact);
-		
-		return result;		
-	}*/
 
 	@Override
 	public Collection<Toolkit> findMany(final Request<Toolkit> request) {
 		assert request != null;
 		
 		Collection<Toolkit> result;
-		
-		result = this.repository.findAllToolkits();
+		final boolean b = true;
+		result = this.repository.findAllToolkits(b);
 		
 		return result;
 	}

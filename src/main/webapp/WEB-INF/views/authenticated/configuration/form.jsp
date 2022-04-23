@@ -16,6 +16,7 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="authenticated.system_configuration.form.acceptedCurrencies" path="acceptedCurrencies"/>
-	<acme:input-textbox code="authenticated.system_configuration.form.defaultCurrency" path="defaultCurrency"/>
+	<acme:input-textbox code="authenticated.system-configuration.form.label.acceptedCurrencies" path="acceptedCurrencies"/>
+	<acme:input-textbox code="authenticated.system-configuration.form.label.defaultCurrency" path="defaultCurrency"/>
+	<acme:button code="authenticated.system-configuration.form.button.money-exchange" action="/authenticated/money-exchange/perform"/>
 </acme:form>

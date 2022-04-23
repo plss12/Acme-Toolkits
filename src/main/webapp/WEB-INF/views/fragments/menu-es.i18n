@@ -26,6 +26,7 @@ master.menu.anonymous.item.list-chirps = Chirps de este mes
 master.menu.any = Cualquiera
 master.menu.any.list.user-accounts = Listar cuentas
 master.menu.any.chirp.list = Chirps de este mes
+master.menu.any.toolkit.list = Lista de Toolkits
 master.menu.any.user-accounts.list = Cuentas de usuarios
 master.menu.any.artifact.list = Herramientas y componentes
 
@@ -41,16 +42,18 @@ master.menu.inventor.patronage.list = Patrocionios del Inventor
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
-master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.dashboard = Panel de Administración
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
+master.menu.administrator.systemConfiguration = Configuracion del Sistema
 master.menu.administrator.shut-down = Parar el sistema
 
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
-master.menu.patron.patronage_report.list = Informe de Patrimonio
+master.menu.patron.patronage_report.list = Informe de Patrocinio
+master.menu.patron.dashboard = Panel de Patron
 
 # master.menu.provider ########################################################
 

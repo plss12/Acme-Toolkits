@@ -10,5 +10,7 @@
 
 master.menu.authenticated.system-configuration.show = Configuración del sistema
 
-authenticated.system_configuration.form.acceptedCurrencies = Monedas aceptadas
-authenticated.system_configuration.form.defaultCurrency = Moneda por defecto
+
+authenticated.system-configuration.form.label.acceptedCurrencies = Monedas aceptadas
+authenticated.system-configuration.form.label.defaultCurrency = Moneda por defecto
+authenticated.system-configuration.form.button.money-exchange = Intercambio de moneda

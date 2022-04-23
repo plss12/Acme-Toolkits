@@ -52,12 +52,9 @@ public class Artifact extends AbstractEntity{
 	
 	@URL
 	protected String link;
-
-	// Relationships ---------------------------------
 	
-    @Valid
-    @ManyToOne
-    protected ArtifactToolkit artifactToolkit;
+	@NotNull
+	protected Boolean isPublic;
     
     @Valid
     @ManyToOne

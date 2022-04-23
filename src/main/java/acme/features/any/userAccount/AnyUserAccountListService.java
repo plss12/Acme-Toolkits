@@ -30,7 +30,8 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 	public List<UserAccount> findMany(final Request<UserAccount> request) {
 		assert request != null;
 		List<UserAccount> allAccounts;
-		allAccounts = this.anyUserRepo.findAllUserAccountsAllowed("anonymous", "administrator");
+		final Boolean enabled = true;
+		allAccounts = this.anyUserRepo.findAllUserAccountsAllowed("anonymous", "administrator",enabled);
 		return allAccounts;
 	}
 

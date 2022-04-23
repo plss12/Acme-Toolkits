@@ -4,6 +4,7 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="${readonly}">
+	<acme:input-moment code="authenticated.announcement.form.label.moment" path="moment"/>
 	<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
 	<acme:input-select code="authenticated.announcement.form.label.status" path="status">
 		<acme:input-option code="INFO" value="INFO" selected="${status == 'INFO'}"/>

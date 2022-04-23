@@ -25,6 +25,7 @@ master.menu.anonymous.favourite-link = Favourite link
 master.menu.any = Any
 master.menu.any.list.user-accounts = List User Accounts
 master.menu.any.chirp.list = Chirps of this month
+master.menu.any.toolkit.list = List of Toolkits
 master.menu.any.user-accounts.list = User's Accounts-
 master.menu.any.artifact.list = Tools & Components
 
@@ -34,8 +35,8 @@ master.menu.authenticated.announcement.list-recent = Recent Announcements
 
 # master.menu.inventor ########################################################
 master.menu.inventor = Inventor
-master.menu.inventor.artifact.list = Inventor's Artifacts
-master.menu.inventor.patronage.list = Inventor's Patronages
+master.menu.inventor.artifact.list = Inventor Artifacts
+master.menu.inventor.patronage.list = Inventor Patronages
 
 # master.menu.administrator ###################################################
 
@@ -44,12 +45,14 @@ master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
+master.menu.administrator.systemConfiguration = System Configuration
 master.menu.administrator.shut-down = Shut down
 
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
 master.menu.patron.patronage_report.list = Patronage Reports
+master.menu.patron.dashboard = Patron Dashboard
 
 # master.menu.provider ########################################################
 

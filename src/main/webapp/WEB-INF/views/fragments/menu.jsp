@@ -18,11 +18,12 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		
+    
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
 			<acme:menu-suboption code="master.menu.any.artifact.list" action="/any/artifact/list"/>
+      		<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="47549618Q: Navarro Rodriguez, Julio" action="https://vandal.elespanol.com/"/>
@@ -35,9 +36,12 @@
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.systemConfiguration" action="/administrator/configuration/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
@@ -52,6 +56,7 @@
 		
 		<acme:menu-option code="master.menu.patron.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.patronages" action="/patron/patronage/list-mine"/>
+			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/patron-dashboard/show"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
@@ -60,6 +65,7 @@
 			<acme:menu-suboption code="master.menu.any.chirp.list" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.user-accounts.list" action="/any/user-account/list"/>
 			<acme:menu-suboption code="master.menu.any.artifact.list" action="/any/artifact/list"/>
+      <acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.authenticated.system-configuration.show" action="/authenticated/configuration/show"/>
 		</acme:menu-option>

@@ -5,3 +5,4 @@ user-account-inventor-01,true,"UserIdentity{name: 'Nikola', surname: 'Tesla', em
 user-account-inventor-02,true,"UserIdentity{name: 'Alexander G.', surname: 'Bell', email: 'agraham@acme.com'}",inventor2,inventor2
 user-account-patron-01,true,"UserIdentity{name: 'Thomas', surname: 'Edison', email: 'tommyedison@acme.com'}",patron1,patron1
 user-account-patron-02,true,"UserIdentity{name: 'Henry', surname: 'Ford', email: 'fordautomobile@acme.com'}",patron2,patron2
+user-account-patron03,false,"UserIdentity{name: 'Test', surname: 'Tested', email: 'testingperson@acme.com'}",patron3,patron3
