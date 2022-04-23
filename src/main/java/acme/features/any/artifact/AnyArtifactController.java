@@ -20,6 +20,8 @@ public class AnyArtifactController extends AbstractController<Any, Artifact> {
 	@Autowired
 	protected AnyArtifactShowService		showService;
 	
+	@Autowired
+	protected AnyArtifactListToolkitService		listToolkitService;
 	// Constructors -----------------------------------------------------------
 
 
@@ -27,5 +29,6 @@ public class AnyArtifactController extends AbstractController<Any, Artifact> {
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("list-toolkit","list", this.listToolkitService);
 	}
 }

@@ -20,5 +20,5 @@
 	<acme:input-textarea code="any.toolkit.form.label.description" path="description"/>
 	<acme:input-textarea code="any.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-url code="any.toolkit.form,label.link" path="link"/>
-	<acme:button code="any.toolkit.form.button.artifact" action="/any/artifact/list-artifact-toolkit?id=${toolkitId}"/>		
+	<acme:button code="any.toolkit.form.button.artifact" action="/any/artifact/list-toolkit?masterId=${id}"/>		
 </acme:form>
