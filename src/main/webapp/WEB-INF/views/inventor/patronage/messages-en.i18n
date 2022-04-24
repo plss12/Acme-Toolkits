@@ -25,6 +25,6 @@ authenticated.patronage.form.label.legal_stuff = Legal Stuff
 authenticated.patronage.form.label.link = Link
 authenticated.patronage.form.label.status = Status
 authenticated.patronage.form.label.company = Patron's Company
-authenticated.patronage.form.label.link = Patron's Link
+authenticated.patronage.form.label.patron.link = Patron's Link
 authenticated.patronage.form.label.statement = Patron's Statement
 authenticated.patronage.form.button.patronageReport = Patronage Reports

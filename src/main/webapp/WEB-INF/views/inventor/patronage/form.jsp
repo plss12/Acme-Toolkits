@@ -24,7 +24,7 @@
 	<acme:input-textbox code="authenticated.patronage.form.label.link" path="link"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.status" path="status"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.company" path="patron.company"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.link" path="patron.link"/>
+	<acme:input-textbox code="authenticated.patronage.form.label.patron.link" path="patron.link"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.statement" path="patron.statement"/>
 	
 	<acme:button code="authenticated.patronage.form.button.patronageReport" action="/inventor/patronage-report/list?masterId=${id}"/>

@@ -1,6 +1,7 @@
 package acme.testing.inventor.artifact;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -36,8 +37,15 @@ public class InventorArtifactListTest extends TestHarness {
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("link", link);
 						
-		super.signOut();		
-		
+		super.signOut();			
+	}
+	
+	@Test
+	@Order(20)
+	public void negativeTest() {
+		super.signIn("inventor1", "inventor1");
+		super.navigate("/inventor/artifact/show", "id=-1");
+		super.checkErrorsExist();
 	}
 	
 }

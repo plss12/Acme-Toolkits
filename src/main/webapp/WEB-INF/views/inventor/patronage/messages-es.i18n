@@ -25,6 +25,6 @@ authenticated.patronage.form.label.legal_stuff = Cosas legales
 authenticated.patronage.form.label.link = Enlace
 authenticated.patronage.form.label.status = Estado
 authenticated.patronage.form.label.company = Compañía del Patrón
-authenticated.patronage.form.label.link = Enlace del Patrón
+authenticated.patronage.form.label.patron.link = Enlace del Patrón
 authenticated.patronage.form.label.statement = Declaración del Patrón
 authenticated.patronage.form.button.patronageReport = Reportes de Patrocinio

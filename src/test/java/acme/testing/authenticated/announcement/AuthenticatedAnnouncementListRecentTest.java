@@ -1,6 +1,7 @@
 package acme.testing.authenticated.announcement;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -34,5 +35,11 @@ public class AuthenticatedAnnouncementListRecentTest extends TestHarness {
 		super.checkInputBoxHasValue("body", body);
 		super.checkInputBoxHasValue("link", link);
 		super.signOut();
-	}	
+	}
+	@Test
+	@Order(20)
+	public void negativeTest() {
+		super.navigate("/authenticated/announcement/show", "id=-1");
+		super.checkErrorsExist();			
+	}
 }
