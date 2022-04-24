@@ -18,7 +18,7 @@ public class AnyChirpListRecentTest extends TestHarness {
 		//Testing list
 		super.clickOnMenu("Authenticated", "Chirps of this month");
 		super.checkListingExists();
-		super.sortListing(0, "asc");
+		super.sortListing(0, "desc");
 		
 		super.checkColumnHasValue(recordIndex, 0, creationMoment);
 		super.checkColumnHasValue(recordIndex, 1, title);

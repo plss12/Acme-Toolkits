@@ -39,8 +39,8 @@ public class AnyArtifactTest extends TestHarness{
 		
 		@Test
 		@Order(20)
-		public void negativeTest2() {
-			super.navigate("/any/artifact/show", "id=1");
+		public void negativeTest() {
+			super.navigate("/any/artifact/show", "id=-1");
 			super.checkErrorsExist();			
 		}	
 	}

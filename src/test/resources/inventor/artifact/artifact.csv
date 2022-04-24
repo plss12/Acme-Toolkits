@@ -1,3 +1,4 @@
 record-index,artifact-type,name,code,technology,description,retail-price,link
-1,TOOL,Metro,FRS-097-T,Messurer,This is a sample TOOL,EUR 10.00,https://www.google.es
+2,TOOL,Metro,FRS-097-T,Messurer,This is a sample TOOL,EUR 10.00,https://www.google.es
 0,COMPONENT,Ruler,FRS-098-T,Messurer,This is a sample COMPONENT,EUR 12.00,https://www.google.es
+1,TOOL,Metro,FRS-100-T,Messurer,This is a sample TOOL,USD 10.00,https://www.google.es
