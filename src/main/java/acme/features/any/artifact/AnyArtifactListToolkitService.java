@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Artifact;
+import acme.entities.Toolkit;
+import acme.features.any.toolkit.AnyToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -18,6 +20,9 @@ public class AnyArtifactListToolkitService implements AbstractListService<Any, A
 		@Autowired
 		protected AnyArtifactRepository repo;
 		
+		@Autowired
+		protected AnyToolkitRepository toolkitRepo;
+		
 		
 	// AbstractListService<Any, Artifact> interface --------------
 
@@ -25,7 +30,16 @@ public class AnyArtifactListToolkitService implements AbstractListService<Any, A
 	public boolean authorise(final Request<Artifact> request) {
 		assert request != null;
 		
-		return true;
+		boolean result;
+		int masterId;
+		Toolkit toolkit;
+		
+		masterId = request.getModel().getInteger("masterId");
+		toolkit = this.toolkitRepo.findOneToolkitById(masterId);
+		
+		result = (toolkit != null);
+		
+		return result;
 	}
 	
 
