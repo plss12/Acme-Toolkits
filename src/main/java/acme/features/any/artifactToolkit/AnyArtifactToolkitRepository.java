@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.Artifact;
 import acme.entities.ArtifactToolkit;
+import acme.entities.Toolkit;
 import acme.framework.repositories.AbstractRepository;
+import acme.roles.Inventor;
 
 @Repository
 public interface AnyArtifactToolkitRepository extends AbstractRepository{
@@ -26,4 +28,10 @@ public interface AnyArtifactToolkitRepository extends AbstractRepository{
 	
 	@Query("select at from ArtifactToolkit at where at.toolkit.id = :id")
 	Collection<ArtifactToolkit> findArtifactsToolkitsByToolkit(int id);
+	
+	@Query("select t from Toolkit t where t.id=:id")
+	Toolkit findOneToolkitById(int id);
+	
+	@Query("select i from Inventor i where i.userAccount.id = :id")
+	Inventor findInventorByUserAccountId(int id);
 }
