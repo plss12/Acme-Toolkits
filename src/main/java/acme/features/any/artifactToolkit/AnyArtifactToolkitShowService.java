@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.ArtifactToolkit;
-import acme.features.any.artifact.AnyArtifactRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -14,12 +13,30 @@ import acme.framework.services.AbstractShowService;
 public class AnyArtifactToolkitShowService implements AbstractShowService<Any,ArtifactToolkit> {
 	
 	@Autowired
-	protected AnyArtifactRepository repo;
+	protected AnyArtifactToolkitRepository repo;
 
 	@Override
 	public boolean authorise(final Request<ArtifactToolkit> request) {
 		assert request != null;
-		return true;
+		
+		int id;
+		final ArtifactToolkit atifactToolkit;
+		
+		id = request.getModel().getInteger("id");
+		atifactToolkit = this.repo.findArtifactToolkitById(id);
+		
+		/* Somos conscientes de que sería posible acceder a los artefactos de un toolkit público que no es del inventor
+		 * desde la vista de toolkits de inventor, pero esto tiene sentido porque desde la vista de any (authenticated) toolkit 
+		 * es posible mostrarlos también, no es ninguna brecha de seguridad sino un ahorro de código razonable.  */
+		
+		if(atifactToolkit == null) {
+			return false;
+		}else if(Boolean.TRUE.equals(atifactToolkit.getToolkit().getIsPublic())) {
+			return true;
+		}else if(request.isPrincipal(atifactToolkit.getToolkit().getInventor())){
+			return true;
+		}
+		return false;
 	}
 
 	@Override
