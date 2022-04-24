@@ -292,8 +292,9 @@
 					<tr>
 						<jstl:set value="${averageBudgetOfPatronages.get(key)}" var="amount"/>
 						<jstl:if test="${amount>0}">
-							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key}"/></th>
+							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key.first}"/></th>
 							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
 						</jstl:if>
 					</tr>
 				</jstl:forEach>
@@ -318,8 +319,9 @@
 					<tr>
 						<jstl:set value="${deviationBudgetOfPatronages.get(key)}" var="amount"/>
 						<jstl:if test="${amount>=0}">
-							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key}"/></th>
+							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key.first}"/></th>
 							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
 						</jstl:if>
 					</tr>
 				</jstl:forEach>
@@ -344,8 +346,9 @@
 					<tr>
 						<jstl:set value="${minimumBudgetOfPatronages.get(key)}" var="amount"/>
 						<jstl:if test="${amount>0}">
-							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key}"/></th>
+							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key.first}"/></th>
 							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
 						</jstl:if>
 					</tr>
 				</jstl:forEach>
@@ -370,8 +373,9 @@
 					<tr>
 						<jstl:set value="${maximumBudgetOfPatronages.get(key)}" var="amount"/>
 						<jstl:if test="${amount>0}">
-							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key}"/></th>
+							<th scope="row" style="width: 10%"><acme:message code="administrator.dashboard.form.status.${key.first}"/></th>
 							<td><acme:print value="${amount}"/></td>
+							<td><acme:print value="${key.second}"/></td>
 						</jstl:if>
 					</tr>
 				</jstl:forEach>

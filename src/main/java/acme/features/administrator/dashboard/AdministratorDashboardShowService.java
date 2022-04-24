@@ -97,10 +97,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		totalNumberOfPatronagesGrouped = this.repository.totalNumberOfPatronages();
 		
 		final EnumMap<PatronageStatus,Long> totalNumberOfPatronages = new EnumMap<>(PatronageStatus.class);
-		final EnumMap<PatronageStatus,Double> averageBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
-		final EnumMap<PatronageStatus,Double> deviationBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
-		final EnumMap<PatronageStatus,Double> minimumBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
-		final EnumMap<PatronageStatus,Double> maximumBudgetOfPatronages = new EnumMap<>(PatronageStatus.class);
+		final Map<Pair<PatronageStatus,String>,Double> averageBudgetOfPatronages = new HashMap<Pair<PatronageStatus,String>, Double>();
+		final Map<Pair<PatronageStatus,String>,Double> deviationBudgetOfPatronages = new HashMap<Pair<PatronageStatus,String>, Double>();
+		final Map<Pair<PatronageStatus,String>,Double> minimumBudgetOfPatronages = new HashMap<Pair<PatronageStatus,String>, Double>();
+		final Map<Pair<PatronageStatus,String>,Double> maximumBudgetOfPatronages = new HashMap<Pair<PatronageStatus,String>, Double>();
 		
 		final List<Object[]> statsOfPatronages;
 		statsOfPatronages = this.repository.statsOfPatronages();
@@ -118,11 +118,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			final Double min = (Double) stats[2];
 			final Double max = (Double) stats[3];
 			final Double stddev = (Double) stats[4];
+			final String currency = (String) stats[5];
 			
-			averageBudgetOfPatronages.put(status, avg);
-			deviationBudgetOfPatronages.put(status, stddev);
-			minimumBudgetOfPatronages.put(status, min);
-			maximumBudgetOfPatronages.put(status, max);
+			final Pair<PatronageStatus, String> pair = Pair.of(status, currency);
+			averageBudgetOfPatronages.put(pair, avg);
+			deviationBudgetOfPatronages.put(pair, stddev);
+			minimumBudgetOfPatronages.put(pair, min);
+			maximumBudgetOfPatronages.put(pair, max);
 		}
 		
 		//Construct

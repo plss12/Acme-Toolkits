@@ -20,8 +20,6 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 	public boolean authorise(final Request<Configuration> request) {
 		assert request != null;
 		boolean result;
-//		final int id;
-//		id = request.getModel().getInteger("id");
 		Configuration configuration;
 		configuration = this.authConfRepo.findOneConf();
 		result = configuration != null;

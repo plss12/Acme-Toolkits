@@ -27,7 +27,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select a.retailPrice.currency,avg(a.retailPrice.amount),min(a.retailPrice.amount),max(a.retailPrice.amount),stddev(a.retailPrice.amount) from Artifact a where a.artifactType = acme.entities.ArtifactType.TOOL group by a.retailPrice.currency")
 	List<Object[]> statsOfTools();
 	
-	@Query("select p.status,avg(p.budget.amount),min(p.budget.amount),max(p.budget.amount),stddev(p.budget.amount) from Patronage p group by p.status")
+	@Query("select p.status,avg(p.budget.amount),min(p.budget.amount),max(p.budget.amount),stddev(p.budget.amount),p.budget.currency from Patronage p group by p.status")
 	List<Object[]> statsOfPatronages();
 
 }
