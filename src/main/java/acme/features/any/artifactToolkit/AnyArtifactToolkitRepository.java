@@ -1,4 +1,4 @@
-package acme.features.any.artifact;
+package acme.features.any.artifactToolkit;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.entities.ArtifactToolkit;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnyArtifactRepository extends AbstractRepository{
+public interface AnyArtifactToolkitRepository extends AbstractRepository{
 	
 	@Query("select a from Artifact a")
 	Collection<Artifact> findAllArtifacts();
