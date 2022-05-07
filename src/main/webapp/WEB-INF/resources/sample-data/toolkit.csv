@@ -1,3 +1,3 @@
 key,code,title,description,assembly-notes,link,is-public,key:inventor
-toolkit-01,RFD-007-W,Master toolkit,This is a toolkit that contains all the artifacts,This is a sample assembly notes,https://www.google.es,True,inventor-01
-toolkit-02,RFD-008-W,Master toolkit not published,This is a toolkit that contains all the artifacts,This is a sample assembly notes,https://www.google.es,False,inventor-01
+toolkit-01,RFD-007-W,Master toolkit,This is a toolkit that contains all the artifacts,This is a sample assembly notes,https://www.google.es,true,inventor-01
+toolkit-02,RFD-008-W,Master toolkit not published,This is a toolkit that contains all the artifacts,This is a sample assembly notes,https://www.google.es,false,inventor-01

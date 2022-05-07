@@ -1,4 +1,4 @@
 key,artifact-type,name,code,technology,description,retail-price,link,is-public,key:inventor
-artifact-01,TOOL,Metro,FRS-097-T,Messurer,This is a sample TOOL,EUR 10.00,https://www.google.es,True,inventor-01
-artifact-02,COMPONENT,Ruler,FRS-098-T,Messurer,This is a sample COMPONENT,EUR 12.00,https://www.google.es,False,inventor-01
-artifact-03,TOOL,Metro,FRS-100-T,Messurer,This is a sample TOOL,USD 10.00,https://www.google.es,True,inventor-01
+artifact-01,TOOL,Metro,FRS-097-T,Messurer,This is a sample TOOL,EUR 10.00,https://www.google.es,true,inventor-01
+artifact-02,COMPONENT,Ruler,FRS-098-T,Messurer,This is a sample COMPONENT,EUR 12.00,https://www.google.es,false,inventor-01
+artifact-03,TOOL,Metro,FRS-100-T,Messurer,This is a sample TOOL,USD 10.00,https://www.google.es,true,inventor-01
