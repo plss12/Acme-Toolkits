@@ -31,7 +31,7 @@ public class AnyArtifactToolkitShowService implements AbstractShowService<Any,Ar
 		
 		if(atifactToolkit == null) {
 			return false;
-		}else if(Boolean.TRUE.equals(atifactToolkit.getToolkit().getIsPublic())) {
+		}else if(Boolean.TRUE.equals(atifactToolkit.getToolkit().isPublic())) {
 			return true;
 		}else if(request.isPrincipal(atifactToolkit.getToolkit().getInventor())){
 			return true;

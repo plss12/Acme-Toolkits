@@ -39,7 +39,7 @@ public class AnyArtifactListToolkitService implements AbstractListService<Any, A
 		
 		if(toolkit == null) {
 			return false;
-		}else if(Boolean.TRUE.equals(toolkit.getIsPublic())) {
+		}else if(Boolean.TRUE.equals(toolkit.isPublic())) {
 			return true;
 		}else if(request.isPrincipal(toolkit.getInventor())){
 			return true;

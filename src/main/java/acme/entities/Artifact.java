@@ -54,7 +54,7 @@ public class Artifact extends AbstractEntity{
 	protected String link;
 	
 	@NotNull
-	protected Boolean isPublic;
+	protected boolean isPublic;
     
     @Valid
     @ManyToOne

@@ -27,7 +27,7 @@ public class AnyArtifactShowService implements AbstractShowService<Any, Artifact
 		Artifact artifact;
 		artifact = this.repo.findArtifactById(id);
 		
-		result = (artifact != null && artifact.getIsPublic());
+		result = (artifact != null && artifact.isPublic());
 		return result;
 	}
 
