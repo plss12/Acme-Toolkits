@@ -1,6 +1,7 @@
 package acme.features.administrator.systemConfiguration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.Configuration;
 import acme.framework.components.models.Model;
@@ -9,6 +10,7 @@ import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractUpdateService;
 
+@Service
 public class AdministratorSystemConfigurationUpdateService implements AbstractUpdateService<Administrator, Configuration>{
 
 	
@@ -56,16 +58,11 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		if(!errors.hasErrors("weakSpamTrheshold")) {
-			errors.state(request, entity.getWeakSpamTrheshold() == 0 || entity.getWeakSpamTrheshold() == 100, "weakSpamTrheshold", 
-				"administrator.system_configuration.form.error.bad-weak-spam-trheshold");
-		}
 		
-		if(!errors.hasErrors("strongSpamTrheshold")) {
-			errors.state(request, entity.getStrongSpamTrheshold() == 0 || entity.getStrongSpamTrheshold() == 100, "strongSpamTrheshold", 
-				"administrator.system_configuration.form.error.bad-strong-spam-trheshold");
+		if(!errors.hasErrors("defaultCurrency")) {
+			errors.state(request, entity.getAcceptedCurrencies().contains(entity.getDefaultCurrency()), "defaultCurrency", 
+				"administrator.system_configuration.form.error.bad-default-currency");
 		}
-		
 	}
 
 	@Override
