@@ -10,9 +10,15 @@
 
 master.menu.authenticated.system-configuration.show = Configuración del sistema
 
+administrator.system_configuration.form.button.edit = Editar
+administrator.system_configuration.form.button.update = Actualizar
+
 administrator.system_configuration.form.acceptedCurrencies = Monedas Aceptadas
 administrator.system_configuration.form.defaultCurrency = Divisa por Defecto
 administrator.system_configuration.form.weakSpamThreshold = Límite de Palabras de Spam Débiles
 administrator.system_configuration.form.weakSpam = Palabras de Spam Débiles
 administrator.system_configuration.form.strongSpamThreshold = Límite de Palabras de Spam Fuertes
 administrator.system_configuration.form.strongSpam = Palabras de Spam Fuertes
+
+administrator.system_configuration.form.error.bad-weak-spam-trheshold = Límite de palabras de spam débiles está fuera del rango permitido (1-100)
+administrator.system_configuration.form.error.bad-strong-spam-trheshold = Límite de palabras de spam fuertes está fuera del rango permitido (1-100)

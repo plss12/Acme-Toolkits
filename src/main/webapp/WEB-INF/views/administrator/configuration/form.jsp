@@ -16,10 +16,19 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="administrator.system_configuration.form.acceptedCurrencies" path="acceptedCurrencies"/>
-	<acme:input-textbox code="administrator.system_configuration.form.defaultCurrency" path="defaultCurrency"/>
-	<acme:input-textbox code="administrator.system_configuration.form.weakSpamThreshold" path="weakSpamTrheshold"/>
+	<acme:input-money code="administrator.system_configuration.form.acceptedCurrencies" path="acceptedCurrencies"/>
+	<acme:input-money code="administrator.system_configuration.form.defaultCurrency" path="defaultCurrency"/>
+	<acme:input-integer code="administrator.system_configuration.form.weakSpamThreshold" path="weakSpamTrheshold"/>
 	<acme:input-textbox code="administrator.system_configuration.form.weakSpam" path="weakSpam"/>
-	<acme:input-textbox code="administrator.system_configuration.form.strongSpamThreshold" path="strongSpamTrheshold"/>
+	<acme:input-integer code="administrator.system_configuration.form.strongSpamThreshold" path="strongSpamTrheshold"/>
 	<acme:input-textbox code="administrator.system_configuration.form.strongSpam" path="strongSpam"/>
+	
+	<jstl:choose>	 
+		<jstl:when test="${command == 'show'}">
+			<acme:button code="administrator.system_configuration.form.button.edit" action="/administrator/configuration/update"/>			
+		</jstl:when>
+		<jstl:when test="${command == 'update'}">
+			<acme:submit code="administrator.system_configuration.form.button.update" action="/administrator/configuration/update"/>
+		</jstl:when>		
+	</jstl:choose>
 </acme:form>
