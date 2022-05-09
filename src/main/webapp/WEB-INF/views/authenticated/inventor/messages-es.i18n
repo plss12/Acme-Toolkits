@@ -1,0 +1,6 @@
+authenticated.inventor.form.label.company = Compañía
+authenticated.inventor.form.label.statement = Estado
+authenticated.inventor.form.label.link = Link
+
+authenticated.inventor.form.button.create = Crear
+authenticated.inventor.form.button.update = Actualizar
