@@ -40,7 +40,7 @@ master.menu.inventor.patronage.list = Inventor Patronages
 master.menu.inventor.toolkit.list = List of Toolkits
 
 # master.menu.administrator ###################################################
-
+master.menu.administrator.createAnnouncement = Create New Announcement
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts

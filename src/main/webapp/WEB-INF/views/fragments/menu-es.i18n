@@ -42,6 +42,7 @@ master.menu.inventor.toolkit.list = Toolkits del inventor
 
 # master.menu.administrator ###################################################
 
+master.menu.administrator.createAnnouncement = Crear Nuevo Anuncio
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de Administración
 master.menu.administrator.user-accounts = Cuentas de usuario
