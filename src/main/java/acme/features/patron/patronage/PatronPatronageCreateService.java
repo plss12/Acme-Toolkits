@@ -38,7 +38,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		
 		patron = this.repository.findOnePatronById(request.getPrincipal().getActiveRoleId());
 		result = new Patronage();
-		//result.isPublic(false);
+		result.setPublic(false);
 		result.setPatron(patron);
 		
 		final Date actualDate = new Date();		
@@ -59,7 +59,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		errors.state(request, inventor!=null, "*", "patron.patronage.form.error.invalidInventor");
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
+		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
 		
 	}
 	
@@ -76,6 +76,16 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 			errors.state(request, existing==null, "code", "patron.patronage.form.error.duplicated");
 		}
 		
+		if(!errors.hasErrors("startDate")) {
+			Calendar calendar;
+			final Date minimunDate;
+			
+			calendar = new GregorianCalendar();
+			calendar.add(Calendar.MONTH, 1);
+			minimunDate = calendar.getTime();
+			errors.state(request, entity.getStartDate().after(minimunDate), "startDate", "patron.patronage.form.error.too-close-start");
+		}
+		
 		if(!errors.hasErrors("budget")) {
 			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative");
 		}
@@ -85,8 +95,11 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 			Date minimunDate;
 			
 			calendar = new GregorianCalendar();
-			calendar.add(Calendar.DAY_OF_MONTH, 62);
+			calendar.setTime(entity.getStartDate());
+			
+			calendar.add(Calendar.MONTH, 1);
 			minimunDate = calendar.getTime();
+			
 			errors.state(request, entity.getFinishDate().after(minimunDate), "finishDate", "patron.patronage.form.error.too-close");
 		}
 		
@@ -102,7 +115,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link", "inventor.userAccount.username");
+		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link", "inventor.userAccount.username","isPublic");
 		
 	}		
 

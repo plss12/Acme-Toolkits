@@ -31,7 +31,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		id = request.getModel().getInteger("id");
 		patronage = this.repository.findPatronageById(id);
 		patron = patronage.getPatron();
-		result = request.isPrincipal(patron);
+		result = request.isPrincipal(patron)&&(!patronage.isPublic());
 		
 		return result;
 	}
@@ -44,13 +44,13 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		errors.state(request, inventor!=null, "*", "patron.patronage.form.error.invalidInventor");
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
+		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
 		
 	}
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
+		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
 		
 	}
 
@@ -77,7 +77,19 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 			Patronage existing;
 			
 			existing = this.repository.findOnePatronageByCode(entity.getCode());
-			errors.state(request, existing==null, "code", "patron.patronage.form.error.duplicated");
+			errors.state(request, existing==null||entity.getCode().equals(existing.getCode()), "code", "patron.patronage.form.error.duplicated");
+		}
+		
+		if(!errors.hasErrors("startDate")) {
+			Calendar calendar;
+			final Date minimunDate;
+			
+			calendar = new GregorianCalendar();
+			calendar.add(Calendar.MONTH, 1);
+			minimunDate = calendar.getTime();
+			
+			final Date previousDate = this.repository.findPatronageById(entity.getId()).getStartDate();
+			errors.state(request, entity.getStartDate().after(minimunDate)||(entity.getStartDate().equals(previousDate)), "startDate", "patron.patronage.form.error.too-close-start");
 		}
 		
 		if(!errors.hasErrors("budget")) {
@@ -89,8 +101,11 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 			Date minimunDate;
 			
 			calendar = new GregorianCalendar();
-			calendar.add(Calendar.DAY_OF_MONTH, 62);
+			calendar.setTime(entity.getStartDate());
+			
+			calendar.add(Calendar.MONTH, 1);
 			minimunDate = calendar.getTime();
+			
 			errors.state(request, entity.getFinishDate().after(minimunDate), "finishDate", "patron.patronage.form.error.too-close");
 		}
 		

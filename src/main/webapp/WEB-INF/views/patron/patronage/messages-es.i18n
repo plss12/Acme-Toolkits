@@ -25,6 +25,7 @@ patronage.form.label.inventor.statement = Declaración del inventor
 patronage.form.label.inventor.link = Link del inventor
 patron.patronage.form.button.patronageReport = Reportes de Patrocinio
 patron.patronage.form.label.status = Estado
+patron.patronage.form.label.isPublic = Es público
 
 patron.patronage.form.button.update = Actualizar
 patron.patronage.form.button.delete = Eliminar
@@ -33,7 +34,8 @@ patron.patronage.form.button.create = Crear
 
 patron.patronage.form.error.duplicated = Ese código ya está en uso
 patron.patronage.form.error.negative = El presupuesto debe ser positivo
-patron.patronage.form.error.too-close = La fecha es demasiado cercana (por lo menos debe durar un mes, empezando un mes después de la creación del patrocinio)
+patron.patronage.form.error.too-close = La fecha es demasiado cercana (por lo menos debe durar un mes a partir de la fecha de inicio)
 patron.patronage.form.error.status = Solo los inventores pueden aceptar/denegar patrocinios (Por favor elige PROPOSED)
 patron.patronage.form.label.inventor.username = Usuario del inventor
 patron.patronage.form.error.invalidInventor = Usuario del inventor no válido
+patron.patronage.form.error.too-close-start = Fecha de inicio inválida (debe ser al menos un mes después de hoy)
