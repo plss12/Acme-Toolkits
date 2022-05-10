@@ -15,6 +15,12 @@ public interface InventorArtifactRepository extends AbstractRepository{
 	@Query("select a from Artifact a where a.id = :id")
 	Artifact findArtifactById(int id);
 	
+	@Query("select a from Artifact a where a.code = :code")
+	Artifact findArtifactByCode(String code);
+	
+	@Query("select i from Inventor i where i.id = :id")
+	Inventor findInventorById(int id);
+	
 	@Query("select i from Inventor i where i.userAccount.id = :id")
 	Inventor findInventorByUserAccountId(int id);
 	
