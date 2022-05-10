@@ -44,6 +44,7 @@ public class Patronage extends AbstractEntity{
 		@Length(max=255)
 		protected String legalStuff;
 		
+		@NotNull
 		@Valid
 		protected Money budget;
 		
@@ -61,6 +62,7 @@ public class Patronage extends AbstractEntity{
 		// Derived attributes -----------------------------------------------------
 
 		// Relationships ----------------------------------------------------------
+		@NotNull
 		@Valid
 		@ManyToOne
 		protected Patron patron;
