@@ -22,3 +22,7 @@
 	<acme:list-column code="patron.patronage.list.label.legal_stuff" path="legalStuff"/>
 	<acme:list-column code="patron.patronage.list.label.status" path="status"/>	
 </acme:list>
+
+<jstl:if test="${command == 'list-mine'}">
+	<acme:button code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
+</jstl:if>	
