@@ -47,7 +47,7 @@ public class InventorArtifactUpdateService implements AbstractUpdateService<Inve
 		id = request.getModel().getInteger("id");
 		result = this.repository.findArtifactById(id);
 		
-		return result;
+		return result; 
 	}
 
 	@Override
