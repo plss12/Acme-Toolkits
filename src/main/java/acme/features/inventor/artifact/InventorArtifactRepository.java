@@ -26,4 +26,7 @@ public interface InventorArtifactRepository extends AbstractRepository{
 	
 	@Query("select a from Artifact a where a.inventor.id = :id")
 	Collection<Artifact> findArtifactsByInventorId(int id);
+	
+	@Query("SELECT sc.acceptedCurrencies from Configuration sc")
+	String findAllAcceptedCurrencies();
 }

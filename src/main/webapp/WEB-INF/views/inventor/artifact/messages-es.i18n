@@ -25,6 +25,7 @@ inventor.artifact.form.label.technology = Tecnología
 inventor.artifact.form.label.description = Descripción
 inventor.artifact.form.label.retail_price = Precio
 inventor.artifact.form.label.link = Enlace
+inventor.artifact.form.label.inventor.username = Inventor
 inventor.artifact.form.button.create = Crear
 inventor.artifact.form.button.update = Actualizar
 inventor.artifact.form.button.delete = Borrar
@@ -32,3 +33,4 @@ inventor.artifact.form.button.publish = Publicar
 
 inventor.artifact.form.error.duplicated_code = Otro artefacto tiene este código
 inventor.artifact.form.error.negative = El precio no puede ser negativo
+inventor.artifact.form.error.noAcceptedCurrency = Esta moneda no esta aceptada

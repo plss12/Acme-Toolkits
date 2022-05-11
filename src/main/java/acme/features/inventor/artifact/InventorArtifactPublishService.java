@@ -1,5 +1,8 @@
 package acme.features.inventor.artifact;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -64,11 +67,23 @@ public class InventorArtifactPublishService implements AbstractUpdateService<Inv
 			Artifact otherArtifact;
 			
 			otherArtifact=this.repository.findArtifactByCode(entity.getCode());
-			errors.state(request, otherArtifact == null, "code", "inventor.artifact.form.error.duplicated_code");
+			errors.state(request, otherArtifact == null || otherArtifact.getId()==entity.getId(), "code", "inventor.artifact.form.error.duplicated_code");
 		}
 		
 		if(!errors.hasErrors("retailPrice")) {
 			errors.state(request, entity.getRetailPrice().getAmount() > 0, "budget", "inventor.artifact.form.error.negative");
+		}
+		
+		if(!errors.hasErrors("retailPrice")) {
+			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.artifact.form.error.negative");
+			
+			final List<String> currencies= new ArrayList<String>();
+			final String[] acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
+			for (final String currency : acceptedCurrencies){
+			    currencies.add(currency);
+			    }
+			
+			errors.state(request, currencies.contains(entity.getRetailPrice().getCurrency()) , "retailPrice", "inventor.artifact.form.error.noAcceptedCurrency");
 		}
 	}
 

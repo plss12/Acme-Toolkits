@@ -18,8 +18,8 @@
 <acme:form>
 
 	<acme:input-select code="inventor.artifact.form.label.artifact_type" path="artifactType">
-		<acme:input-option code="component" value="COMPONENT" selected="${artifactType == 'COMPONENT'}"/>
-		<acme:input-option code="tool" value="TOOL" selected="${artifactType == 'TOOL' }"/>
+		<acme:input-option code="Component" value="COMPONENT" selected="${artifactType == 'COMPONENT'}"/>
+		<acme:input-option code="Tool" value="TOOL" selected="${artifactType == 'TOOL' }"/>
 	</acme:input-select>
 	<acme:input-textbox code="inventor.artifact.form.label.name" path="name"/>		
 	<acme:input-textbox code="inventor.artifact.form.label.code" path="code"/>	
@@ -27,8 +27,9 @@
 	<acme:input-textbox code="inventor.artifact.form.label.description" path="description"/>	
 	<acme:input-money code="inventor.artifact.form.label.retail_price" path="retailPrice"/>
 	<acme:input-textbox code="inventor.artifact.form.label.link" path="link"/>	
+	<acme:input-textbox code="inventor.artifact.form.label.inventor.username" path="inventor.userAccount.username" readonly="true"/>	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')}">		
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')  && isPublic==false}">		
 				<acme:submit code="inventor.artifact.form.button.update" action="/inventor/artifact/update"/>
 				<acme:submit code="inventor.artifact.form.button.delete" action="/inventor/artifact/delete"/>
 				<acme:submit code="inventor.artifact.form.button.publish" action="/inventor/artifact/publish"/>
