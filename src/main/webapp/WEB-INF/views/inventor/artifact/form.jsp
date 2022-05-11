@@ -29,7 +29,7 @@
 	<acme:input-textbox code="inventor.artifact.form.label.link" path="link"/>	
 	<acme:input-textbox code="inventor.artifact.form.label.inventor.username" path="inventor.userAccount.username" readonly="true"/>	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')  && isPublic==false}">		
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && !isPublic}">
 				<acme:submit code="inventor.artifact.form.button.update" action="/inventor/artifact/update"/>
 				<acme:submit code="inventor.artifact.form.button.delete" action="/inventor/artifact/delete"/>
 				<acme:submit code="inventor.artifact.form.button.publish" action="/inventor/artifact/publish"/>
