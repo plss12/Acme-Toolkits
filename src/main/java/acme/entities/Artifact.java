@@ -37,6 +37,7 @@ public class Artifact extends AbstractEntity{
 	
 	@Column(unique = true)
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
+	@NotBlank
 	protected String code;
 	
 	@NotBlank
@@ -48,6 +49,7 @@ public class Artifact extends AbstractEntity{
 	protected String description;
 	
 	@Valid
+	@NotNull
 	protected Money retailPrice;
 	
 	@URL
@@ -57,6 +59,7 @@ public class Artifact extends AbstractEntity{
 	protected boolean isPublic;
     
     @Valid
+    @NotNull
     @ManyToOne
     protected Inventor inventor;
 }

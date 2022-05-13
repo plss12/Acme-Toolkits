@@ -71,10 +71,6 @@ public class InventorArtifactPublishService implements AbstractUpdateService<Inv
 		}
 		
 		if(!errors.hasErrors("retailPrice")) {
-			errors.state(request, entity.getRetailPrice().getAmount() > 0, "budget", "inventor.artifact.form.error.negative");
-		}
-		
-		if(!errors.hasErrors("retailPrice")) {
 			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.artifact.form.error.negative");
 			
 			final List<String> currencies= new ArrayList<String>();
