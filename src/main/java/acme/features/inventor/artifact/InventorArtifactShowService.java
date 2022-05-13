@@ -52,9 +52,7 @@ public class InventorArtifactShowService implements AbstractShowService<Inventor
 		assert model != null;
 		
 		request.unbind(entity, model, "artifactType", "name", "code", "technology", "description", 
-			"retailPrice", "link");
-		model.setAttribute("readonly",true);
-		model.setAttribute("confirmation", false);
+			"retailPrice", "link", "inventor.userAccount.username", "isPublic");
 	}
 	
 }

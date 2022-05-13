@@ -21,3 +21,4 @@
 	<acme:list-column code="inventor.artifact.list.label.technology" path="technology"/>
 	<acme:list-column code="inventor.artifact.list.label.description" path="description"/>
 </acme:list>
+<acme:button code="inventor.artifact.list.button.create" action="/inventor/artifact/create"/>		

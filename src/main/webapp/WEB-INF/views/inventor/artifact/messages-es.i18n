@@ -16,6 +16,7 @@ inventor.artifact.list.label.description = Descripción
 inventor.artifact.list.label.retail_price.amount = Precio
 inventor.artifact.list.label.retail_price.currency = Divisa
 inventor.artifact.list.label.link = Enlace
+inventor.artifact.list.button.create = Crear
 
 inventor.artifact.form.label.artifact_type = Tipo de Artefacto
 inventor.artifact.form.label.name = Nombre
@@ -24,3 +25,12 @@ inventor.artifact.form.label.technology = Tecnología
 inventor.artifact.form.label.description = Descripción
 inventor.artifact.form.label.retail_price = Precio
 inventor.artifact.form.label.link = Enlace
+inventor.artifact.form.label.inventor.username = Inventor
+inventor.artifact.form.button.create = Crear
+inventor.artifact.form.button.update = Actualizar
+inventor.artifact.form.button.delete = Borrar
+inventor.artifact.form.button.publish = Publicar
+
+inventor.artifact.form.error.duplicated_code = Otro artefacto tiene este código
+inventor.artifact.form.error.negative = El precio no puede ser negativo
+inventor.artifact.form.error.noAcceptedCurrency = Esta moneda no esta aceptada
