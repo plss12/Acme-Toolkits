@@ -25,6 +25,7 @@ patron.patronage.form.label.inventor.statement = Inventor Statement
 patron.patronage.form.label.inventor.link = Inventor Link
 patron.patronage.form.button.patronageReport = Patronage Reports
 patron.patronage.form.label.status = Status
+patron.patronage.form.label.isPublic = Is public
 
 patron.patronage.form.button.update = Update
 patron.patronage.form.button.delete = Delete
@@ -33,7 +34,8 @@ patron.patronage.form.button.create = Create
 
 patron.patronage.form.error.duplicated = That code is already in use
 patron.patronage.form.error.negative = The budget must be positive
-patron.patronage.form.error.too-close = The date is too close (at least one month long, starting at least one month after the patronage is created)
+patron.patronage.form.error.too-close = The date is too close (at least one month long from start date)
 patron.patronage.form.error.status = Only inventors can accept/deny patronages (Please select PROPOSED)
 patron.patronage.form.label.inventor.username = Inventor Username
 patron.patronage.form.error.invalidInventor = Invalid inventor username
+patron.patronage.form.error.too-close-start = Invalid start date (must be at least one month after today)

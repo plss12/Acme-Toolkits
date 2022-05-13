@@ -20,22 +20,19 @@
 	<acme:input-textbox code="patron.patronage.form.label.status" path="status" readonly="true"/>
 	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
-	<acme:input-moment code="patron.patronage.form.label.startDate" path="startDate" readonly="true"/>
+	<acme:input-moment code="patron.patronage.form.label.startDate" path="startDate"/>
 	<acme:input-moment code="patron.patronage.form.label.finishDate" path="finishDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
 	<acme:input-textbox code="patron.patronage.form.label.inventor.username" path="inventor.userAccount.username"/>
+	<acme:input-textbox code="patron.patronage.form.label.isPublic" path="isPublic" readonly="true"/>
 	
-	<jstl:choose>
-		<%--
-		
-		<jstl:when test="${command == 'show' && draftMode ==false}">			
+	<jstl:choose>		
+		<jstl:when test="${command == 'show' && isPublic == true}">			
 			<acme:input-textbox code="patron.patronage.form.label.inventor.company" path="inventor.company" readonly="true"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor.statement" path="inventor.statement" readonly="true"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor.link" path="inventor.link" readonly="true"/>
 			<acme:button code="patron.patronage.form.button.patronageReport" action="/patron/patronage-report/list?masterId=${id}"/>
-		</jstl:when> 
-		
-		--%>
+		</jstl:when>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')}">
 			<acme:input-textbox code="patron.patronage.form.label.inventor.company" path="inventor.company" readonly="true"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor.statement" path="inventor.statement" readonly="true"/>
