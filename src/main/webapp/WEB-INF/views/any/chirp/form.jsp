@@ -3,11 +3,12 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-moment code="any.form.list.label.creationMoment" path="creationMoment"/>
-	<acme:input-textbox code="any.form.list.label.title" path="title"/>
-	<acme:input-textbox code="any.form.list.label.author" path="author"/>
-	<acme:input-textarea code="any.form.list.label.body" path="body"/>
-	<acme:input-email code="any.form.list.label.email" path="email"/>
+	<acme:input-moment code="any.chirp.form.label.creationMoment" path="creationMoment" readonly="true"/>
+	<acme:input-textbox code="any.chirp.form.label.title" path="title"/>
+	<acme:input-textbox code="any.chirp.form.label.author" path="author" readonly="true"/>
+	<acme:input-textarea code="any.chirp.form.label.body" path="body"/>
+	<acme:input-email code="any.chirp.form.label.email" path="email"/>
+	<acme:input-checkbox code="any.chirp.form.label.confirm" path="confirm"/>
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">

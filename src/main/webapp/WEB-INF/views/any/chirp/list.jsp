@@ -22,3 +22,7 @@
 	<acme:list-column code="any.chirp.list.label.body" path="body" width="20%" />
 	<acme:list-column code="any.chirp.list.label.email" path="email" width="20%" />
 </acme:list>
+
+<jstl:if test="${command == 'list'}">
+	<acme:button code="any.chirp.form.button.create" action="/any/chirp/create"/>
+</jstl:if>	
