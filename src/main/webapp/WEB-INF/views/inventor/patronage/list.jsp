@@ -21,4 +21,5 @@
 	<acme:list-column code="authenticated.patronage.list.label.finish_date" path="finishDate"/>
 	<acme:list-column code="authenticated.patronage.list.label.legal_stuff" path="legalStuff"/>
 	<acme:list-column code="authenticated.patronage.list.label.status" path="status"/>
+	<acme:list-column code="authenticated.patronage.list.label.is_public" path="isPublic"/>
 </acme:list>

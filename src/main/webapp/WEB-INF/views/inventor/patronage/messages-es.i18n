@@ -16,6 +16,7 @@ authenticated.patronage.list.label.finish_date = Fecha final
 authenticated.patronage.list.label.legal_stuff = Cosas legales
 authenticated.patronage.list.label.link = Enlace
 authenticated.patronage.list.label.status = Estado
+authenticated.patronage.list.label.is_public = Público
 
 authenticated.patronage.form.label.code = Código
 authenticated.patronage.form.label.budget = Presupuesto
