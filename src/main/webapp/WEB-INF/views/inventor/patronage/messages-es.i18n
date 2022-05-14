@@ -8,6 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+inventor.patronage.form.button.edit = Nuevo estado
+inventor.patronage.form.button.update = Actualizar
+
+
 authenticated.patronage.list.label.code = Código
 authenticated.patronage.list.label.currency = Divisa
 authenticated.patronage.list.label.amount = Cantidad
@@ -24,6 +28,8 @@ authenticated.patronage.form.label.finish_date = Fecha final
 authenticated.patronage.form.label.legal_stuff = Cosas legales
 authenticated.patronage.form.label.link = Enlace
 authenticated.patronage.form.label.status = Estado
+authenticated.patronage.form.label.status.accepted = ACEPTADO
+authenticated.patronage.form.label.status.denied = RECHAZADO
 authenticated.patronage.form.label.company = Compañía del Patrón
 authenticated.patronage.form.label.patron.link = Enlace del Patrón
 authenticated.patronage.form.label.statement = Declaración del Patrón

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
+import acme.entities.PatronageStatus;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -50,6 +51,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert entity != null;
 		assert model != null;
 		
+		model.setAttribute("isProposedAndPublic", entity.getStatus().equals(PatronageStatus.PROPOSED) && entity.isPublic());
 		request.unbind(entity, model, "code", "budget", "legalStuff", "link", "startDate", "finishDate", "status", 
 			"patron.company", "patron.link", "patron.statement");
 		model.setAttribute("readonly",true);
