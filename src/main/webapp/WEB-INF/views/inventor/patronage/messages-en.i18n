@@ -20,6 +20,7 @@ authenticated.patronage.list.label.finish_date = Finish Date
 authenticated.patronage.list.label.legal_stuff = Legal Stuff
 authenticated.patronage.list.label.link = Link
 authenticated.patronage.list.label.status = Status
+authenticated.patronage.list.label.is_public = Public
 
 authenticated.patronage.form.label.code = Code
 authenticated.patronage.form.label.budget = Budget
