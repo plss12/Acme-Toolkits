@@ -27,8 +27,10 @@
 	<acme:input-textbox code="inventor.artifact.form.label.description" path="description"/>	
 	<acme:input-money code="inventor.artifact.form.label.retail_price" path="retailPrice"/>
 	<acme:input-textbox code="inventor.artifact.form.label.link" path="link"/>	
-	<acme:input-textbox code="inventor.artifact.form.label.inventor.username" path="inventor.userAccount.username" readonly="true"/>	
 	<jstl:choose>
+		<jstl:when test="${command == 'show' && isPublic}">
+				<acme:input-textbox code="inventor.artifact.form.label.inventor.username" path="inventor.userAccount.username" readonly="true"/>	
+		</jstl:when>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && !isPublic}">
 				<acme:submit code="inventor.artifact.form.button.update" action="/inventor/artifact/update"/>
 				<acme:submit code="inventor.artifact.form.button.delete" action="/inventor/artifact/delete"/>

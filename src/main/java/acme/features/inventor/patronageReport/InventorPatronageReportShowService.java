@@ -50,7 +50,7 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "sequenceNumber", "creationMoment", "memorandum", "link");
+		request.unbind(entity, model, "sequenceNumber", "creationMoment", "memorandum", "link", "patronage");
 		model.setAttribute("readonly",true);
 		model.setAttribute("confirmation", false);
 		
