@@ -1,4 +1,5 @@
 key,status,code,legal-stuff,budget,start-date,finish-date,link,is-public,key:patron,key:inventor
-patronage-01,PROPOSED,EDN-418-X,"Sample PROPOSED patronage from patron 1 to inventor 1","EUR 500,000.00","2022/10/01 9:00","2022/12/01 11:00","https://www.google.es",false,patron-01,inventor-01
-patronage-02,ACCEPTED,EDN-419-X,"Sample ACCEPTED patronage from patron 1 to inventor 1","EUR 50,000.00","2022/10/02 10:00","2022/12/02 12:00","https://www.google.es",true,patron-01,inventor-01
-patronage-03,DENIED,EDN-420-X,"Sample DENIED patronage from patron 1 to inventor 1","EUR 999,000.00","2022/10/03 11:00","2022/12/03 13:00","https://www.google.es",true,patron-01,inventor-01
+patronage-01,PROPOSED,EDN-418-X,Sample PROPOSED patronage from patron 1 to inventor 1,"EUR 500,000.00",2022/10/01 9:00,2022/12/01 11:00,https://www.google.es,false,patron-01,inventor-01
+patronage-02,PROPOSED,EDN-419-X,Sample Public PROPOSED,"EUR 500,000.00",2022/10/01 9:00,2022/12/01 11:00,https://www.google.es,true,patron-01,inventor-01
+patronage-03,ACCEPTED,EDN-420-X,Sample ACCEPTED patronage from patron 1 to inventor 1,"EUR 50,000.00",2022/10/02 10:00,2022/12/02 12:00,https://www.google.es,true,patron-01,inventor-01
+patronage-04,DENIED,EDN-421-X,Sample DENIED patronage from patron 1 to inventor 1,"EUR 999,000.00",2022/10/03 11:00,2022/12/03 13:00,https://www.google.es,true,patron-01,inventor-01
