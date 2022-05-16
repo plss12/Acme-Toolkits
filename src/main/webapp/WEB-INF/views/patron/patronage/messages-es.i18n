@@ -39,3 +39,4 @@ patron.patronage.form.error.status = Solo los inventores pueden aceptar/denegar 
 patron.patronage.form.label.inventor.username = Usuario del inventor
 patron.patronage.form.error.invalidInventor = Usuario del inventor no válido
 patron.patronage.form.error.too-close-start = Fecha de inicio inválida (debe ser al menos un mes después de hoy)
+patron.patronage.form.error.noAcceptedCurrency = Moneda no aceptada

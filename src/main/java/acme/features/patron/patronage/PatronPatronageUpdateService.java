@@ -1,8 +1,10 @@
 package acme.features.patron.patronage;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -94,6 +96,11 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		
 		if(!errors.hasErrors("budget")) {
 			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative");
+			
+			final String entityCurrency = entity.getBudget().getCurrency();			
+			final String[] acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
+			final List<String> currencies= Arrays.asList(acceptedCurrencies);			
+			errors.state(request, currencies.contains(entityCurrency) , "budget", "patron.patronage.form.error.noAcceptedCurrency");
 		}
 		
 		if(!errors.hasErrors("finishDate")) {

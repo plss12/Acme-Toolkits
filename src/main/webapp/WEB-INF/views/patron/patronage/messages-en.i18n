@@ -39,3 +39,4 @@ patron.patronage.form.error.status = Only inventors can accept/deny patronages (
 patron.patronage.form.label.inventor.username = Inventor Username
 patron.patronage.form.error.invalidInventor = Invalid inventor username
 patron.patronage.form.error.too-close-start = Invalid start date (must be at least one month after today)
+patron.patronage.form.error.noAcceptedCurrency = Not Accepted Currency
