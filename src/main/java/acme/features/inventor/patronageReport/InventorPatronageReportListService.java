@@ -9,6 +9,7 @@ import acme.entities.Patronage;
 import acme.entities.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.helpers.CollectionHelper;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
@@ -53,8 +54,17 @@ public class InventorPatronageReportListService implements AbstractListService<I
 		assert entity != null;
 		assert model != null;
 		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
 		request.unbind(entity, model,"creationMoment", "memorandum","patronage.code");
+	}
+	
+	@Override
+	public void unbind(final Request<PatronageReport> request, final Collection<PatronageReport> entities, final Model model) {
+		assert request != null;
+		assert !CollectionHelper.someNull(entities);
+		assert model != null;
 		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
 	}
 
 }
