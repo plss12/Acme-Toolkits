@@ -26,6 +26,8 @@
 	<acme:input-textbox code="inventor.artifact.form.label.technology" path="technology"/>	
 	<acme:input-textbox code="inventor.artifact.form.label.description" path="description"/>	
 	<acme:input-money code="inventor.artifact.form.label.retail_price" path="retailPrice"/>
+	<acme:input-money code="inventor.artifact.form.label.retail_priceExchange" path="budgetExchange" readonly="true"/>
+	<acme:input-moment code="inventor.artifact.form.label.retail_priceExchangeDate" path="budgetExchangeDate" readonly="true"/>
 	<acme:input-textbox code="inventor.artifact.form.label.link" path="link"/>	
 	<jstl:choose>
 		<jstl:when test="${command == 'show' && isPublic}">

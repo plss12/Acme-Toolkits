@@ -34,3 +34,5 @@ inventor.artifact.form.button.publish = Publish
 inventor.artifact.form.error.duplicated_code = Other artifact has this code
 inventor.artifact.form.error.negative = The price can´t be negative
 inventor.artifact.form.error.noAcceptedCurrency = This currency is not accepted
+inventor.artifact.form.label.retail_priceExchangeDate = Retail Price exchange date
+inventor.artifact.form.label.retail_priceExchange = Retail Price (at system currency)
