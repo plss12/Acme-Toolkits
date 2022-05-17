@@ -46,13 +46,13 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		errors.state(request, inventor!=null, "*", "patron.patronage.form.error.invalidInventor");
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
+		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
 		
 	}
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
+		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username", "isPublic");
 		
 	}
 
