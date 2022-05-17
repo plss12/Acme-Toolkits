@@ -1,8 +1,10 @@
 package acme.features.patron.patronage;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,13 +46,13 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		errors.state(request, inventor!=null, "*", "patron.patronage.form.error.invalidInventor");
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
+		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
 		
 	}
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
+		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username", "isPublic");
 		
 	}
 
@@ -94,6 +96,11 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		
 		if(!errors.hasErrors("budget")) {
 			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative");
+			
+			final String entityCurrency = entity.getBudget().getCurrency();			
+			final String[] acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
+			final List<String> currencies= Arrays.asList(acceptedCurrencies);			
+			errors.state(request, currencies.contains(entityCurrency) , "budget", "patron.patronage.form.error.noAcceptedCurrency");
 		}
 		
 		if(!errors.hasErrors("finishDate")) {

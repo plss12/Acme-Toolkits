@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Artifact;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
+import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -12,6 +14,9 @@ import acme.roles.Inventor;
 @Service
 public class InventorArtifactShowService implements AbstractShowService<Inventor, Artifact>{
 
+	@Autowired
+	protected AuthenticatedMoneyExchangePerformService moneyExchange;
+	
 	@Autowired
 	protected InventorArtifactRepository repository;
 	
@@ -51,8 +56,15 @@ public class InventorArtifactShowService implements AbstractShowService<Inventor
 		assert entity != null;
 		assert model != null;
 		
+		MoneyExchange exchange;
+		final String defaultCurrency = this.repository.findDefaultCurrency();
+		exchange = this.moneyExchange.computeMoneyExchange(entity.getRetailPrice(), defaultCurrency);
+		
 		request.unbind(entity, model, "artifactType", "name", "code", "technology", "description", 
 			"retailPrice", "link", "inventor.userAccount.username", "isPublic");
+		
+		model.setAttribute("budgetExchange", exchange.getTarget());
+		model.setAttribute("budgetExchangeDate", exchange.getDate());
 	}
 	
 }

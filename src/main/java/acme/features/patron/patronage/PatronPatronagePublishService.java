@@ -37,13 +37,13 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 
 	@Override
 	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
-		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
+		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
 		
 	}
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username","isPublic");
+		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
 		
 	}
 

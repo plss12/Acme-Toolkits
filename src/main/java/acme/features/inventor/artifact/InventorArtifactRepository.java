@@ -29,4 +29,7 @@ public interface InventorArtifactRepository extends AbstractRepository{
 	
 	@Query("SELECT sc.acceptedCurrencies from Configuration sc")
 	String findAllAcceptedCurrencies();
+	
+	@Query("SELECT sc.defaultCurrency from Configuration sc")
+	String findDefaultCurrency();
 }
