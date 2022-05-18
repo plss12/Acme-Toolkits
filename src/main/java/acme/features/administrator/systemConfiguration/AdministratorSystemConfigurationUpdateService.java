@@ -1,5 +1,8 @@
 package acme.features.administrator.systemConfiguration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,8 +62,14 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		assert entity != null;
 		assert errors != null;
 		
+		final List<String> currencies= new ArrayList<String>();
+		final String[] acceptedCurrencies= entity.getAcceptedCurrencies().split(",");
+		for (final String currency : acceptedCurrencies){
+		    currencies.add(currency.trim());
+		    }
+		
 		if(!errors.hasErrors("defaultCurrency")) {
-			errors.state(request, entity.getAcceptedCurrencies().contains(entity.getDefaultCurrency()), "defaultCurrency", 
+			errors.state(request, currencies.contains(entity.getDefaultCurrency()), "defaultCurrency", 
 				"administrator.system_configuration.form.error.bad-default-currency");
 		}
 	}
