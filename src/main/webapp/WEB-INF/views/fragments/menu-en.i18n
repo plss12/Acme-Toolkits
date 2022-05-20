@@ -84,4 +84,4 @@ master.menu.user-account.patron = Patron data
 # master.menu.patron ####################################################
 
 master.menu.patron.patron = Patron
-master.menu.patron.patronages = Patron's Patronages
+master.menu.patron.patronages = List my Patronages

@@ -83,4 +83,4 @@ master.menu.user-account.patron = Datos de patrocinador
 # master.menu.patron ####################################################
 
 master.menu.patron.patron = Patrocinador
-master.menu.patron.patronages = Patrocinios del Patrocinador
+master.menu.patron.patronages = Listar mis Patrocinios
