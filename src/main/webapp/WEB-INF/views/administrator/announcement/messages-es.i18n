@@ -19,3 +19,5 @@ administrator.announcement.form.label.status = Estado
 administrator.announcement.form.label.confirm = Confirmar publicación (NO PODRÁ SER MODIFICADO O BORRADO)
 
 administrator.announcement.form.button.create = Crear anuncio
+
+administrator.announcement.form.error.spam = El texto supera el límite de spam 

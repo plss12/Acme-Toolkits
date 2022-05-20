@@ -36,3 +36,5 @@ inventor.artifact.form.error.negative = El precio no puede ser negativo
 inventor.artifact.form.error.noAcceptedCurrency = Esta moneda no esta aceptada
 inventor.artifact.form.label.retail_priceExchangeDate = Fecha de intercambio del precio 
 inventor.artifact.form.label.retail_priceExchange = Precio (en la divisa del sistema)
+
+inventor.artifact.form.error.spam = El texto supera el límite de spam

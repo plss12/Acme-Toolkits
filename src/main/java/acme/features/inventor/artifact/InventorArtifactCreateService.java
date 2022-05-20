@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Artifact;
+import acme.entities.Configuration;
+import acme.features.SpamDetector.SpamDetector;
+import acme.features.SpamDetector.SpamDetectorRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -18,6 +21,8 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 
 	@Autowired
 	protected InventorArtifactRepository repository;
+	@Autowired
+	protected SpamDetectorRepository spamRepo;
 	
 	@Override
 	public boolean authorise(final Request<Artifact> request) {
@@ -57,7 +62,23 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 			for (final String currency : acceptedCurrencies){
 			    currencies.add(currency);
 			    }
+			
+			
 			errors.state(request, currencies.contains(entityCurrency) , "retailPrice", "inventor.artifact.form.error.noAcceptedCurrency");
+		}
+		
+		final SpamDetector spamdetector = new SpamDetector();
+		final Configuration config = this.spamRepo.findOneConf();
+		
+		if(!errors.hasErrors("name")) {
+			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getName())
+				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getName()),
+				"name", "inventor.artifact.form.error.spam");
+		}
+		if(!errors.hasErrors("description")) {
+			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getDescription())
+				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getDescription()),
+				"description", "inventor.artifact.form.error.spam");
 		}
 	}
 

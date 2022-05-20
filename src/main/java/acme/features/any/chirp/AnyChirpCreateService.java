@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Chirp;
+import acme.entities.Configuration;
+import acme.features.SpamDetector.SpamDetector;
+import acme.features.SpamDetector.SpamDetectorRepository;
 import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.features.patron.patronage.PatronPatronageRepository;
 import acme.framework.components.models.Model;
@@ -27,6 +30,9 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 	
 	@Autowired
 	protected PatronPatronageRepository patronRepository;
+	
+	@Autowired
+	protected SpamDetectorRepository spamRepo;
 	
 	
 	//AbstractCreateService interface
@@ -81,6 +87,21 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		final SpamDetector spamdetector = new SpamDetector();
+		final Configuration config = this.spamRepo.findOneConf();
+		
+		if(!errors.hasErrors("title")) {
+			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getTitle())
+				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getTitle()),
+				"title", "any.chirp.form.error.spam");
+		}
+		if(!errors.hasErrors("body")) {
+			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getBody())
+				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getBody()),
+				"body", "any.chirp.form.error.spam");
+		}
+		
 		
 		final Boolean confirmed = request.getModel().getBoolean("confirm");
 		errors.state(request, confirmed, "confirm", "any.chirp.form.error.confirm");

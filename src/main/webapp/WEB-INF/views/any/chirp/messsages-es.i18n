@@ -24,3 +24,5 @@ any.chirp.form.label.confirm = Confirmar
 
 any.chirp.form.button.create = Crear
 any.chirp.form.error.confirm = Debes confirmar la creación
+
+any.chirp.form.error.spam = El texto supera el límite de spam
