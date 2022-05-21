@@ -19,3 +19,5 @@ administrator.announcement.form.label.status = Status
 administrator.announcement.form.label.confirm = Confirm publishing (CAN'T BE MODIFIED OR DELETED)
 
 administrator.announcement.form.button.create = Create announcement
+
+administrator.announcement.form.error.spam = Text surpasses the spam threshold
