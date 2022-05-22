@@ -45,8 +45,17 @@ public class AnyArtifactToolkitCreateService implements AbstractCreateService<An
 		assert request != null;
 		assert entity != null;
 		assert errors != null;		
-				
-		request.bind(entity, errors, "artifactAmount", "artifact", "toolkit");		
+		
+		final String artifactc = String.valueOf(request.getModel().getAttribute("artifact.code"));
+		final String toolkitc = String.valueOf(request.getModel().getAttribute("toolkit.code"));
+		
+		final Artifact artifact = this.artifactRepository.findArtifactByCode(artifactc);
+		final Toolkit toolkit = this.toolkitRepository.findToolkitByCode(toolkitc);
+		
+		entity.setArtifact(artifact);
+		entity.setToolkit(toolkit);
+		
+		request.bind(entity, errors, "artifactAmount", "artifact.code", "toolkit.code");		
 	}
 
 	@Override
@@ -61,7 +70,7 @@ public class AnyArtifactToolkitCreateService implements AbstractCreateService<An
 		model.setAttribute("artifactSelected", artifactSelected);
 		model.setAttribute("toolkitSelected", toolkitSelected);
 		
-		request.unbind(entity, model, "artifactAmount", "artifact", "toolkit");
+		request.unbind(entity, model, "artifactAmount", "artifact.code", "toolkit.code");
 		
 	}
 

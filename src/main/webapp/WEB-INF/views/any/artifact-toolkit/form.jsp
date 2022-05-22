@@ -20,17 +20,17 @@
 		<jstl:when test="${command == 'create'}">
 		
 				
-				<acme:input-select code="any.artifact.form.label.artifact" path="artifact">
+				<acme:input-select code="any.artifact.form.label.artifact" path="artifact.code">
 					<jstl:forEach items="${artifactSelected}" var="artifactSelected">
-						<acme:input-option code="${artifactSelected.code}, ${artifactSelected.name}" value="${artifactSelected}"/>
+						<acme:input-option code="${artifactSelected.code}, ${artifactSelected.name}" value="${artifactSelected.code}"/>
 					</jstl:forEach>
 				</acme:input-select>
 				
 				<acme:input-textbox code="any.artifact.form.label.artifactAmount" path="artifactAmount"/>
 				
-				<acme:input-select code="any.artifact.form.label.toolkit" path="toolkit">
+				<acme:input-select code="any.artifact.form.label.toolkit" path="toolkit.code">
 					<jstl:forEach items="${toolkitSelected}" var="toolkitSelected">
-						<acme:input-option code="${toolkitSelected.code}, ${toolkitSelected.title}" value="${toolkitSelected}"/>
+						<acme:input-option code="${toolkitSelected.code}, ${toolkitSelected.title}" value="${toolkitSelected.code}"/>
 					</jstl:forEach>
 				</acme:input-select>
 				
