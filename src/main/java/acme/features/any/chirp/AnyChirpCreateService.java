@@ -53,7 +53,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		final Date actualDate = new Date();
 		entity.setCreationMoment(actualDate);
 		
-		request.bind(entity, errors, "creationMoment", "title", "author", "body", "email");
+		request.bind(entity, errors, "title", "body", "email");
 		
 	}
 
@@ -63,7 +63,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "creationMoment", "title", "author", "body", "email");
+		request.unbind(entity, model,"title", "body", "email");
 		model.setAttribute("confirm", "false");
 		
 	}
@@ -117,6 +117,4 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp>{
 		
 	}
 	
-	//
-
 }
