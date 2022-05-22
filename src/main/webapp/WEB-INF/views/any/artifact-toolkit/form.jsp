@@ -18,17 +18,23 @@
 				<acme:submit code="any.artifact.form.button.delete" action="/any/artifact-toolkit/delete"/>
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
+		
+				
 				<acme:input-select code="any.artifact.form.label.artifact" path="artifact">
 					<jstl:forEach items="${artifactSelected}" var="artifactSelected">
-						<acme:input-option code="${artifactSelected.code}, ${artifactSelected.name}" value="${artifact}"/>
+						<acme:input-option code="${artifactSelected.code}, ${artifactSelected.name}" value="${toolkitSelected}"/>
 					</jstl:forEach>
 				</acme:input-select>
+				
 				<acme:input-textbox code="any.artifact.form.label.artifactAmount" path="artifactAmount"/>
+				
 				<acme:input-select code="any.artifact.form.label.toolkit" path="toolkit">
 					<jstl:forEach items="${toolkitSelected}" var="toolkitSelected">
-						<acme:input-option code="${toolkitSelected.code}, ${toolkitSelected.title}" value="${toolkit}"/>
+						<acme:input-option code="${toolkitSelected.code}, ${toolkitSelected.title}" value="${toolkitSelected}"/>
 					</jstl:forEach>
 				</acme:input-select>
+				
+				
 				<acme:submit code="inventor.toolkit.form.button.create" action="/any/artifact-toolkit/create"/>
 		</jstl:when>
 	</jstl:choose>

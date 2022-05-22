@@ -16,3 +16,6 @@ any.artifact.list.label.artifactAmount = Cantidad
 
 any.artifact.form.button.delete = Eliminar del Toolkit
 any.artifact-toolkit.form.error.published = Este Toolkit ha sido publicado, no se puede modificar
+
+any.artifact.form.label.artifact = Selecciona el Artifact
+any.artifact.form.label.toolkit = Selecciona la Toolkit

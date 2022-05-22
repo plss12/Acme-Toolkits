@@ -16,3 +16,6 @@ any.artifact.list.label.artifactAmount = Amount
 
 any.artifact.form.button.delete = Delete from Toolkit
 any.artifact-toolkit.form.error.published = This Toolkit has been published. It cannot be modified
+
+any.artifact.form.label.artifact = Select the artifact
+any.artifact.form.label.toolkit = Select the toolkit

@@ -1,6 +1,6 @@
 package acme.features.any.artifactToolkit;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,10 +44,9 @@ public class AnyArtifactToolkitCreateService implements AbstractCreateService<An
 	public void bind(final Request<ArtifactToolkit> request, final ArtifactToolkit entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
-		assert errors != null;
-		
-		request.bind(entity, errors, "artifactAmount", "artifact", "toolkit");
-		
+		assert errors != null;		
+				
+		request.bind(entity, errors, "artifactAmount", "artifact", "toolkit");		
 	}
 
 	@Override
@@ -56,8 +55,8 @@ public class AnyArtifactToolkitCreateService implements AbstractCreateService<An
 		assert entity != null;
 		assert model != null;
 		
-		final Collection<Artifact> artifactSelected = this.artifactRepository.findAllPublics(true);
-		final Collection<Toolkit> toolkitSelected = this.toolkitRepository.findToolkitsByInventorUsername(request.getPrincipal().getUsername());
+		final List<Artifact> artifactSelected = this.artifactRepository.findAllPublics(true);
+		final List<Toolkit> toolkitSelected = this.toolkitRepository.findPublicToolkitsByInventorUsername(request.getPrincipal().getUsername(), false);
 		
 		model.setAttribute("artifactSelected", artifactSelected);
 		model.setAttribute("toolkitSelected", toolkitSelected);
@@ -70,9 +69,7 @@ public class AnyArtifactToolkitCreateService implements AbstractCreateService<An
 	public ArtifactToolkit instantiate(final Request<ArtifactToolkit> request) {
 		assert request != null;
 		
-		final ArtifactToolkit result = new ArtifactToolkit();
-		
-		return result;
+		return new ArtifactToolkit();
 		
 	}
 
@@ -83,7 +80,7 @@ public class AnyArtifactToolkitCreateService implements AbstractCreateService<An
 		assert errors != null;
 		
 		if(!errors.hasErrors("artifactAmount")) {
-			errors.state(request, entity.getArtifactAmount() <= 0, "artifactAmount", "any.artifact-toolkit.form.error.negative-amount");
+			errors.state(request, entity.getArtifactAmount() > 0, "artifactAmount", "any.artifact-toolkit.form.error.negative-amount");
 		}
 		
 	}

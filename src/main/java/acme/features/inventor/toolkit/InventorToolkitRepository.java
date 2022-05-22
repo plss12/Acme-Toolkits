@@ -31,7 +31,7 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	@Query("select c.defaultCurrency from Configuration c")
 	String defaultCurrency();
 	
-	@Query("SELECT t from Toolkit t where t.inventor.userAccount.username = :username")
-	Collection<Toolkit> findToolkitsByInventorUsername(String username);
+	@Query("SELECT t from Toolkit t where t.inventor.userAccount.username = :username and t.isPublic = :visibility")
+	List<Toolkit> findPublicToolkitsByInventorUsername(String username, boolean visibility);
 
 }

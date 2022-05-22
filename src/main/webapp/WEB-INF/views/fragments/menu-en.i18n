@@ -26,8 +26,9 @@ master.menu.any = Any
 master.menu.any.list.user-accounts = List User Accounts
 master.menu.any.chirp.list = Chirps of this month
 master.menu.any.toolkit.list = List of Toolkits
-master.menu.any.user-accounts.list = User's Accounts-
+master.menu.any.user-accounts.list = User's Accounts
 master.menu.any.artifact.list = Tools & Components
+master.menu.inventor.artifact-toolkit.create = Relate Toolkits to Artifacts
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Authenticated
