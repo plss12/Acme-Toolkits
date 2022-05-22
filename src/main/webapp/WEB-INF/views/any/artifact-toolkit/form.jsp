@@ -22,7 +22,7 @@
 				
 				<acme:input-select code="any.artifact.form.label.artifact" path="artifact">
 					<jstl:forEach items="${artifactSelected}" var="artifactSelected">
-						<acme:input-option code="${artifactSelected.code}, ${artifactSelected.name}" value="${toolkitSelected}"/>
+						<acme:input-option code="${artifactSelected.code}, ${artifactSelected.name}" value="${artifactSelected}"/>
 					</jstl:forEach>
 				</acme:input-select>
 				
