@@ -55,7 +55,7 @@ public class AnyArtifactToolkitShowService implements AbstractShowService<Any,Ar
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+		
 		request.unbind(entity, model, "artifact.name", "artifact.code", "artifact.technology", "artifact.description", "artifact.retailPrice", "artifact.artifactType", "artifact.link", "artifactAmount");
 		
 	}

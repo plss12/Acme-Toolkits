@@ -75,6 +75,7 @@
 			<acme:menu-suboption code="master.menu.inventor.artifact.list" action="/inventor/artifact/list"/>
 			<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list"/>
 			<acme:menu-suboption code="master.menu.inventor.toolkit.list" action="/inventor/toolkit/list"/>
+			<acme:menu-suboption code="master.menu.inventor.artifact-toolkit.create" action="/any/artifact-toolkit/create"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

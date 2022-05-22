@@ -32,4 +32,7 @@ public interface InventorArtifactRepository extends AbstractRepository{
 	
 	@Query("SELECT sc.defaultCurrency from Configuration sc")
 	String findDefaultCurrency();
+	
+	@Query("SELECT a from Artifact a where a.isPublic = :visibility")
+	Collection<Artifact> findAllPublics(boolean visibility);
 }

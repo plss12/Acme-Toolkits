@@ -21,3 +21,5 @@
 	<acme:list-column code="any.artifact.list.label.artifactType" path="artifact.artifactType"/>
 	<acme:list-column code="any.artifact.list.label.artifactAmount" path="artifactAmount"/>
 </acme:list>
+
+

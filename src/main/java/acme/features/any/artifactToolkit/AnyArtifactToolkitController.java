@@ -18,6 +18,10 @@ public class AnyArtifactToolkitController extends AbstractController<Any, Artifa
 	protected AnyArtifactListToolkitService		listToolkitService;
 	@Autowired
 	protected AnyArtifactToolkitShowService		showToolkitService;
+	@Autowired
+	protected AnyArtifactToolkitDeleteService		deleteToolkitService;
+	@Autowired
+	protected AnyArtifactToolkitCreateService		createToolkitService;
 	// Constructors -----------------------------------------------------------
 
 
@@ -25,5 +29,7 @@ public class AnyArtifactToolkitController extends AbstractController<Any, Artifa
 	protected void initialise() {
 		super.addCommand("list", this.listToolkitService);
 		super.addCommand("show", this.showToolkitService);
+		super.addCommand("delete", this.deleteToolkitService);
+		super.addCommand("create", this.createToolkitService);
 	} 
 }
