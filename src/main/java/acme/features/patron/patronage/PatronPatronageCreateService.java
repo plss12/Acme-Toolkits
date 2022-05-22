@@ -61,7 +61,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		errors.state(request, inventor!=null, "*", "patron.patronage.form.error.invalidInventor");
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
+		request.bind(entity, errors, "code", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
 		
 	}
 	
@@ -125,7 +125,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		final List<Inventor> inventorSelect = this.repository.findAllInventors();
 		model.setAttribute("inventorSelect", inventorSelect);
 		
-		request.unbind(entity, model, "code", "status", "legalStuff", "budget", "startDate", "finishDate", "link", "inventor.userAccount.username");
+		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "finishDate", "link", "inventor.userAccount.username");
 		
 	}		
 
