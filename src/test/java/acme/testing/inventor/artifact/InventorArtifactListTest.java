@@ -29,7 +29,6 @@ public class InventorArtifactListTest extends TestHarness {
 		//Testing show
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("artifactType", artifactType);
 		super.checkInputBoxHasValue("name", name);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("technology", technology);
