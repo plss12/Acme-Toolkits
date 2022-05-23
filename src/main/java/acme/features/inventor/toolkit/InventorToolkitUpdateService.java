@@ -3,7 +3,10 @@ package acme.features.inventor.toolkit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Configuration;
 import acme.entities.Toolkit;
+import acme.features.SpamDetector.SpamDetector;
+import acme.features.SpamDetector.SpamDetectorRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -15,6 +18,8 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 	
 	@Autowired
 	protected InventorToolkitRepository repository;
+	@Autowired
+	protected SpamDetectorRepository spamRepo;
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -77,6 +82,24 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 			
 			otherToolkit=this.repository.findToolkitByCode(entity.getCode());
 			errors.state(request, otherToolkit == null || otherToolkit.getId()==entity.getId(), "code", "inventor.toolkit.form.error.duplicated_code");
+		}
+		final SpamDetector spamdetector = new SpamDetector();
+		final Configuration config = this.spamRepo.findOneConf();
+		
+		if(!errors.hasErrors("title")) {
+			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getTitle())
+				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getTitle()),
+				"title", "administrator.toolkit.form.error.spam");
+		}
+		if(!errors.hasErrors("description")) {
+			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getDescription())
+				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getDescription()),
+				"description", "administrator.toolkit.form.error.spam");
+		}
+		if(!errors.hasErrors("assemblyNotes")) {
+			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getAssemblyNotes())
+				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getAssemblyNotes()),
+				"assemblyNotes", "administrator.toolkit.form.error.spam");
 		}
 		
 	}
