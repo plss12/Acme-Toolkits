@@ -19,7 +19,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 	protected InventorToolkitRepository repository;
 	
 	@Autowired
-	protected AnyArtifactToolkitRepository ATrepository;
+	protected AnyArtifactToolkitRepository aTrepository;
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -86,8 +86,8 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		
 		 final int id = request.getModel().getInteger("id");
 		 
-		 for(final ArtifactToolkit at : this.ATrepository.findArtifactsToolkitsByToolkit(id)) {
-			 this.ATrepository.delete(at);
+		 for(final ArtifactToolkit at : this.aTrepository.findArtifactsToolkitsByToolkit(id)) {
+			 this.aTrepository.delete(at);
 		 }
 		 
 		this.repository.delete(entity);	

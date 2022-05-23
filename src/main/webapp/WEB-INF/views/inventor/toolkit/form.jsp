@@ -21,10 +21,10 @@
 	<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
 	<acme:input-textarea code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-url code="inventor.toolkit.form.label.link" path="link"/>
-	<acme:input-textarea code="inventor.toolkit.form.label.isPublic" path="isPublic" readonly="true"/>
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'show' && isPublic}">
+			
 			<acme:button code="inventor.toolkit.form.button.artifact" action="/any/artifact-toolkit/list?masterId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && !isPublic}">
