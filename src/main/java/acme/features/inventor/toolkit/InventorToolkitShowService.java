@@ -54,7 +54,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		model.setAttribute("id", entity.getId());
 		model.setAttribute("price", this.calculatePriceOfToolkit(entity.getId()));
-		request.unbind(entity, model, "title", "description", "assemblyNotes", "link", "isPublic");	
+		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "link", "isPublic");	
 	}
 	
 	public Double calculatePriceOfToolkit(final int id) {

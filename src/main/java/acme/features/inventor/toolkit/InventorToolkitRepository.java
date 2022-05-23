@@ -16,6 +16,9 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	@Query("select t from Toolkit t where t.id = :id")
 	Toolkit findToolkitById(int id);
 	
+	@Query("select t from Toolkit t where t.code = :code")
+	Toolkit findToolkitByCode(String code);
+	
 	@Query("select i from Inventor i where i.userAccount.id = :id")
 	Inventor findInventorByUserAccountId(int id);
 	
@@ -27,5 +30,8 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	
 	@Query("select c.defaultCurrency from Configuration c")
 	String defaultCurrency();
+	
+	@Query("SELECT t from Toolkit t where t.inventor.userAccount.username = :username and t.isPublic = :visibility")
+	List<Toolkit> findPublicToolkitsByInventorUsername(String username, boolean visibility);
 
 }

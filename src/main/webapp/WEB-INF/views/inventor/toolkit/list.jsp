@@ -16,9 +16,14 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="any.toolkit.list.label.title" path="title"/>	
-	<acme:list-column code="any.toolkit.list.label.description" path="description"/>
-	<acme:list-column code="any.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
-	<acme:list-column code="any.toolkit.list.label.link" path="link"/>
-	<acme:list-column code="any.toolkit.list.label.isPublic" path="isPublic"/>
+	<acme:list-column code="inventor.toolkit.list.label.code" path="code"/>
+	<acme:list-column code="inventor.toolkit.list.label.title" path="title"/>	
+	<acme:list-column code="inventor.toolkit.list.label.description" path="description"/>
+	<acme:list-column code="inventor.toolkit.list.label.assemblyNotes" path="assemblyNotes"/>
+	<acme:list-column code="inventor.toolkit.list.label.link" path="link"/>
+	<acme:list-column code="inventor.toolkit.list.label.isPublic" path="isPublic"/>
 </acme:list>
+
+<jstl:if test="${command == 'list'}">
+	<acme:button code="inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/>
+</jstl:if>	

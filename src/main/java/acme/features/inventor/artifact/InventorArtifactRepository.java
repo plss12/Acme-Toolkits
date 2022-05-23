@@ -1,6 +1,7 @@
 package acme.features.inventor.artifact;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -32,4 +33,7 @@ public interface InventorArtifactRepository extends AbstractRepository{
 	
 	@Query("SELECT sc.defaultCurrency from Configuration sc")
 	String findDefaultCurrency();
+	
+	@Query("SELECT a from Artifact a where a.isPublic = :visibility")
+	List<Artifact> findAllPublics(boolean visibility);
 }
