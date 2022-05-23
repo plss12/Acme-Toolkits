@@ -92,6 +92,10 @@ public class AnyArtifactToolkitCreateService implements AbstractCreateService<An
 			errors.state(request, entity.getArtifactAmount() > 0, "artifactAmount", "any.artifact-toolkit.form.error.negative-amount");
 		}
 		
+		if(!errors.hasErrors()) {
+			errors.state(request,this.repository.findArtifactsToolkitsByToolkitAndArtifact(entity.getToolkit(), entity.getArtifact()).isEmpty(),"artifactAmount" , "any.artifact-toolkit.form.error.existingArtifactToolkit");
+		}
+		
 	}
 
 	@Override

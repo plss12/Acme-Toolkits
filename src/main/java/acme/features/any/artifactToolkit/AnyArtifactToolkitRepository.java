@@ -34,4 +34,7 @@ public interface AnyArtifactToolkitRepository extends AbstractRepository{
 	
 	@Query("select i from Inventor i where i.userAccount.id = :id")
 	Inventor findInventorByUserAccountId(int id);
+	
+	@Query("select at from ArtifactToolkit at where at.toolkit = :toolkit and at.artifact = :artifact")
+	Collection<ArtifactToolkit> findArtifactsToolkitsByToolkitAndArtifact(Toolkit toolkit, Artifact artifact);
 }

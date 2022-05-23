@@ -21,7 +21,7 @@
 	<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
 	<acme:input-textarea code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-url code="inventor.toolkit.form.label.link" path="link"/>
-	<acme:input-url code="inventor.toolkit.form.label.isPublic" path="isPublic" readonly="true"/>
+	<acme:input-textarea code="inventor.toolkit.form.label.isPublic" path="isPublic" readonly="true"/>
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'show' && isPublic}">
