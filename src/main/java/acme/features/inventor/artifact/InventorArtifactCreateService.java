@@ -1,6 +1,6 @@
 package acme.features.inventor.artifact;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,14 +56,9 @@ public class InventorArtifactCreateService implements AbstractCreateService<Inve
 			final String entityCurrency = entity.getRetailPrice().getCurrency();
 			final Double amount = entity.getRetailPrice().getAmount();
 			errors.state(request, amount > 0, "retailPrice", "inventor.artifact.form.error.negative");
-			
-			final List<String> currencies= new ArrayList<String>();
 			final String[] acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
-			for (final String currency : acceptedCurrencies){
-			    currencies.add(currency);
-			    }
 			
-			
+			final List<String> currencies = Arrays.asList(acceptedCurrencies);
 			errors.state(request, currencies.contains(entityCurrency) , "retailPrice", "inventor.artifact.form.error.noAcceptedCurrency");
 		}
 		

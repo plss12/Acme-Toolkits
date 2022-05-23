@@ -64,7 +64,7 @@ public class InventorArtifactDeleteService implements AbstractDeleteService<Inve
 		if(!errors.hasErrors("publish")) {
 			boolean publish;
 			publish=this.repository.findById(entity.getId()).isPresent();
-			errors.state(request, publish==true, "publish", "inventor.artifact.form.error.publish");
+			errors.state(request, publish, "publish", "inventor.artifact.form.error.publish");
 		}
 	}
 

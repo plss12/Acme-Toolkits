@@ -67,7 +67,7 @@ public class AnyArtifactToolkitDeleteService implements AbstractDeleteService<An
 			ArtifactToolkit existing;
 			
 			existing = this.repository.findArtifactToolkitById(request.getModel().getInteger("id"));
-			errors.state(request, existing.getToolkit().isPublic() == false, "*", "any.artifact-toolkit.form.error.published");
+			errors.state(request, !existing.getToolkit().isPublic(), "*", "any.artifact-toolkit.form.error.published");
 		}
 	}
 
