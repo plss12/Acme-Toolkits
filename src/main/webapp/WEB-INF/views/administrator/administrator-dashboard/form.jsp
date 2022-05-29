@@ -383,3 +383,123 @@
 		</th>
 	</tr>
 </table>
+
+<%--CONTROL CHECK--%>
+
+<h3>
+	<acme:message code="administrator.dashboard.form.label.ratioOfCHIMPUM"/>
+	<acme:print value="${ratioOfCHIMPUM}"/>
+</h3>
+
+<table class="table table-sm">
+	<caption>
+	</caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="administrator.dashboard.form.label.averageBudgetOfCHIMPUM"/>
+			</h4>
+			<table class="table table-sm" id="id-averageBudgetOfCHIMPUM">
+				<caption>
+					<acme:message code="administrator.dashboard.form.label.averageBudgetOfCHIMPUM"/>
+				</caption>
+				<jstl:forEach items="${currency}" var="currency">
+					<tr>
+						<th scope="row"><acme:print value="${currency}"/></th>
+						<jstl:set value="${averageBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currency)).iterator()}" var="entrySet"/>
+						<jstl:if test="${entrySet.hasNext()}">
+							<jstl:forEach items="${entrySet}" var="entry">
+								<th scope="row"><acme:print value="${entry.getValue()}" /></th>
+							</jstl:forEach>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
+</table>
+
+<table class="table table-sm">
+	<caption>
+	</caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="administrator.dashboard.form.label.deviationBudgetOfCHIMPUM"/>
+			</h4>
+			<table class="table table-sm" id="id-deviationBudgetOfCHIMPUM">
+				<caption>
+					<acme:message code="administrator.dashboard.form.label.deviationBudgetOfCHIMPUM"/>
+				</caption>
+				<jstl:forEach items="${currency}" var="currency">
+					<tr>
+						<th scope="row"><acme:print value="${currency}"/></th>
+						<jstl:set value="${deviationBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currency)).iterator()}" var="entrySet"/>
+						<jstl:if test="${entrySet.hasNext()}">
+							<jstl:forEach items="${entrySet}" var="entry">
+								<th scope="row"><acme:print value="${entry.getValue()}"/></th>
+							</jstl:forEach>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
+</table>
+
+<table class="table table-sm">
+	<caption>
+	</caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="administrator.dashboard.form.label.minimumBudgetOfCHIMPUM"/>
+			</h4>
+			<table class="table table-sm" id="id-minimumBudgetOfCHIMPUM">
+				<caption>
+					<acme:message
+						code="administrator.dashboard.form.label.minimumBudgetOfCHIMPUM"/>
+				</caption>
+				<jstl:forEach items="${currency}" var="currency">
+					<tr>
+						<th scope="row"><acme:print value="${currency}"/></th>
+						<jstl:set value="${minimumBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currency)).iterator()}" var="entrySet"/>
+						<jstl:if test="${entrySet.hasNext()}">
+							<jstl:forEach items="${entrySet}" var="entry">
+								<th scope="row"><acme:print value="${entry.getValue()}"/></th>
+							</jstl:forEach>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
+</table>
+
+<table class="table table-sm">
+	<caption>
+	</caption>
+	<tr>
+		<th scope="row">
+			<h4>
+				<acme:message code="administrator.dashboard.form.label.maximumBudgetOfCHIMPUM"/>
+			</h4>
+			<table class="table table-sm" id="id-maximumBudgetOfCHIMPUM">
+				<caption>
+					<acme:message code="administrator.dashboard.form.label.maximumBudgetOfCHIMPUM"/>
+				</caption>
+				<jstl:forEach items="${currency}" var="currency">
+					<tr>
+						<th scope="row"><acme:print value="${currency}"/></th>
+						<jstl:set value="${maximumBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currency)).iterator()}" var="entrySet"/>
+						<jstl:if test="${entrySet.hasNext()}">
+							<jstl:forEach items="${entrySet}" var="entry">
+								<th scope="row"><acme:print value="${entry.getValue()}"/></th>
+							</jstl:forEach>
+						</jstl:if>
+					</tr>
+				</jstl:forEach>
+			</table>
+		</th>
+	</tr>
+</table>

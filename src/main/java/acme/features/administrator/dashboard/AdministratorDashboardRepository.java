@@ -29,5 +29,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select p.status,avg(p.budget.amount),min(p.budget.amount),max(p.budget.amount),stddev(p.budget.amount),p.budget.currency from Patronage p group by p.status")
 	List<Object[]> statsOfPatronages();
+	
+	//CONTROL CHECK------------------------
+	
+	@Query("select count(c) from CHIMPUM c")
+	int totalNumberOfCHIMPUMs();
+	
+	@Query("select avg(c.budget.amount), min(c.budget.amount), max(c.budget.amount), stddev(c.budget.amount), c.budget.currency from CHIMPUM c group by c.budget.currency")
+	List<Object[]> statsOfCHIMPUM();
 
 }
