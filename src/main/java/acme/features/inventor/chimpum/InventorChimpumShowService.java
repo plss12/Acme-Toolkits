@@ -3,7 +3,6 @@ package acme.features.inventor.chimpum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Artifact;
 import acme.entities.Chimpum;
 import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.forms.MoneyExchange;
@@ -28,12 +27,12 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 		boolean result;
 		int id;
 		
-		Artifact artifact;
+		Chimpum chimpum;
 		
 		id = request.getModel().getInteger("id");
-		artifact = this.repository.findChimpumById(id).getArtifact();
+		chimpum = this.repository.findChimpumById(id);
 		
-		result = (artifact != null && (request.isPrincipal(artifact.getInventor())));
+		result = (chimpum != null && (request.isPrincipal(chimpum.getArtifact().getInventor())));
 		
 		return result;
 	}

@@ -38,3 +38,5 @@ inventor.artifact.form.label.retail_priceExchangeDate = Retail Price exchange da
 inventor.artifact.form.label.retail_priceExchange = Retail Price (at system currency)
 
 inventor.artifact.form.error.spam = Text surpasses the spam threshold
+
+inventor.artifact.form.button.chimpum = Chimpums

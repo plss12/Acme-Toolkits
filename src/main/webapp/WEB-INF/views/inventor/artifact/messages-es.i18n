@@ -38,3 +38,5 @@ inventor.artifact.form.label.retail_priceExchangeDate = Fecha de intercambio del
 inventor.artifact.form.label.retail_priceExchange = Precio (en la divisa del sistema)
 
 inventor.artifact.form.error.spam = El texto supera el límite de spam
+
+inventor.artifact.form.button.chimpum = Chimpums

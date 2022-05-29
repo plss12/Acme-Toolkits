@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Artifact;
 import acme.entities.Chimpum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -20,7 +21,17 @@ public class InventorChimpumListService implements AbstractListService<Inventor,
 	@Override
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
-		return true;
+		boolean result;
+		int id;
+		
+		Artifact artifact;
+		
+		id = request.getModel().getInteger("masterId");
+		artifact = this.repository.findArtifactById(id);
+		
+		result = (artifact != null && (request.isPrincipal(artifact.getInventor())));
+		
+		return result;
 	}
 
 	@Override
@@ -28,7 +39,7 @@ public class InventorChimpumListService implements AbstractListService<Inventor,
 		assert request != null;
 	
 		final Collection<Chimpum> result;
-		final int artifactId= request.getModel().getInteger("id");
+		final int artifactId= request.getModel().getInteger("masterId");
 		result = this.repository.findChimpumByArtifactId(artifactId);
 		
 		return result;

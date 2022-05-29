@@ -1,0 +1,15 @@
+inventor.chimpum.list.label.title = Title
+inventor.chimpum.list.label.creationMoment = Creation Moment
+inventor.chimpum.list.label.budget = Price
+inventor.chimpum.list.button.create = Create
+
+inventor.chimpum.form.label.title = Title
+inventor.chimpum.form.label.code = Code
+inventor.chimpum.form.label.creationMoment = Creation Moment
+inventor.chimpum.form.label.description = Description
+inventor.chimpum.form.label.budget = Price
+inventor.chimpum.form.label.link = Link
+inventor.chimpum.form.label.startDate = Start Date
+inventor.chimpum.form.label.finishDate = Finish Date
+inventor.chimpum.form.button.delete = Delete
+inventor.chimpum.form.button.update = Update

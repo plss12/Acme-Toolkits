@@ -31,3 +31,11 @@ administrator.dashboard.form.label.averageBudgetOfPatronages = Presupuesto Medio
 administrator.dashboard.form.label.deviationBudgetOfPatronages = Desviación del Presupuesto de Patrocinios
 administrator.dashboard.form.label.maximumBudgetOfPatronages = Presupuesto Máximo de Patrocinios
 administrator.dashboard.form.label.minimumBudgetOfPatronages = Presupuesto Mínimo de Patrocinios
+
+#CONTROL CHECK
+
+administrator.dashboard.form.label.ratioOfCHIMPUM = Ratio de CHIMPUM
+administrator.dashboard.form.label.averageBudgetOfCHIMPUM = Presupuesto Medio de CHIMPUM
+administrator.dashboard.form.label.deviationBudgetOfCHIMPUM = Desviación del Presupuesto de CHIMPUM
+administrator.dashboard.form.label.minimumBudgetOfCHIMPUM = Presupuesto Mínimo de CHIMPUM
+administrator.dashboard.form.label.maximumBudgetOfCHIMPUM = Presupuesto Máximo de CHIMPUM

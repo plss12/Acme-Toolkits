@@ -38,7 +38,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
 		assert request != null;
 		
-		final AdministratorDashboard result;
+		final AdministratorDashboard result;				
 		
 		// Components stats
 		
@@ -127,6 +127,36 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			maximumBudgetOfPatronages.put(pair, max);
 		}
 		
+		//CONTROL CHECK ---------------------------------------------------------------------------
+
+		final int totalNumberOfCHIMPUM;
+		totalNumberOfCHIMPUM = this.repository.totalNumberOfCHIMPUMs();
+		
+		final Double ratioOfCHIMPUM;
+		
+		ratioOfCHIMPUM = totalNumberOfCHIMPUM==0? 0.0 : (double) totalNumberOfCHIMPUM/totalNumberOfTools;		
+		
+		final Map<String, Double> averageBudgetOfCHIMPUM = new HashMap<>();
+		final Map<String, Double> deviationBudgetOfCHIMPUM = new HashMap<>();
+		final Map<String, Double> minimumBudgetOfCHIMPUM = new HashMap<>();
+		final Map<String, Double> maximumBudgetOfCHIMPUM = new HashMap<>();
+		
+		final List<Object[]> statsOfCHIMPUM;
+		statsOfCHIMPUM = this.repository.statsOfCHIMPUM();
+		for(final Object[] stats:statsOfCHIMPUM) {
+			
+			final Double avg = (Double) stats[0];
+			final Double min = (Double) stats[1];
+			final Double max = (Double) stats[2];
+			final Double stddev = (Double) stats[3];
+			final String currency = (String) stats[4];
+			
+			averageBudgetOfCHIMPUM.put(currency, avg);
+			deviationBudgetOfCHIMPUM.put(currency, stddev);
+			minimumBudgetOfCHIMPUM.put(currency, min);
+			maximumBudgetOfCHIMPUM.put(currency, max);
+		}
+		
 		//Construct
 		
 		result = new AdministratorDashboard();
@@ -149,6 +179,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMinimumBudgetOfPatronages(minimumBudgetOfPatronages);
 		result.setMaximumBudgetOfPatronages(maximumBudgetOfPatronages);
 		
+		//CONTROL CHECK-----------------
+		result.setAverageBudgetOfCHIMPUM(averageBudgetOfCHIMPUM);
+		result.setDeviationBudgetOfCHIMPUM(deviationBudgetOfCHIMPUM);
+		result.setMaximumBudgetOfCHIMPUM(maximumBudgetOfCHIMPUM);
+		result.setMinimumBudgetOfCHIMPUM(minimumBudgetOfCHIMPUM);
+		result.setRatioOfCHIMPUM(ratioOfCHIMPUM);
+		
 		return result;
 	}
 
@@ -161,7 +198,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		request.unbind(entity, model, "totalNumberOfComponents","averageRetailPriceOfComponents","retailPriceDeviationOfComponents",
 			"minimumRetailPriceOfComponents","maximumRetailPriceOfComponents",
 			"totalNumberOfTools","averageRetailPriceOfTools","retailPriceDeviationOfTools","minimumRetailPriceOfTools","maximumRetailPriceOfTools",
-			"totalNumberOfPatronages","averageBudgetOfPatronages","deviationBudgetOfPatronages","minimumBudgetOfPatronages","maximumBudgetOfPatronages");
+			"totalNumberOfPatronages","averageBudgetOfPatronages","deviationBudgetOfPatronages","minimumBudgetOfPatronages","maximumBudgetOfPatronages",
+			"ratioOfCHIMPUM", "averageBudgetOfCHIMPUM", "deviationBudgetOfCHIMPUM", "minimumBudgetOfCHIMPUM", "maximumBudgetOfCHIMPUM");
 		
 		final Set<String> technologies = entity.getMinimumRetailPriceOfComponents().keySet().stream().map(Pair::getFirst).collect(Collectors.toSet());
 		model.setAttribute("technology", technologies);
