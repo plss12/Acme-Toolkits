@@ -134,7 +134,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		final Double ratioOfCHIMPUM;
 		
-		ratioOfCHIMPUM = totalNumberOfCHIMPUM==0? 0.0 : (double) totalNumberOfTools/totalNumberOfCHIMPUM;		
+		ratioOfCHIMPUM = totalNumberOfCHIMPUM==0? 0.0 : (double) totalNumberOfCHIMPUM/totalNumberOfTools;		
 		
 		final Map<String, Double> averageBudgetOfCHIMPUM = new HashMap<>();
 		final Map<String, Double> deviationBudgetOfCHIMPUM = new HashMap<>();
