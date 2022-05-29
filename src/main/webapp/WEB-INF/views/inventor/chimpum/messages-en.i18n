@@ -11,5 +11,11 @@ inventor.chimpum.form.label.budget = Price
 inventor.chimpum.form.label.link = Link
 inventor.chimpum.form.label.startDate = Start Date
 inventor.chimpum.form.label.finishDate = Finish Date
+inventor.chimpum.form.label.artifact = Artifact
 inventor.chimpum.form.button.delete = Delete
 inventor.chimpum.form.button.update = Update
+inventor.chimpum.form.button.create = Create
+
+inventor.chimpum.form.error.negative = The price cant be negative
+inventor.chimpum.form.error.noAcceptedCurrency = This currency is not accepted
+inventor.chimpum.form.error.spam = You can write spam

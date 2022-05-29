@@ -13,11 +13,15 @@
 	<acme:input-textbox code="inventor.chimpum.form.label.link" path="link"/>	
 	<acme:input-moment code="inventor.chimpum.form.label.startDate" path="startDate"/>	
 	<acme:input-moment code="inventor.chimpum.form.label.finishDate" path="finishDate"/>	
+	<acme:input-textbox code="inventor.chimpum.form.label.artifact" path="artifact.name"/>	
 		
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
 				<acme:submit code="inventor.chimpum.form.button.update" action="/inventor/chimpum/update"/>
 				<acme:submit code="inventor.chimpum.form.button.delete" action="/inventor/chimpum/delete"/>
+		</jstl:when>
+		<jstl:when test="${command == 'create'}">
+				<acme:submit code="inventor.chimpum.form.button.create" action="/inventor/chimpum/create"/>
 		</jstl:when>
 	</jstl:choose>
 

@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Artifact;
 import acme.entities.Chimpum;
 import acme.entities.Configuration;
 import acme.features.SpamDetector.SpamDetector;
@@ -57,13 +56,8 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		assert request != null;
 		
 		Chimpum result;
-		int id;
-		Artifact artifact;
 		
-		id = request.getModel().getInteger("id");
-		artifact = this.repository.findArtifactById(id);
 		result = new Chimpum();
-		result.setArtifact(artifact);;
 		
 		return result;
 	}
@@ -77,11 +71,11 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		if(!errors.hasErrors("budget")) {
 			final String entityCurrency = entity.getBudget().getCurrency();
 			final Double amount = entity.getBudget().getAmount();
-			errors.state(request, amount > 0, "retailPrice", "inventor.artifact.form.error.negative");
+			errors.state(request, amount > 0, "budget", "inventor.artifact.form.error.negative");
 			final String[] acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
 			
 			final List<String> currencies = Arrays.asList(acceptedCurrencies);
-			errors.state(request, currencies.contains(entityCurrency) , "retailPrice", "inventor.chimpum.form.error.noAcceptedCurrency");
+			errors.state(request, currencies.contains(entityCurrency) , "budget", "inventor.chimpum.form.error.noAcceptedCurrency");
 		}
 		
 		final SpamDetector spamdetector = new SpamDetector();

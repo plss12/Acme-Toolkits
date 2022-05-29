@@ -3,7 +3,6 @@ package acme.features.inventor.chimpum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Artifact;
 import acme.entities.Chimpum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -21,17 +20,7 @@ public class InventorChimpumDeleteService implements AbstractDeleteService<Inven
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
 		
-		boolean result;
-		int id;
-		
-		Artifact artifact;
-		
-		id = request.getModel().getInteger("id");
-		artifact = this.repository.findChimpumById(id).getArtifact();
-		
-		result = request.isPrincipal(artifact.getInventor());
-		
-		return result;
+		return true;
 	}
 
 	@Override

@@ -12,6 +12,9 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface InventorChimpumRepository extends AbstractRepository{
 
+	@Query("select c from Chimpum c")
+	Collection<Chimpum> findAllChimpums();
+	
 	@Query("select c from Chimpum c where c.id = :id")
 	Chimpum findChimpumById(int id);
 	
