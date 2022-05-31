@@ -2,7 +2,6 @@ package acme.entities;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -37,7 +36,6 @@ public class Patronage extends AbstractEntity{
 
 		@NotBlank
 		@Pattern(regexp="^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
-		@Column(unique = true)
 		protected String code;
 		
 		@NotBlank
@@ -64,11 +62,13 @@ public class Patronage extends AbstractEntity{
 		// Derived attributes -----------------------------------------------------
 
 		// Relationships ----------------------------------------------------------
+		
 		@NotNull
 		@Valid
 		@ManyToOne
 		protected Patron patron;
 		
+		@NotNull
 		@Valid
 		@ManyToOne
 		protected Inventor inventor;
