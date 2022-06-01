@@ -28,7 +28,7 @@ public interface PatronPatronageRepository extends AbstractRepository{
 	Patronage findOnePatronageByCode(String code);
 
 	@Query("select inventor from Inventor inventor where inventor.userAccount.username =:inventorUsername")
-	Inventor findInventorByUsername(String inventorUsername);
+	List<Inventor> findInventorByUsername(String inventorUsername);
 
 	@Query("select patronageReports from PatronageReport patronageReports where patronageReports.patronage.id =:id")
 	Collection<PatronageReport> findManyPatronageReportsByPatronageId(int id);

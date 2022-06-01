@@ -34,7 +34,7 @@ public class AnyToolkitListService implements AbstractListService<Any, Toolkit>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "description", "assemblyNotes", "link", "artifactToolkits");
+		request.unbind(entity, model, "title", "description", "assemblyNotes", "link");
 	}
 
 	@Override

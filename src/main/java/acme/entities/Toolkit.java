@@ -1,6 +1,5 @@
 package acme.entities;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -27,7 +26,6 @@ public class Toolkit  extends AbstractEntity{
 	
 	// Attributes  ------------------------------------
 
-	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String code;	
