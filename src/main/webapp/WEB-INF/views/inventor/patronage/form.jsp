@@ -18,6 +18,8 @@
 <acme:form>
 	<acme:input-textbox code="authenticated.patronage.form.label.code" path="code" readonly="true"/>	
 	<acme:input-money code="authenticated.patronage.form.label.budget" path="budget" readonly="true"/>
+	<acme:input-money code="patron.patronage.form.label.budgetExchange" path="budgetExchange" readonly="true"/>
+	<acme:input-moment code="patron.patronage.form.label.budgetExchangeDate" path="budgetExchangeDate" readonly="true"/>
 	<acme:input-moment code="authenticated.patronage.form.label.start_date" path="startDate" readonly="true"/>
 	<acme:input-moment code="authenticated.patronage.form.label.finish_date" path="finishDate" readonly="true"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.legal_stuff" path="legalStuff" readonly="true"/>
@@ -30,7 +32,7 @@
 	<jstl:choose>	 
 		<jstl:when test="${command == 'show'}">
 			<acme:input-textbox code="authenticated.patronage.form.label.status" path="status"/>
-			<jstl:if test="${isProposedAndPublic.equals(true)}">
+			<jstl:if test="${isProposedAndPublic.equals(true)}">			
 				<acme:button code="inventor.patronage.form.button.edit" action="/inventor/patronage/update?id=${id}"/>
 			</jstl:if>
 			<acme:button code="authenticated.patronage.form.button.patronageReport" action="/inventor/patronage-report/list?masterId=${id}"/>			
