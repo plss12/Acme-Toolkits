@@ -1,5 +1,6 @@
 package acme.features.patron.patronage;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -90,7 +91,7 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 			Patronage existing;
 			
 			existing = this.repository.findOnePatronageByCode(entity.getCode());
-			errors.state(request, existing==null||entity.getCode().equals(existing.getCode()), "code", "patron.patronage.form.error.duplicated");
+			errors.state(request, existing==null||entity.getId()==(existing.getId()), "code", "patron.patronage.form.error.duplicated");
 		}
 		
 		if(!errors.hasErrors("startDate")) {
@@ -107,6 +108,11 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		
 		if(!errors.hasErrors("budget")) {
 			errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.patronage.form.error.negative");
+		
+			final String entityCurrency = entity.getBudget().getCurrency();			
+			final String[] acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
+			final List<String> currencies= Arrays.asList(acceptedCurrencies);			
+			errors.state(request, currencies.contains(entityCurrency) , "budget", "patron.patronage.form.error.noAcceptedCurrency");
 		}
 		
 		if(!errors.hasErrors("finishDate")) {
