@@ -653,13 +653,13 @@ bg=green</panel_attributes>
 AdministratorDashboard
 --
 + totalNumberOfComponents: int
-+ averageNumberOfComponents: Map&lt;Pair&lt;String, String&gt;, Double&gt;
-+ deviationNumberOfComponents:Map&lt;Pair&lt;String, String&gt;, Double&gt;
++ averageRetailPriceOfComponents: Map&lt;Pair&lt;String, String&gt;, Double&gt;
++ retailPriceDeviationOfComponents:Map&lt;Pair&lt;String, String&gt;, Double&gt;
 + minimumRetailPriceOfComponents: Map&lt;Pair&lt;String, String&gt;, Double&gt;
 + maximumRetailPriceOfComponents: Map&lt;Pair&lt;String, String&gt;, Double&gt;
 + totalNumberOfTools: int
-+ averageNumberOfTools: Map&lt;String, Double&gt;
-+ deviationNumberOfTools: Map&lt;String, Double&gt;
++ averageRetailPriceOfTools: Map&lt;String, Double&gt;
++ retailPriceDeviationOfTools: Map&lt;String, Double&gt;
 + minimumRetailPriceOfTools: Map&lt;String, Double&gt;
 + maximumRetailPriceOfTools: Map&lt;String, Double&gt;
 + totalNumberOfPatronages: Map&lt;PatronageStatus, Long&gt;
