@@ -206,6 +206,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		final Set<String> currencies = entity.getRetailPriceDeviationOfTools().keySet();
 		model.setAttribute("currency", currencies);
+		
+		final Set<String> currenciesCHIMPUM = entity.getDeviationBudgetOfCHIMPUM().keySet();
+        model.setAttribute("currencyCHIMPUM", currenciesCHIMPUM);
 	}
 
 }

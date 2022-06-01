@@ -17,6 +17,7 @@ inventor.artifact.list.label.retail_price.amount = Precio
 inventor.artifact.list.label.retail_price.currency = Divisa
 inventor.artifact.list.label.link = Enlace
 inventor.artifact.list.button.create = Crear
+inventor.artifact.list.button.CHIMPUM = Ver Chimpums
 
 inventor.artifact.form.label.artifact_type = Tipo de Artefacto
 inventor.artifact.form.label.name = Nombre
