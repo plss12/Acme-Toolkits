@@ -56,12 +56,12 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert errors != null;
 		
-		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor.userAccount.username"));
-		final Inventor inventor = this.repository.findInventorByUsername(inventorUsername);
+		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventorUsername"));
+		final Inventor inventor = this.repository.findInventorByUsername(inventorUsername).get(0);
 		errors.state(request, inventor!=null, "*", "patron.patronage.form.error.invalidInventor");
 		entity.setInventor(inventor);
 		
-		request.bind(entity, errors, "code", "legalStuff", "budget", "startDate", "finishDate", "link","inventor.userAccount.username");
+		request.bind(entity, errors, "code", "legalStuff", "budget", "startDate", "finishDate", "link");
 		
 	}
 	
@@ -125,7 +125,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		final List<Inventor> inventorSelect = this.repository.findAllInventors();
 		model.setAttribute("inventorSelect", inventorSelect);
 		
-		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "finishDate", "link", "inventor.userAccount.username");
+		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "finishDate", "link");
 		
 	}		
 
@@ -133,8 +133,8 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 	public void create(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
 		assert entity != null;
-		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor.userAccount.username"));
-		final Inventor inventor = this.repository.findInventorByUsername(inventorUsername);
+		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventorUsername"));
+		final Inventor inventor = this.repository.findInventorByUsername(inventorUsername).get(0);
 		entity.setInventor(inventor);
 
 		this.repository.save(entity);		

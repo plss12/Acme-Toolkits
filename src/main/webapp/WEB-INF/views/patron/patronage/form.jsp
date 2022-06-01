@@ -35,9 +35,9 @@
 			<acme:button code="patron.patronage.form.button.patronageReport" action="/patron/patronage-report/list?masterId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')}">
-			<acme:input-select code="patron.patronage.form.label.inventor.username" path="inventor.userAccount.username">
+			<acme:input-select code="patron.patronage.form.label.inventor.username" path="inventorUsername">
 				<jstl:forEach items="${inventorSelect}" var="inventorSelect">
-					<acme:input-option code="${inventorSelect.userAccount.username}" value="${inventorSelect.userAccount.username}" selected="${inventorSelect.userAccount.username==(inventor.userAccount.username)}"/>
+					<acme:input-option code="${inventorSelect.userAccount.username}" value="${inventorSelect.userAccount.username}"/>
 				</jstl:forEach>
 			</acme:input-select>
 			<acme:input-textbox code="patron.patronage.form.label.status" path="status" readonly="true"/>
@@ -53,9 +53,9 @@
 			<acme:button code="patron.patronage.form.button.patronageReport" action="/patron/patronage-report/list?masterId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
-			<acme:input-select code="patron.patronage.form.label.inventor.username" path="inventor.userAccount.username">
+			<acme:input-select code="patron.patronage.form.label.inventor.username" path="inventorUsername">
 				<jstl:forEach items="${inventorSelect}" var="inventorSelect">
-					<acme:input-option code="${inventorSelect.userAccount.username}" value="${inventorSelect.userAccount.username}" selected="${inventorSelect.userAccount.username==(inventor.userAccount.username)}"/>
+					<acme:input-option code="${inventorSelect.userAccount.username}" value="${inventorSelect.userAccount.username}"/>
 				</jstl:forEach>
 			</acme:input-select>
 			<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>			
