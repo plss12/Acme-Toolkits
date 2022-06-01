@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.TestHarness;
+import acme.testing.TemporalAwareTestHarness;
 
-public class AuthenticatedAnnouncementListRecentTest extends TestHarness {
-	
+public class AuthenticatedAnnouncementListRecentTest extends TemporalAwareTestHarness {
+		
 	//Test cases
 	
 	@ParameterizedTest
@@ -21,7 +21,6 @@ public class AuthenticatedAnnouncementListRecentTest extends TestHarness {
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		
-		super.checkColumnHasValue(recordIndex, 0, moment);
 		super.checkColumnHasValue(recordIndex, 1, status);
 		super.checkColumnHasValue(recordIndex, 2, title);
 		super.checkColumnHasValue(recordIndex, 3, body);

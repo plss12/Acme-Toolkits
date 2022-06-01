@@ -17,4 +17,7 @@ public interface AuthenticatedAnnouncementRepository extends AbstractRepository{
 	
 	@Query("select a from Announcement a where a.id = :id")
 	Announcement findOneAnnouncementById(int id);
+
+	@Query("select a from Announcement a")
+	Collection<Announcement> findAnnouncementsToPatch();
 }
