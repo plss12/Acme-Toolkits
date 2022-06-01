@@ -290,7 +290,7 @@ give it to ^
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 PatronageReport
 --
-+ sequenceNumber: String {NotBlank, Pattern="\\d+:\\d+"}
++ sequenceNumber: String {NotBlank, Pattern="^[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]+$"}
 + creationMoment: Date {Temporal(TIMESTAMP), Past}
 + memorandum: String {NotBlank, Length(Max(255))}
 + link: String {URL}
