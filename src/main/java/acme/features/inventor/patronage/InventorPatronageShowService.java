@@ -53,7 +53,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		
 		model.setAttribute("isProposedAndPublic", entity.getStatus().equals(PatronageStatus.PROPOSED) && entity.isPublic());
 		request.unbind(entity, model, "code", "budget", "legalStuff", "link", "startDate", "finishDate", "status", 
-			"patron.company", "patron.link", "patron.statement");
+			"patron.company", "patron.link", "patron.statement", "patron.userAccount.username");
 		model.setAttribute("readonly",true);
 		model.setAttribute("confirmation", false);
 	}

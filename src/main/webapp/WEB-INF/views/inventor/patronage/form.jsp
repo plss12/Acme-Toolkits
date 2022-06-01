@@ -22,6 +22,7 @@
 	<acme:input-moment code="authenticated.patronage.form.label.finish_date" path="finishDate" readonly="true"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.legal_stuff" path="legalStuff" readonly="true"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.link" path="link" readonly="true"/>
+	<acme:input-textbox code="authenticated.patronage.form.label.patron" path="patron.userAccount.username" readonly="true"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.company" path="patron.company" readonly="true"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.patron.link" path="patron.link" readonly="true"/>
 	<acme:input-textbox code="authenticated.patronage.form.label.statement" path="patron.statement" readonly="true"/>
