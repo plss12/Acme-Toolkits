@@ -1,11 +1,13 @@
 package acme.features.inventor.chimpum;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.Artifact;
+import acme.entities.ArtifactType;
 import acme.entities.Chimpum;
 import acme.framework.repositories.AbstractRepository;
 
@@ -26,6 +28,12 @@ public interface InventorChimpumRepository extends AbstractRepository{
 	
 	@Query("select a from Artifact a where a.id = :id")
 	Artifact findArtifactById(int id);
+	
+	@Query("select a from Artifact a where a.code = :code")
+	Artifact findArtifactByCode(String code);
+	
+	@Query("SELECT a from Artifact a where a.isPublic = True and a.artifactType = :type")
+	List<Artifact> findAllArtifactsPublicsByType(ArtifactType type);
 	
 	@Query("SELECT sc.acceptedCurrencies from Configuration sc")
 	String findAllAcceptedCurrencies();

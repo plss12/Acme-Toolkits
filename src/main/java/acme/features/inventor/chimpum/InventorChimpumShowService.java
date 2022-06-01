@@ -24,7 +24,16 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
 		
-		return true;
+		boolean result;
+		int id;
+		id = request.getModel().getInteger("id");
+		
+		Chimpum chimpum;
+		chimpum = this.repository.findChimpumById(id);
+		
+		result = (chimpum != null &&(request.isPrincipal(chimpum.getArtifact().getInventor())));
+		
+		return result;
 	}
 
 	@Override
@@ -47,7 +56,7 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 		exchange = this.moneyExchange.computeMoneyExchange(entity.getBudget(), defaultCurrency);
 		
 		request.unbind(entity, model, "title", "code", "creationMoment", "description", "budget", 
-			"link", "startDate", "finishDate", "artifact.name");
+			"link", "startDate", "finishDate");
 		
 		model.setAttribute("budgetExchange", exchange.getTarget());
 		model.setAttribute("budgetExchangeDate", exchange.getDate());

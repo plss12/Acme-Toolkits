@@ -30,6 +30,7 @@ inventor.artifact.form.button.create = Crear
 inventor.artifact.form.button.update = Actualizar
 inventor.artifact.form.button.delete = Borrar
 inventor.artifact.form.button.publish = Publicar
+inventor.artifact.form.button.chimpum = Chimpums
 
 inventor.artifact.form.error.duplicated_code = Otro artefacto tiene este código
 inventor.artifact.form.error.negative = El precio no puede ser negativo

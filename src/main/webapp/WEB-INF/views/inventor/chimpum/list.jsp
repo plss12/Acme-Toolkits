@@ -20,4 +20,4 @@
 	<acme:list-column code="inventor.chimpum.list.label.creationMoment" path="creationMoment"/>
 	<acme:list-column code="inventor.chimpum.list.label.budget" path="budget"/>
 </acme:list>
-<acme:button code="inventor.chimpum.list.button.create" action="/inventor/chimpum/create"/>
+<acme:button code="inventor.chimpum.list.button.create" action="/inventor/chimpum/create?masterId=${masterId}"/>

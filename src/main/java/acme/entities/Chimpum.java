@@ -4,13 +4,14 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -32,12 +33,13 @@ public class Chimpum extends AbstractEntity{
 	protected String title;
 
 	@Column(unique = true)
-	//@Pattern(regexp = "^[0-9]+-([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))?$")
+	@Pattern(regexp = "[A-Z]{3}-[12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01])")	
 	@NotBlank
 	protected String code;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
+	@NotNull
 	protected Date creationMoment;
 	
 	@NotBlank
@@ -61,6 +63,6 @@ public class Chimpum extends AbstractEntity{
     
     @Valid
     @NotNull
-    @OneToOne
+    @ManyToOne
     protected Artifact artifact;
 }

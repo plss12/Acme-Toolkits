@@ -46,5 +46,7 @@
 				<acme:submit code="inventor.artifact.form.button.create" action="/inventor/artifact/create"/>
 		</jstl:when>
 	</jstl:choose>
-		
+		<jstl:if test="${artifactType=='TOOL'}">
+				<acme:button code="inventor.artifact.form.button.chimpum" action="/inventor/chimpum/list?masterId=${id}"/>			
+		</jstl:if>
 </acme:form>

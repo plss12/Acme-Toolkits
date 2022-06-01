@@ -1,6 +1,10 @@
 package acme.features.inventor.chimpum;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +33,16 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
 		
-		return true;
+		boolean result;
+		int id;
+		id = request.getModel().getInteger("id");
+		
+		Chimpum chimpum;
+		chimpum = this.repository.findChimpumById(id);
+		
+		result = (chimpum != null &&(request.isPrincipal(chimpum.getArtifact().getInventor())));
+		
+		return result;
 	}
 
 	@Override
@@ -70,14 +83,62 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 		assert entity != null;
 		assert errors != null;
 		
-		if(!errors.hasErrors("budget")) {
-			final String entityCurrency = entity.getBudget().getCurrency();
-			final Double amount = entity.getBudget().getAmount();
-			errors.state(request, amount > 0, "budget", "inventor.chimpum.form.error.negative");
-			final String[] acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
+		if (!errors.hasErrors("code")) {
+			Chimpum chimpum;
 			
-			final List<String> currencies = Arrays.asList(acceptedCurrencies);
+			chimpum=this.repository.findChimpumByCode(entity.getCode());
+			errors.state(request, chimpum == null || chimpum.getId()==entity.getId(), "code", "inventor.chimpum.form.error.duplicated_code");
+			
+			String code;
+			Date date;
+			SimpleDateFormat formatter;
+			String format;
+			int finalIndexCode;
+			
+			date = entity.getCreationMoment();
+			formatter = new SimpleDateFormat("yyyy/MM/dd");
+			format = formatter.format(date);
+			
+			code=entity.getCode();
+			finalIndexCode=code.length();
+			code=code.substring(finalIndexCode-10, finalIndexCode);
+			errors.state(request, code.equals(format), "code", "inventor.chimpum.form.error.incorrect_code");
+
+		}
+		if(!errors.hasErrors("budget")) {
+			final String entityCurrency;
+			final Double amount;
+			final String[] acceptedCurrencies;
+			final List<String> currencies;
+			
+			entityCurrency = entity.getBudget().getCurrency();
+			amount = entity.getBudget().getAmount();
+			errors.state(request, amount > 0, "budget", "inventor.artifact.form.error.negative");
+			acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
+			
+			currencies = Arrays.asList(acceptedCurrencies);
 			errors.state(request, currencies.contains(entityCurrency) , "budget", "inventor.chimpum.form.error.noAcceptedCurrency");
+		}
+		if(!errors.hasErrors("startDate")) {
+			Calendar calendar;
+			final Date minimunDate;
+			
+			calendar = new GregorianCalendar();
+			calendar.add(Calendar.MONTH, 1);
+			minimunDate = calendar.getTime();
+			errors.state(request, entity.getStartDate().after(minimunDate), "startDate", "inventor.chimpum.form.error.too-close-start");
+		}
+		if(!errors.hasErrors("finishDate")) {
+			Calendar calendar;
+			Date minimunDate;
+			
+			calendar = new GregorianCalendar();
+			calendar.setTime(entity.getStartDate());
+			
+			calendar.add(Calendar.WEEK_OF_YEAR, 1);
+			minimunDate = calendar.getTime();
+			
+			errors.state(request, entity.getFinishDate().equals(minimunDate), "finishDate", "inventor.chimpum.form.error.too-close");
 		}
 		
 		final SpamDetector spamdetector = new SpamDetector();
@@ -86,7 +147,7 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 		if(!errors.hasErrors("title")) {
 			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getTitle())
 				&& !spamdetector.containsSpam(config.getStrongSpam(),config.getStrongSpamTrheshold(),entity.getTitle()),
-				"name", "inventor.chimpum.form.error.spam");
+				"title", "inventor.chimpum.form.error.spam");
 		}
 		if(!errors.hasErrors("description")) {
 			errors.state(request, !spamdetector.containsSpam(config.getWeakSpam(),config.getWeakSpamTrheshold(),entity.getDescription())

@@ -36,4 +36,5 @@ public interface InventorArtifactRepository extends AbstractRepository{
 	
 	@Query("SELECT a from Artifact a where a.isPublic = :visibility")
 	List<Artifact> findAllPublics(boolean visibility);
+	
 }
