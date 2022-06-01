@@ -27,7 +27,7 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("finishDate", finishDate);
 		super.fillInputBoxIn("link", link);
-		super.fillInputBoxIn("inventor.userAccount.username", inventorSelector);
+		super.fillInputBoxIn("inventorUsername", inventorSelector);
 		
 		super.clickOnSubmit("Update");
 		
@@ -82,7 +82,7 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("finishDate", finishDate);
 		super.fillInputBoxIn("link", link);
-		super.fillInputBoxIn("inventor.userAccount.username", inventorSelector);
+		super.fillInputBoxIn("inventorUsername", inventorSelector);
 		
 		super.clickOnSubmit("Update");
 		

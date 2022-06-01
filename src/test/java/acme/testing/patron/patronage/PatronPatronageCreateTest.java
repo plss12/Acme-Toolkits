@@ -27,7 +27,7 @@ public class PatronPatronageCreateTest extends TestHarness{
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("finishDate", finishDate);
 		super.fillInputBoxIn("link", link);
-		super.fillInputBoxIn("inventor.userAccount.username", inventorSelector);
+		super.fillInputBoxIn("inventorUsername", inventorSelector);
 		
 		super.clickOnSubmit("Create");
 		
@@ -80,7 +80,7 @@ public class PatronPatronageCreateTest extends TestHarness{
 		super.fillInputBoxIn("startDate", startDate);
 		super.fillInputBoxIn("finishDate", finishDate);
 		super.fillInputBoxIn("link", link);
-		super.fillInputBoxIn("inventor.userAccount.username", inventorSelector);
+		super.fillInputBoxIn("inventorUsername", inventorSelector);
 		
 		super.clickOnSubmit("Create");
 		
