@@ -13,9 +13,6 @@ import acme.roles.Inventor;
 public class InventorChimpumController extends AbstractController<Inventor,CHIMPUM>{
 	
 	@Autowired
-	protected InventorChimpumListService listService;
-	
-	@Autowired
 	protected InventorArtifactChimpumsListService listServiceArtifact;
 	
 	@Autowired
@@ -24,7 +21,6 @@ public class InventorChimpumController extends AbstractController<Inventor,CHIMP
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
 		super.addCommand("list-own","list", this.listServiceArtifact);
 	}
