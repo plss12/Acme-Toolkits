@@ -1,0 +1,4 @@
+Feature 6) Deliverable 4:
+Un inventor solo puede aceptar o rechazar patronages cuyo status sean PROPOSED y sean públicos.
+Si un patronage es PROPOSED pero no público o público pero no PROPOSED, no se puede aceptar o rechazar.
+El proceso de aceptar o rechazar se lleva a cabo dentro del patronage, con el botón New Status.
