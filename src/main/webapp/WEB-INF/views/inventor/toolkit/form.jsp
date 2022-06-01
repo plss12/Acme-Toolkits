@@ -24,10 +24,11 @@
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'show' && isPublic}">
-			
+			<acme:input-integer code="inventor.toolkit.form.label.price" path="price" readonly="true"/>
 			<acme:button code="inventor.toolkit.form.button.artifact" action="/any/artifact-toolkit/list?masterId=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && !isPublic}">
+				<acme:input-integer code="inventor.toolkit.form.label.price" path="price" readonly="true"/>
 				<acme:button code="inventor.toolkit.form.button.artifact" action="/any/artifact-toolkit/list?masterId=${id}"/>
 				<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
 				<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>

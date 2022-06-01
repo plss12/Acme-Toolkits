@@ -39,7 +39,7 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 
 		final String inventorUsername = String.valueOf(request.getModel().getAttribute("inventor.userAccount.username"));
-		final Inventor inventor = this.repository.findInventorByUsername(inventorUsername);
+		final Inventor inventor = this.repository.findInventorByUsername(inventorUsername).get(0);
 		errors.state(request, inventor!=null, "*", "patron.patronage.form.error.invalidInventor");
 		entity.setInventor(inventor);
 		

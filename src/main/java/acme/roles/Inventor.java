@@ -21,11 +21,11 @@ public class Inventor extends UserRole{
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Size(min = 1, max = 101)
+	@Size(max = 100)
 	protected String			company;
 
 	@NotBlank
-	@Size(min = 1, max = 256)
+	@Size(max = 255)
 	protected String			statement;
 	
 	@URL

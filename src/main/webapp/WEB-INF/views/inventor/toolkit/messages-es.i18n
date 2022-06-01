@@ -33,3 +33,5 @@ inventor.toolkit.form.button.publish = Publicar
 
 inventor.toolkit.form.error.duplicated_code = Este elemento ya se encuentra en uso
 administrator.toolkit.form.error.spam = El texto supera el límite de spam 
+
+inventor.toolkit.form.label.price=Precio (En la moneda por defecto del sistema)
