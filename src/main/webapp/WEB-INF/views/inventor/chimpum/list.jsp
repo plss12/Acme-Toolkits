@@ -22,4 +22,5 @@
 	<acme:list-column code="inventor.chimpum.list.label.budget" path="budget"/>
 	<acme:list-column code="inventor.chimpum.list.label.artefact.code" path="artefact.code"/>
 </acme:list>
+<acme:button code="inventor.chimpum.list.button.create" action="/inventor/chimpum/create?masterId=${masterId}"/>
 	

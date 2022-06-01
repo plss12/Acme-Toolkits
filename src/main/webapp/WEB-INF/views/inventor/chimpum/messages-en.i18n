@@ -25,3 +25,6 @@ inventor.chimpum.form.label.startDate = Start Date
 inventor.chimpum.form.label.finishDate = Finish Date
 inventor.chimpum.form.label.budget = Budget 
 inventor.chimpum.form.label.artefact.code = Artefact
+inventor.chimpum.form.label.link = Link
+inventor.chimpum.list.button.create = Create
+inventor.chimpum.form.button.delete = Delete

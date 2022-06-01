@@ -25,5 +25,6 @@
 	<acme:input-textbox code="inventor.chimpum.form.label.budget" path="budget"/>
 	<acme:input-textbox code="inventor.chimpum.form.label.link" path="link"/>
 	<acme:input-textbox code="inventor.chimpum.form.label.artefact.code" path="artefact.code"/>		
-
+	
+	<acme:submit code="inventor.chimpum.form.button.delete" action="/inventor/chimpum/delete"/>
 </acme:form>

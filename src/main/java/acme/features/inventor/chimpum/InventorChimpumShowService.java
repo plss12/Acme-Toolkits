@@ -42,6 +42,8 @@ public class InventorChimpumShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;	
 		
+		
+		
 		request.unbind(entity, model, "code","creationMoment","title","description", "startDate", "finishDate", "budget", "link", "artefact.code");
 		
 		
