@@ -10,6 +10,7 @@ import acme.entities.ArtifactType;
 import acme.entities.CHIMPUM;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.helpers.CollectionHelper;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
@@ -45,11 +46,16 @@ public class InventorArtifactChimpumsListService implements AbstractListService<
 		assert request != null;
 		assert entity != null;
 		assert model != null;	
-		
-		
 		request.unbind(entity, model, "code","creationMoment","title","description", "startDate", "finishDate", "budget", "link", "artefact.code");
-		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
+	}
+	
+	@Override
+	public void unbind(final Request<CHIMPUM> request, final Collection<CHIMPUM> entities, final Model model) {
+		assert request != null;
+		assert !CollectionHelper.someNull(entities);
+		assert model != null;
 		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
 	}
 
 }

@@ -1,6 +1,10 @@
 package acme.features.inventor.chimpum;
 
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -78,7 +82,50 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	public void validate(final Request<CHIMPUM> request, final CHIMPUM entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
+		
 		assert errors != null;
+		if(!errors.hasErrors("budget")) {
+			final String entityCurrency;
+			final Double amount;
+			final String[] acceptedCurrencies;
+			final List<String> currencies;
+			
+			entityCurrency = entity.getBudget().getCurrency();
+			amount = entity.getBudget().getAmount();
+			errors.state(request, amount > 0, "budget", "inventor.artifact.form.error.negative");
+			acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
+			
+			currencies = Arrays.asList(acceptedCurrencies);
+			errors.state(request, currencies.contains(entityCurrency) , "budget", "inventor.chimpum.form.error.noAcceptedCurrency");
+		}
+		if(!errors.hasErrors("startDate")) {
+			Calendar calendar;
+			final Date minimunDate;
+			calendar = new GregorianCalendar();
+			calendar.add(Calendar.MONTH, 1);
+			minimunDate = calendar.getTime();
+			errors.state(request, entity.getStartDate().after(minimunDate), "startDate", "inventor.chimpum.form.error.startDate");
+		}
+		
+		if(!errors.hasErrors("finishDate")) {
+			Calendar calendar;
+			Date minimunDate;
+			
+			calendar = new GregorianCalendar();
+			calendar.setTime(entity.getStartDate());
+			
+			calendar.add(Calendar.WEEK_OF_YEAR, 1);
+			minimunDate = calendar.getTime();
+			
+			errors.state(request, entity.getFinishDate().equals(minimunDate), "finishDate", "inventor.chimpum.form.error.finishDate");
+		}
+		
+		if (!errors.hasErrors("code")) {
+			CHIMPUM chimpum;
+
+			chimpum=this.repository.findChimpumByCode(entity.getCode());
+			errors.state(request, chimpum == null || chimpum.getId()==entity.getId(), "code", "inventor.chimpum.form.error.duplicated_code");
+		}
 		
 	}
 

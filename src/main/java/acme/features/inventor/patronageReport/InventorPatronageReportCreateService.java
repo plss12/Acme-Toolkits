@@ -62,7 +62,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert model != null;
 		
 		request.unbind(entity, model, "memorandum", "link");		
-		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
+		//model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
 		model.setAttribute("confirm", "false");
 	}
 

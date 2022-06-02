@@ -27,5 +27,11 @@ public interface InventorChimpumRepository extends AbstractRepository{
 	@Query("select c from CHIMPUM c where c.artefact.id =:id")
 	Collection<CHIMPUM> findManyCHIMPUMsByArtifactId(Integer id);
 	
+	@Query("select sc.acceptedCurrencies from Configuration sc")
+	String findAllAcceptedCurrencies();
+	
+	@Query("select c from CHIMPUM c where c.code = :code")
+	CHIMPUM findChimpumByCode(String code);
+	
 
 }
