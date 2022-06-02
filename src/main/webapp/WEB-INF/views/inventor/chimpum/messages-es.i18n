@@ -27,6 +27,7 @@ inventor.chimpum.form.label.budget = Presupuesto
 inventor.chimpum.form.label.artefact.code = Artefacto
 inventor.chimpum.form.label.link = Enlace
 inventor.chimpum.list.button.create = Crear	
+inventor.chimpum.form.button.create = Crear
 inventor.chimpum.form.button.delete = Eliminar
 inventor.chimpum.form.button.update = Actualizar
 

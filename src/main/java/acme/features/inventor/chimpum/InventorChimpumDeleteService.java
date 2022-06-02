@@ -1,7 +1,5 @@
 package acme.features.inventor.chimpum;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +40,6 @@ public class InventorChimpumDeleteService implements AbstractDeleteService<Inven
 
         request.bind(entity, errors, "code", "creationMoment", "title", "description", "startDate", "finishDate", "budget","link","artefact.code");
 
-
     }
 
     @Override
@@ -81,14 +78,7 @@ public class InventorChimpumDeleteService implements AbstractDeleteService<Inven
         assert request != null;
         assert entity != null;
 
-        Collection<CHIMPUM> chimpums;
-
-        chimpums = this.repository.findManyCHIMPUMsByArtifactId(request.getModel().getInteger("id"));
-        for (final CHIMPUM chimpum : chimpums) {
-            this.repository.delete(chimpum);
-        }
         this.repository.delete(entity);
-
     }
 
 }
