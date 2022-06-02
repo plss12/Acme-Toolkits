@@ -28,8 +28,12 @@ inventor.chimpum.form.label.artefact.code = Artefacto
 inventor.chimpum.form.label.link = Enlace
 inventor.chimpum.list.button.create = Crear	
 inventor.chimpum.form.button.delete = Eliminar
+inventor.chimpum.form.button.update = Actualizar
+
 inventor.chimpum.form.error.negative = El precio no puede ser negativo
 inventor.chimpum.form.error.noAcceptedCurrency = La divisa no está aceptada por el sistema
 inventor.chimpum.form.error.startDate = La fecha de comienzo está demasiado cerca de la actual (Al menos un mes por delante)
 inventor.chimpum.form.error.finishDate = La fecha de final está demasiado cerca de la seleccionada (Al menos una semana por delante)
 inventor.chimpum.form.error.duplicated_code = El código no puede estar repetido en nuestro sistema, intente otra combinación
+inventor.chimpum.form.error.sameCode = El código ha de ser el mismo que el del artefacto asociado
+inventor.chimpum.form.error.correctDate = El código debe contener la misma fecha que hoy (dd/mm/yy)

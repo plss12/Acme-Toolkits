@@ -1,5 +1,7 @@
 package acme.features.inventor.chimpum;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -45,7 +47,19 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "creationMoment","title","description","startDate","finishDate","budget","link");
+		final Integer id = request.getModel().getInteger("masterId");
+		final Artifact artifact = this.repository.findOneArtifactById(id);
+		
+		final LocalDate dateObj = LocalDate.now();
+        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy/MM/dd");
+        final String date = dateObj.format(formatter);
+        
+		final String newcode = artifact.getCode() +"-"+ date +"-"+request.getModel().getAttribute("code");
+		entity.setCode(newcode);
+		request.getModel().setAttribute("code",newcode);
+		
+		
+		request.bind(entity, errors,"code","creationMoment","title","description","startDate","finishDate","budget","link");
 		
 	}
 
@@ -55,7 +69,8 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "creationMoment","title","description","startDate","finishDate","budget","link");
+		
+		request.unbind(entity, model,"code","creationMoment","title","description","startDate","finishDate","budget","link");
 		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
 	}
 
@@ -68,12 +83,11 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		
 		id = request.getModel().getInteger("masterId");
 		artifact = this.repository.findOneArtifactById(id);
+		
 		actualDate = new Date();
-
 		result = new CHIMPUM();
 		result.setArtefact(artifact);
 		result.setCreationMoment(actualDate);
-		result.setCode("YY/MM/DD");
 				
 		return result;
 	}
@@ -126,6 +140,12 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 			chimpum=this.repository.findChimpumByCode(entity.getCode());
 			errors.state(request, chimpum == null || chimpum.getId()==entity.getId(), "code", "inventor.chimpum.form.error.duplicated_code");
 		}
+		
+		if(errors.hasErrors("code")) {
+			final Model model = request.getModel();
+			model.setAttribute("code",model.getAttribute("code").toString().charAt(model.getAttribute("code").toString().length()-1));
+		}
+		
 		
 	}
 
