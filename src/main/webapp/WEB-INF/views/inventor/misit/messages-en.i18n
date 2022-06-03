@@ -1,0 +1,40 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.misit.list.label.code = Code
+inventor.misit.list.label.creationMoment = Creation Moment
+inventor.misit.list.label.subject = Subject
+inventor.misit.list.label.explanation = Explanation 
+inventor.misit.list.label.startDate = Start Date
+inventor.misit.list.label.finishDate = Finish Date
+inventor.misit.list.label.quantity = Quantity 
+inventor.misit.list.label.artefact.code = Artefact
+
+inventor.misit.form.label.code = Code
+inventor.misit.form.label.creationMoment = Creation Moment
+inventor.misit.form.label.subject = subject
+inventor.misit.form.label.explanation = Explanation 
+inventor.misit.form.label.startDate = Start Date
+inventor.misit.form.label.finishDate = Finish Date
+inventor.misit.form.label.quantity = Quantity 
+inventor.misit.form.label.artefact.code = Artefact
+inventor.misit.form.label.additionalInfo = Additional Information
+inventor.misit.list.button.create = Create
+inventor.misit.form.button.create = Create
+inventor.misit.form.button.delete = Delete
+inventor.misit.form.button.update = Update
+
+inventor.misit.form.error.negative = The price can´t be negative
+inventor.misit.form.error.noAcceptedCurrency = This currency is not accepted
+inventor.misit.form.error.startDate = The start date is too close to the actual date (at least one month apart)
+inventor.misit.form.error.finishDate = The finish date has to be at least 1 week apart after actual date
+inventor.misit.form.error.duplicated_code = A code can't be duplicated in our system, please try another one
+inventor.misit.form.error.sameCode = The code must contain the same code as the asociated artifact
+inventor.misit.form.error.correctDate = The code must contain the same date as todays (dd/mm/yy)

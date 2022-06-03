@@ -1,0 +1,4 @@
+key,code,creationMoment,subject,explanation,startDate,finishDate,quantity,additionalInfo,key:artefact
+misit-01,AA:22:0101,2022/06/01 12:00,CHIMPUM1,CHIMPUNASO1,2022/05/25 12:00,2022/06/01 12:00,EUR 10.00,https://www.google.es/,artifact-02
+misit-02,AAB:22:0202,2022/06/01 12:00,CHIMPUM2,CHIMPUNASO2,2022/05/25 12:00,2022/06/01 12:00,GBP 10.00,https://www.google.es/,artifact-02
+misit-03,AAAC:22:0303,2022/06/01 12:00,CHIMPUM3,CHIMPUNASO3,2022/05/25 12:00,2022/06/01 12:00,USD 10.00,https://www.google.es/,artifact-02

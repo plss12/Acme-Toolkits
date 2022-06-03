@@ -40,11 +40,11 @@ public class AdministratorDashboard implements Serializable{
 	
 	//CONTROL CHECK      -----------------------------------------------------
 	
-	Double										ratioOfCHIMPUM;
-	Map<String,Double>							averageBudgetOfCHIMPUM;
-	Map<String,Double>							deviationBudgetOfCHIMPUM;
-	Map<String,Double>							minimumBudgetOfCHIMPUM;
-	Map<String,Double>							maximumBudgetOfCHIMPUM;
+	Double										ratioOfMisit;
+	Map<String,Double>							averageQuantityOfMisit;
+	Map<String,Double>							deviationQuantityOfMisit;
+	Map<String,Double>							minimumQuantityOfMisit;
+	Map<String,Double>							maximumQuantityOfMisit;
 	
 	
 	// Derived attributes -----------------------------------------------------

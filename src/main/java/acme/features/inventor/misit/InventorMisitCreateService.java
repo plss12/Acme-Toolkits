@@ -1,4 +1,4 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.misit;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Artifact;
-import acme.entities.CHIMPUM;
+import acme.entities.Misit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -20,13 +20,13 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumCreateService implements AbstractCreateService<Inventor, CHIMPUM>{
+public class InventorMisitCreateService implements AbstractCreateService<Inventor, Misit>{
 
 	@Autowired
-	protected InventorChimpumRepository repository;
+	protected InventorMisitRepository repository;
 	
 	@Override
-	public boolean authorise(final Request<CHIMPUM> request) {
+	public boolean authorise(final Request<Misit> request) {
 		assert request != null;
 		
 		boolean result;
@@ -42,7 +42,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	}
 
 	@Override
-	public void bind(final Request<CHIMPUM> request, final CHIMPUM entity, final Errors errors) {
+	public void bind(final Request<Misit> request, final Misit entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -59,24 +59,24 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		request.getModel().setAttribute("code",newcode);
 		
 		
-		request.bind(entity, errors,"code","creationMoment","title","description","startDate","finishDate","budget","link");
+		request.bind(entity, errors,"code","creationMoment","subject","explanation","startDate","finishDate","quantity","additionalInfo");
 		
 	}
 
 	@Override
-	public void unbind(final Request<CHIMPUM> request, final CHIMPUM entity, final Model model) {
+	public void unbind(final Request<Misit> request, final Misit entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
 		
-		request.unbind(entity, model,"code","creationMoment","title","description","startDate","finishDate","budget","link");
+		request.unbind(entity, model,"code","creationMoment","subject","explanation","startDate","finishDate","quantity","additionalInfo");
 		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
 	}
 
 	@Override
-	public CHIMPUM instantiate(final Request<CHIMPUM> request) {
-		final CHIMPUM result;
+	public Misit instantiate(final Request<Misit> request) {
+		final Misit result;
 		int id;
 		Artifact artifact;
 		final Date actualDate;
@@ -85,7 +85,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		artifact = this.repository.findOneArtifactById(id);
 		
 		actualDate = new Date();
-		result = new CHIMPUM();
+		result = new Misit();
 		result.setArtefact(artifact);
 		result.setCreationMoment(actualDate);
 				
@@ -93,24 +93,24 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	}
 
 	@Override
-	public void validate(final Request<CHIMPUM> request, final CHIMPUM entity, final Errors errors) {
+	public void validate(final Request<Misit> request, final Misit entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		
 		assert errors != null;
-		if(!errors.hasErrors("budget")) {
+		if(!errors.hasErrors("quantity")) {
 			final String entityCurrency;
 			final Double amount;
 			final String[] acceptedCurrencies;
 			final List<String> currencies;
 			
-			entityCurrency = entity.getBudget().getCurrency();
-			amount = entity.getBudget().getAmount();
+			entityCurrency = entity.getQuantity().getCurrency();
+			amount = entity.getQuantity().getAmount();
 			errors.state(request, amount > 0, "budget", "inventor.artifact.form.error.negative");
 			acceptedCurrencies=this.repository.findAllAcceptedCurrencies().split(",");
 			
 			currencies = Arrays.asList(acceptedCurrencies);
-			errors.state(request, currencies.contains(entityCurrency) , "budget", "inventor.chimpum.form.error.noAcceptedCurrency");
+			errors.state(request, currencies.contains(entityCurrency) , "quantity", "inventor.misit.form.error.noAcceptedCurrency");
 		}
 		if(!errors.hasErrors("startDate")) {
 			Calendar calendar;
@@ -118,7 +118,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 			calendar = new GregorianCalendar();
 			calendar.add(Calendar.MONTH, 1);
 			minimunDate = calendar.getTime();
-			errors.state(request, entity.getStartDate().after(minimunDate), "startDate", "inventor.chimpum.form.error.startDate");
+			errors.state(request, entity.getStartDate().after(minimunDate), "startDate", "inventor.misit.form.error.startDate");
 		}
 		
 		if(!errors.hasErrors("finishDate")) {
@@ -131,14 +131,14 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 			calendar.add(Calendar.WEEK_OF_YEAR, 1);
 			minimunDate = calendar.getTime();
 			
-			errors.state(request, entity.getFinishDate().equals(minimunDate), "finishDate", "inventor.chimpum.form.error.finishDate");
+			errors.state(request, entity.getFinishDate().equals(minimunDate), "finishDate", "inventor.misit.form.error.finishDate");
 		}
 		
 		if (!errors.hasErrors("code")) {
-			CHIMPUM chimpum;
+			Misit misit;
 
-			chimpum=this.repository.findChimpumByCode(entity.getCode());
-			errors.state(request, chimpum == null || chimpum.getId()==entity.getId(), "code", "inventor.chimpum.form.error.duplicated_code");
+			misit=this.repository.findMisitByCode(entity.getCode());
+			errors.state(request, misit == null || misit.getId()==entity.getId(), "code", "inventor.misit.form.error.duplicated_code");
 		}
 		
 		if(errors.hasErrors("code")) {
@@ -150,7 +150,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	}
 
 	@Override
-	public void create(final Request<CHIMPUM> request, final CHIMPUM entity) {
+	public void create(final Request<Misit> request, final Misit entity) {
 		assert request != null;
 		assert entity != null;
 		this.repository.save(entity);

@@ -129,20 +129,20 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		//CONTROL CHECK ---------------------------------------------------------------------------
 
-		final int totalNumberOfCHIMPUM;
-		totalNumberOfCHIMPUM = this.repository.totalNumberOfCHIMPUMs();
+		final int totalNumberOfMisit;
+		totalNumberOfMisit = this.repository.totalNumberOfMisit();
 		
-		final Double ratioOfCHIMPUM;
+		final Double ratioOfMisit;
 		
-		ratioOfCHIMPUM = totalNumberOfCHIMPUM==0? 0.0 : (double) totalNumberOfCHIMPUM/totalNumberOfTools;		
+		ratioOfMisit = totalNumberOfMisit==0? 0.0 : (double) totalNumberOfMisit/totalNumberOfComponents;		
 		
-		final Map<String, Double> averageBudgetOfCHIMPUM = new HashMap<>();
-		final Map<String, Double> deviationBudgetOfCHIMPUM = new HashMap<>();
-		final Map<String, Double> minimumBudgetOfCHIMPUM = new HashMap<>();
-		final Map<String, Double> maximumBudgetOfCHIMPUM = new HashMap<>();
+		final Map<String, Double> averageQuantityOfMisit = new HashMap<>();
+		final Map<String, Double> deviationQuantityOfMisit = new HashMap<>();
+		final Map<String, Double> minimumQuantityOfMisit = new HashMap<>();
+		final Map<String, Double> maximumQuantityOfMisit = new HashMap<>();
 		
 		final List<Object[]> statsOfCHIMPUM;
-		statsOfCHIMPUM = this.repository.statsOfCHIMPUM();
+		statsOfCHIMPUM = this.repository.statsOfMisit();
 		for(final Object[] stats:statsOfCHIMPUM) {
 			
 			final Double avg = (Double) stats[0];
@@ -151,10 +151,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			final Double stddev = (Double) stats[3];
 			final String currency = (String) stats[4];
 			
-			averageBudgetOfCHIMPUM.put(currency, avg);
-			deviationBudgetOfCHIMPUM.put(currency, stddev);
-			minimumBudgetOfCHIMPUM.put(currency, min);
-			maximumBudgetOfCHIMPUM.put(currency, max);
+			averageQuantityOfMisit.put(currency, avg);
+			deviationQuantityOfMisit.put(currency, stddev);
+			minimumQuantityOfMisit.put(currency, min);
+			maximumQuantityOfMisit.put(currency, max);
 		}
 		
 		//Construct
@@ -180,11 +180,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setMaximumBudgetOfPatronages(maximumBudgetOfPatronages);
 		
 		//CONTROL CHECK-----------------
-		result.setAverageBudgetOfCHIMPUM(averageBudgetOfCHIMPUM);
-		result.setDeviationBudgetOfCHIMPUM(deviationBudgetOfCHIMPUM);
-		result.setMaximumBudgetOfCHIMPUM(maximumBudgetOfCHIMPUM);
-		result.setMinimumBudgetOfCHIMPUM(minimumBudgetOfCHIMPUM);
-		result.setRatioOfCHIMPUM(ratioOfCHIMPUM);
+		result.setAverageQuantityOfMisit(averageQuantityOfMisit);
+		result.setDeviationQuantityOfMisit(deviationQuantityOfMisit);
+		result.setMaximumQuantityOfMisit(maximumQuantityOfMisit);
+		result.setMinimumQuantityOfMisit(minimumQuantityOfMisit);
+		result.setRatioOfMisit(ratioOfMisit);
 		
 		return result;
 	}
@@ -199,7 +199,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"minimumRetailPriceOfComponents","maximumRetailPriceOfComponents",
 			"totalNumberOfTools","averageRetailPriceOfTools","retailPriceDeviationOfTools","minimumRetailPriceOfTools","maximumRetailPriceOfTools",
 			"totalNumberOfPatronages","averageBudgetOfPatronages","deviationBudgetOfPatronages","minimumBudgetOfPatronages","maximumBudgetOfPatronages",
-			"ratioOfCHIMPUM", "averageBudgetOfCHIMPUM", "deviationBudgetOfCHIMPUM", "minimumBudgetOfCHIMPUM", "maximumBudgetOfCHIMPUM");
+			"ratioOfMisit", "averageQuantityOfMisit", "deviationQuantityOfMisit", "minimumQuantityOfMisit", "maximumQuantityOfMisit");
 		
 		final Set<String> technologies = entity.getMinimumRetailPriceOfComponents().keySet().stream().map(Pair::getFirst).collect(Collectors.toSet());
 		model.setAttribute("technology", technologies);
@@ -207,8 +207,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Set<String> currencies = entity.getRetailPriceDeviationOfTools().keySet();
 		model.setAttribute("currency", currencies);
 		
-		final Set<String> currenciesCHIMPUM = entity.getDeviationBudgetOfCHIMPUM().keySet();
-        model.setAttribute("currencyCHIMPUM", currenciesCHIMPUM);
+		final Set<String> quantityMisit = entity.getDeviationQuantityOfMisit().keySet();
+        model.setAttribute("quantityMisit", quantityMisit);
 	}
 
 }

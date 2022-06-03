@@ -1,4 +1,4 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.misit;
 
 import java.util.Collection;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Artifact;
 import acme.entities.ArtifactType;
-import acme.entities.CHIMPUM;
+import acme.entities.Misit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.helpers.CollectionHelper;
@@ -15,42 +15,42 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorArtifactChimpumsListService implements AbstractListService<Inventor, CHIMPUM>{
+public class InventorArtifactMisitListService implements AbstractListService<Inventor, Misit>{
 	
 	@Autowired
-	protected InventorChimpumRepository chimpumRepo;
+	protected InventorMisitRepository misitRepo;
 	
 	@Override
-	public boolean authorise(final Request<CHIMPUM> request) {
+	public boolean authorise(final Request<Misit> request) {
 		boolean result;
 		int masterId;
 		
 		Artifact artifact;
 		
 		masterId = request.getModel().getInteger("masterId");
-		artifact = this.chimpumRepo.findOneArtifactById(masterId);
-		result = (artifact != null && (request.isPrincipal(artifact.getInventor())) && artifact.getArtifactType()==ArtifactType.TOOL);
+		artifact = this.misitRepo.findOneArtifactById(masterId);
+		result = (artifact != null && (request.isPrincipal(artifact.getInventor())) && artifact.getArtifactType()==ArtifactType.COMPONENT);
 		return result;
 	}
 
 	@Override
-	public Collection<CHIMPUM> findMany(final Request<CHIMPUM> request) {
+	public Collection<Misit> findMany(final Request<Misit> request) {
 		assert request != null;
 		final Integer masterId = request.getModel().getInteger("masterId");
-		final Collection<CHIMPUM> result = this.chimpumRepo.findAllChimpumsFromArtefact(masterId);
+		final Collection<Misit> result = this.misitRepo.findAllMisitFromArtefact(masterId);
 		return result;
 	}
 
 	@Override
-	public void unbind(final Request<CHIMPUM> request, final CHIMPUM entity, final Model model) {
+	public void unbind(final Request<Misit> request, final Misit entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;	
-		request.unbind(entity, model, "code","creationMoment","title","description", "startDate", "finishDate", "budget", "link", "artefact.code");
+		request.unbind(entity, model, "code","creationMoment","subject","explanation", "startDate", "finishDate", "quantity", "additionalInfo", "artefact.code");
 	}
 	
 	@Override
-	public void unbind(final Request<CHIMPUM> request, final Collection<CHIMPUM> entities, final Model model) {
+	public void unbind(final Request<Misit> request, final Collection<Misit> entities, final Model model) {
 		assert request != null;
 		assert !CollectionHelper.someNull(entities);
 		assert model != null;

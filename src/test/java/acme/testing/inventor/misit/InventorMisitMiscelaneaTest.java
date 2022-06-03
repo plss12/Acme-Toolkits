@@ -1,11 +1,11 @@
-package acme.testing.inventor.chimpum;
+package acme.testing.inventor.misit;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import acme.testing.TestHarness;
 
-public class InventorChimpumMiscelaneaTest extends TestHarness{
+public class InventorMisitMiscelaneaTest extends TestHarness{
 	
 	@Test
 	@Order(10)
@@ -13,10 +13,10 @@ public class InventorChimpumMiscelaneaTest extends TestHarness{
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "Inventor Artifacts");
 		super.checkListingExists();
-		super.sortListing(0, "desc");
+		super.sortListing(0, "asc");
 		super.clickOnListingRecord(0);
 		super.checkFormExists();
-		super.clickOnButton("View Chimpums");
+		super.clickOnButton("View Misits");
 		super.checkListingExists();
 		super.sortListing(0,"desc");
 		super.clickOnListingRecord(0);
@@ -28,16 +28,16 @@ public class InventorChimpumMiscelaneaTest extends TestHarness{
 	@Order(20)
 	public void hackingTest() {
 		super.checkNotLinkExists("Account");
-		super.navigate("/inventor/chimpum/create");
+		super.navigate("/inventor/misit/create");
 		super.checkPanicExists();
 		
 		super.signIn("administrator", "administrator");
-		super.navigate("/inventor/chimpum/create");
+		super.navigate("/inventor/misit/create");
 		super.checkPanicExists();
 		super.signOut();
 		
 		super.signIn("patron1", "patron1");
-		super.navigate("/inventor/chimpum/create");
+		super.navigate("/inventor/misit/create");
 		super.checkPanicExists();
 		super.signOut();
 	}

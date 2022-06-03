@@ -34,8 +34,8 @@ administrator.dashboard.form.label.minimumBudgetOfPatronages = Presupuesto Míni
 
 #CONTROL CHECK
 
-administrator.dashboard.form.label.ratioOfCHIMPUM = Ratio de CHIMPUM
-administrator.dashboard.form.label.averageBudgetOfCHIMPUM = Presupuesto Medio de CHIMPUM
-administrator.dashboard.form.label.deviationBudgetOfCHIMPUM = Desviación del Presupuesto de CHIMPUM
-administrator.dashboard.form.label.minimumBudgetOfCHIMPUM = Presupuesto Mínimo de CHIMPUM
-administrator.dashboard.form.label.maximumBudgetOfCHIMPUM = Presupuesto Máximo de CHIMPUM
+administrator.dashboard.form.label.ratioOfMisit = Ratio de Misit
+administrator.dashboard.form.label.averageQuantityOfMisit = Presupuesto Medio de Misit
+administrator.dashboard.form.label.deviationQuantityOfMisit = Desviación del Presupuesto de Misit
+administrator.dashboard.form.label.minimumQuantityOfMisit = Presupuesto Mínimo de Misit
+administrator.dashboard.form.label.maximumQuantityOfMisit = Presupuesto Máximo de Misit

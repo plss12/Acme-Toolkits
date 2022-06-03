@@ -16,11 +16,11 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="inventor.chimpum.list.label.code" path="code"/>	
-	<acme:list-column code="inventor.chimpum.list.label.creationMoment" path="creationMoment"/>
-	<acme:list-column code="inventor.chimpum.list.label.title" path="title"/>
-	<acme:list-column code="inventor.chimpum.list.label.budget" path="budget"/>
-	<acme:list-column code="inventor.chimpum.list.label.artefact.code" path="artefact.code"/>
+	<acme:list-column code="inventor.misit.list.label.code" path="code"/>	
+	<acme:list-column code="inventor.misit.list.label.creationMoment" path="creationMoment"/>
+	<acme:list-column code="inventor.misit.list.label.subject" path="subject"/>
+	<acme:list-column code="inventor.misit.list.label.quantity" path="quantity"/>
+	<acme:list-column code="inventor.misit.list.label.artefact.code" path="artefact.code"/>
 </acme:list>
-<acme:button code="inventor.chimpum.list.button.create" action="/inventor/chimpum/create?masterId=${masterId}"/>
+<acme:button code="inventor.misit.list.button.create" action="/inventor/misit/create?masterId=${masterId}"/>
 	

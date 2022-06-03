@@ -49,7 +49,7 @@
 		</jstl:when>
 	</jstl:choose>
 	
-	<jstl:if test="${artifactType=='TOOL'}">
-                <acme:button code="inventor.artifact.list.button.CHIMPUM" action="/inventor/chimpum/list?masterId=${id}"/>
+	<jstl:if test="${artifactType=='COMPONENT'}">
+                <acme:button code="inventor.artifact.list.button.misit" action="/inventor/misit/list?masterId=${id}"/>
     </jstl:if>
 </acme:form>

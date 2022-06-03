@@ -387,8 +387,8 @@
 <%--CONTROL CHECK--%>
 
 <h3>
-	<acme:message code="administrator.dashboard.form.label.ratioOfCHIMPUM"/>
-	<acme:print value="${ratioOfCHIMPUM}"/>
+	<acme:message code="administrator.dashboard.form.label.ratioOfMisit"/>
+	<acme:print value="${ratioOfMisit}"/>
 </h3>
 
 <table class="table table-sm">
@@ -397,16 +397,16 @@
 	<tr>
 		<th scope="row">
 			<h4>
-				<acme:message code="administrator.dashboard.form.label.averageBudgetOfCHIMPUM"/>
+				<acme:message code="administrator.dashboard.form.label.averageQuantityOfMisit"/>
 			</h4>
-			<table class="table table-sm" id="id-averageBudgetOfCHIMPUM">
+			<table class="table table-sm" id="id-averageQuantityOfMisit">
 				<caption>
-					<acme:message code="administrator.dashboard.form.label.averageBudgetOfCHIMPUM"/>
+					<acme:message code="administrator.dashboard.form.label.averageQuantityOfMisit"/>
 				</caption>
-				<jstl:forEach items="${currencyCHIMPUM}" var="currencyCHIMPUM">
+				<jstl:forEach items="${quantityMisit}" var="quantityMisit">
 					<tr>
-						<th scope="row"><acme:print value="${currencyCHIMPUM}"/></th>
-						<jstl:set value="${averageBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currencyCHIMPUM)).iterator()}" var="entrySet"/>
+						<th scope="row"><acme:print value="${quantityMisit}"/></th>
+						<jstl:set value="${averageQuantityOfMisit.entrySet().stream().filter(x->x.getKey().equals(quantityMisit)).iterator()}" var="entrySet"/>
 						<jstl:if test="${entrySet.hasNext()}">
 							<jstl:forEach items="${entrySet}" var="entry">
 								<th scope="row"><acme:print value="${entry.getValue()}" /></th>
@@ -425,16 +425,16 @@
 	<tr>
 		<th scope="row">
 			<h4>
-				<acme:message code="administrator.dashboard.form.label.deviationBudgetOfCHIMPUM"/>
+				<acme:message code="administrator.dashboard.form.label.deviationQuantityOfMisit"/>
 			</h4>
-			<table class="table table-sm" id="id-deviationBudgetOfCHIMPUM">
+			<table class="table table-sm" id="id-deviationQuantityOfMisit">
 				<caption>
-					<acme:message code="administrator.dashboard.form.label.deviationBudgetOfCHIMPUM"/>
+					<acme:message code="administrator.dashboard.form.label.deviationQuantityOfMisit"/>
 				</caption>
-				<jstl:forEach items="${currencyCHIMPUM}" var="currencyCHIMPUM">
+				<jstl:forEach items="${quantityMisit}" var="quantityMisit">
 					<tr>
-						<th scope="row"><acme:print value="${currencyCHIMPUM}"/></th>
-						<jstl:set value="${deviationBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currencyCHIMPUM)).iterator()}" var="entrySet"/>
+						<th scope="row"><acme:print value="${quantityMisit}"/></th>
+						<jstl:set value="${deviationQuantityOfMisit.entrySet().stream().filter(x->x.getKey().equals(quantityMisit)).iterator()}" var="entrySet"/>
 						<jstl:if test="${entrySet.hasNext()}">
 							<jstl:forEach items="${entrySet}" var="entry">
 								<th scope="row"><acme:print value="${entry.getValue()}"/></th>
@@ -453,17 +453,17 @@
 	<tr>
 		<th scope="row">
 			<h4>
-				<acme:message code="administrator.dashboard.form.label.minimumBudgetOfCHIMPUM"/>
+				<acme:message code="administrator.dashboard.form.label.minimumQuantityOfMisit"/>
 			</h4>
-			<table class="table table-sm" id="id-minimumBudgetOfCHIMPUM">
+			<table class="table table-sm" id="id-minimumQuantityOfMisit">
 				<caption>
 					<acme:message
-						code="administrator.dashboard.form.label.minimumBudgetOfCHIMPUM"/>
+						code="administrator.dashboard.form.label.minimumQuantityOfMisit"/>
 				</caption>
-				<jstl:forEach items="${currencyCHIMPUM}" var="currencyCHIMPUM">
+				<jstl:forEach items="${quantityMisit}" var="quantityMisit">
 					<tr>
-						<th scope="row"><acme:print value="${currencyCHIMPUM}"/></th>
-						<jstl:set value="${minimumBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currencyCHIMPUM)).iterator()}" var="entrySet"/>
+						<th scope="row"><acme:print value="${quantityMisit}"/></th>
+						<jstl:set value="${minimumQuantityOfMisit.entrySet().stream().filter(x->x.getKey().equals(quantityMisit)).iterator()}" var="entrySet"/>
 						<jstl:if test="${entrySet.hasNext()}">
 							<jstl:forEach items="${entrySet}" var="entry">
 								<th scope="row"><acme:print value="${entry.getValue()}"/></th>
@@ -482,16 +482,16 @@
 	<tr>
 		<th scope="row">
 			<h4>
-				<acme:message code="administrator.dashboard.form.label.maximumBudgetOfCHIMPUM"/>
+				<acme:message code="administrator.dashboard.form.label.maximumQuantityOfMisit"/>
 			</h4>
-			<table class="table table-sm" id="id-maximumBudgetOfCHIMPUM">
+			<table class="table table-sm" id="id-maximumQuantityOfMisit">
 				<caption>
-					<acme:message code="administrator.dashboard.form.label.maximumBudgetOfCHIMPUM"/>
+					<acme:message code="administrator.dashboard.form.label.maximumQuantityOfMisit"/>
 				</caption>
-				<jstl:forEach items="${currencyCHIMPUM}" var="currencyCHIMPUM">
+				<jstl:forEach items="${quantityMisit}" var="quantityMisit">
 					<tr>
-						<th scope="row"><acme:print value="${currencyCHIMPUM}"/></th>
-						<jstl:set value="${maximumBudgetOfCHIMPUM.entrySet().stream().filter(x->x.getKey().equals(currencyCHIMPUM)).iterator()}" var="entrySet"/>
+						<th scope="row"><acme:print value="${quantityMisit}"/></th>
+						<jstl:set value="${maximumQuantityOfMisit.entrySet().stream().filter(x->x.getKey().equals(quantityMisit)).iterator()}" var="entrySet"/>
 						<jstl:if test="${entrySet.hasNext()}">
 							<jstl:forEach items="${entrySet}" var="entry">
 								<th scope="row"><acme:print value="${entry.getValue()}"/></th>

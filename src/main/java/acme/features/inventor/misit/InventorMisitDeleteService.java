@@ -1,9 +1,9 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.misit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.CHIMPUM;
+import acme.entities.Misit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -11,20 +11,20 @@ import acme.framework.services.AbstractDeleteService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumDeleteService implements AbstractDeleteService<Inventor, CHIMPUM>{
+public class InventorMisitDeleteService implements AbstractDeleteService<Inventor, Misit>{
 
 	@Autowired
-    protected InventorChimpumRepository repository;
+    protected InventorMisitRepository repository;
 
     @Override
-    public boolean authorise(final Request<CHIMPUM> request) {
+    public boolean authorise(final Request<Misit> request) {
         boolean result;
         int id;
-        CHIMPUM chimpum;
+        Misit chimpum;
         Inventor inventor;
 
         id = request.getModel().getInteger("id");
-        chimpum = this.repository.findChimpumById(id);
+        chimpum = this.repository.findMisitById(id);
         inventor = chimpum.getArtefact().getInventor();
         result = request.isPrincipal(inventor) && chimpum!=null;
 
@@ -32,41 +32,41 @@ public class InventorChimpumDeleteService implements AbstractDeleteService<Inven
     }
 
     @Override
-    public void bind(final Request<CHIMPUM> request, final CHIMPUM entity, final Errors errors) {
+    public void bind(final Request<Misit> request, final Misit entity, final Errors errors) {
     	assert request != null;
 		assert entity != null;
 		assert errors != null;        
        
 
-        request.bind(entity, errors, "code", "creationMoment", "title", "description", "startDate", "finishDate", "budget","link","artefact.code");
+        request.bind(entity, errors, "code","creationMoment","subject","explanation","startDate","finishDate","quantity","additionalInfo","artefact.code");
 
     }
 
     @Override
-    public void unbind(final Request<CHIMPUM> request, final CHIMPUM entity, final Model model) {
+    public void unbind(final Request<Misit> request, final Misit entity, final Model model) {
     	assert request != null;
 		assert entity != null;
 		assert model != null;
     	
-    	request.unbind(entity, model, "code", "creationMoment", "title", "description", "startDate", "finishDate", "budget","link","artefact.code");
+    	request.unbind(entity, model, "code","creationMoment","subject","explanation","startDate","finishDate","quantity","additionalInfo","artefact.code");
 
     }
 
     @Override
-    public CHIMPUM findOne(final Request<CHIMPUM> request) {
+    public Misit findOne(final Request<Misit> request) {
         assert request != null;
 
-        CHIMPUM result;
+        Misit result;
         int id;
 
         id = request.getModel().getInteger("id");
-        result = this.repository.findChimpumById(id);
+        result = this.repository.findMisitById(id);
 
         return result;
     }
 
     @Override
-    public void validate(final Request<CHIMPUM> request, final CHIMPUM entity, final Errors errors) {
+    public void validate(final Request<Misit> request, final Misit entity, final Errors errors) {
         assert request != null;
         assert entity != null;
         assert errors != null;
@@ -74,7 +74,7 @@ public class InventorChimpumDeleteService implements AbstractDeleteService<Inven
     }
     
     @Override
-    public void delete(final Request<CHIMPUM> request, final CHIMPUM entity) {
+    public void delete(final Request<Misit> request, final Misit entity) {
         assert request != null;
         assert entity != null;
 
