@@ -65,6 +65,6 @@ public class CHIMPUM extends AbstractEntity{
 	// Relationships ----------------------------------------------------------	
 	
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	protected Artifact artefact;
 }
